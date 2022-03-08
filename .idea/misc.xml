@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_iniciar_sessio.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_iniciar_sessio.xml" value="0.17" />
         <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_main.xml" value="0.17" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_registre_empresa.xml" value="0.14175724637681159" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_registre_usuari.xml" value="0.25" />
       </map>
     </option>
   </component>
