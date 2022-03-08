@@ -10,10 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TipPay">
         <activity
-            android:name=".registreEmpresa"
+            android:name=".IniciarTreballador"
+            android:exported="true" />
+        <activity
+            android:name=".IniciClient"
+            android:exported="true" />
+        <activity
+            android:name=".tancarSessio"
+            android:exported="true" />
+        <activity
+            android:name=".registrarEmpresa"
             android:exported="true" />
         <activity
             android:name=".registreUsuari"
+            android:exported="true" />
+        <activity
+            android:name=".registreEmpresa"
+            android:exported="true" />
+        <activity
+            android:name=".registrePersona"
             android:exported="true" />
         <activity
             android:name=".IniciarSessio"
