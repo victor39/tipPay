@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">tipPay</string>
+    <string name="registre">REGISTRE</string>
+    <string name="dni_propietari">DNI Propietari</string>
+    <string name="nie_empresa">NIE Empresa</string>
+    <string name="historial">HISTORIAL</string>
+    <string name="favoritos">FAVORITOS</string>
 </resources>
