@@ -1,0 +1,36 @@
+<?php
+    $DNI = $_POST['dni'];
+    $Nom = $_POST['nom'];
+    $Cognom1 = $_POST['cognom1'];
+    $Cognom2 = $_POST['cognom2'];
+    $DataNaix = $_POST['datanaix'];
+    $Telefon = $_POST['telefon'];
+    $Correu = $_POST['correu'];
+    $CodiPostal = $_POST['codipostal'];
+    $CompteBancari = $_POST['comptebancari'];
+    $PayPal = $_POST['paypal'];
+    $Treballador = $_POST['treballador'];
+
+
+    $servername = "ellaboratori.cat";
+    $username = "tippay";
+    $password = "T1pp@y2022!";
+    $dbname = "2022dam2tippay";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO Persona ('DNI', 'Nom', 'Cognom1', 'Cognom2', 'DataNaix', 'Telefon', 'Correu', 'CodiPostal', 'CompteBancari', 'PayPal', 'Treballador') VALUES (".$DNI.",".$Nom.",".$Cognom1.",."$Cognom2.",".$DataNaix.",".$Telefon.",".$Correu.",".$CodiPostal.",".$CompteBancari.",".$PayPal.",".$Treballador.")";
+
+    if ($conn->query($sql) === TRUE) {
+      echo "1";
+    } else {
+      echo "0";
+    }
+
+    $conn->close();
+?>
