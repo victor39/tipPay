@@ -6,12 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".registreEmpresa">
 
+
+    <EditText
+        android:id="@+id/registreEmpresaUbicacio"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="272dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="ubicació"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="284dp"
         android:layout_height="79dp"
         android:layout_marginTop="64dp"
-        android:text="@string/registre"
+        android:text="REGISTRE "
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.566"
@@ -19,96 +32,69 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/RegiEmprDNI"
+        android:id="@+id/registreEmpresaTipusLocal"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="448dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/dni_propietari"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/reEmpNIE"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="168dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/nie_empresa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/regiEmprUbicacio"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="296dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Ubicació"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/RegiEmprNomEmp"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="356dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Nom Empresa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/regisEmprNomPropietari"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="416dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Nom Propietari"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/regisEmpTipusLocal"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="476dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Tipu Local"
+        android:text="Tipus Local"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btSeguentRegistreEmp"
+        android:id="@+id/btSeguent4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="28dp"
         android:text="seguent"
+        android:onClick="registre2Empresa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <EditText
+        android:id="@+id/registreEmpresaNIE"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="152dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="NIE Empresa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/registreEmpresaDNI"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="212dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="DNI Propietari"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/registreEmpreNomPropietari"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="392dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Nom propietari"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
-        android:id="@+id/returnRegistreEmpre"
+        android:id="@+id/returnRegistre3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -120,7 +106,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/returnRegistre3"
+        android:id="@+id/registreInfo4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -130,4 +116,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/registreEmpresaNom"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="332dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Nom Empresa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

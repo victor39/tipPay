@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:text="Registrar"
+        android:onClick="iniciarEmpresa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -106,8 +107,8 @@
 
     <TextView
         android:id="@+id/registrarNomEmpresa"
-        android:layout_width="150dp"
-        android:layout_height="31dp"
+        android:layout_width="169dp"
+        android:layout_height="40dp"
         android:layout_marginTop="152dp"
         android:text="CridaNomEmpresa"
         app:layout_constraintEnd_toEndOf="parent"
