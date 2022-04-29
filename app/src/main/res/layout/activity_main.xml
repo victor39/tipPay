@@ -12,6 +12,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="296dp"
         android:text="IniciarSessió "
+        android:onClick="IniciarSessio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +23,10 @@
         android:layout_width="198dp"
         android:layout_height="48dp"
         android:layout_marginTop="448dp"
+        android:onClick="registrarPersona"
         android:text="Registrar Client"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,6 +37,7 @@
         android:layout_marginTop="376dp"
         android:layout_marginEnd="104dp"
         android:text="Registrar Empresa"
+        android:onClick="registrarEmpresa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

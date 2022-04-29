@@ -6,17 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class iniciarEmpresa extends AppCompatActivity {
+public class favoritos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_iniciar_empresa);
+        setContentView(R.layout.activity_favoritos);
+
 
     }
-    public void gTreballadors(View view) {
-        Intent gTreballadors = new Intent ( this , GTreballadors.class);
-        startActivity(gTreballadors);
-    }
 
+    public void returnClient(View view) {
+        Intent returnClient = new Intent(this, IniciClient.class);
+        startActivity(returnClient);
+    }
 }

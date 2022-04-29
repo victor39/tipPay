@@ -3,13 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_inici_client.xml" value="0.11548913043478261" />
-        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_iniciar_sessio.xml" value="0.17" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_favoritos.xml" value="0.11354166666666667" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_gtreballadors.xml" value="0.22" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_historial_pagaments.xml" value="0.17" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_inici_client.xml" value="0.18" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_iniciar_empresa.xml" value="0.17" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_iniciar_sessio.xml" value="0.22" />
         <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_iniciar_treballador.xml" value="0.22" />
-        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_main.xml" value="0.17" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_mis_tips.xml" value="0.21041666666666667" />
         <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_qr2.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_registrar_empresa.xml" value="0.25" />
+        <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_registrar_empresa.xml" value="0.22" />
         <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_registre_empresa.xml" value="0.14175724637681159" />
         <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_registre_persona.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/julian y victor/AndroidStudioProjects/tipPay/app/src/main/res/layout/activity_registre_usuari.xml" value="0.25" />

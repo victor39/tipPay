@@ -23,17 +23,19 @@
         android:layout_width="187dp"
         android:layout_height="70dp"
         android:layout_marginBottom="472dp"
-        android:text="Registrar"
+        android:text="Gestionar Personal"
+        android:onClick="gTreballadors"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="UsingOnClickInXml" />
 
     <Button
         android:id="@+id/btonGestionarTIPs"
         android:layout_width="187dp"
         android:layout_height="70dp"
         android:layout_marginBottom="348dp"
-        android:text="Registrar"
+        android:text="Gestionar Tips"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class IniciarEmpresa extends AppCompatActivity {
+public class GTreballadors extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_iniciar_empresa);
+        setContentView(R.layout.activity_gtreballadors);
     }
 }

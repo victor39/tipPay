@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/IniciarSessioPassword"
+        android:id="@+id/textContraseñaINICIAR"
         android:layout_width="239dp"
         android:layout_height="65dp"
         android:layout_marginBottom="200dp"
@@ -32,15 +32,15 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/textIniciarSessio"
+        android:id="@+id/textIniciarSessioINICIAR"
         android:layout_width="234dp"
         android:layout_height="63dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginBottom="284dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
