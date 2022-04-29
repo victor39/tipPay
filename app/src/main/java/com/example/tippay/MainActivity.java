@@ -13,7 +13,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
-
 import clases.Treballador;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
