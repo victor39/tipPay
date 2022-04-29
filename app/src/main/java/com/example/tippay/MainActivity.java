@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         String paypal = "123345";
         String comptebancari = "ES1233456789";
 
+
         Treballador tre = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, comptebancari);
         tre.insert(MainActivity.this);
     }
