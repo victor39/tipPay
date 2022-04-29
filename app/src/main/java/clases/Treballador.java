@@ -143,6 +143,7 @@ public class Treballador extends Persona{
     }
 
     public void update(Activity act){
+
         String dni = this.getDni();
         String nom = this.getNom();
         String cognom1 = this.getCognom1();
@@ -153,8 +154,10 @@ public class Treballador extends Persona{
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String comptebancari = this.getCompte_bancari();
+        String contrasena = this.getContrasena();
+
         try {
-            String url = "https://ffames.cat/tippay/treballador-insert.php";
+            String url = "https://ffames.cat/tippay/Treballador-update.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -163,7 +166,9 @@ public class Treballador extends Persona{
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+
                                     String resultado = response;
+
 
                                 }
                             },
@@ -172,13 +177,15 @@ public class Treballador extends Persona{
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
                                     error.printStackTrace();
-
+                                    System.out.println("manel");
                                 }
                             }
                     ) {
+
                         //generar clave-valor
                         @Override
                         protected Map<String, String> getParams() {
+
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("dni", dni);
@@ -191,18 +198,64 @@ public class Treballador extends Persona{
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("comptebancari", comptebancari);
+                            params.put("contrasena", contrasena);
                             return params;
                         }
                     };
             //ejecutar y pasar parametros
-            Volley.newRequestQueue(act.getApplicationContext()).add(postRequest);
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+            System.out.println(telefono);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public void delete(Activity act){
+        String dni = this.getDni();
 
+        try {
+            String url = "https://ffames.cat/tippay/Treballador-delete.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+
+                                    String resultado = response;
+
+
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                    System.out.println("manel");
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

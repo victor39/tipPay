@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         String contrasena = "psw";
 
         Treballador tre = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, comptebancari, contrasena);
-        tre.insert(MainActivity.this);
+        //tre.insert(MainActivity.this);
+        //tre.update(MainActivity.this);
+        tre.delete(MainActivity.this);
     }
 
     public void IniciarSessio(View view) {
