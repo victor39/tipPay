@@ -15,6 +15,9 @@ public class Persona {
     private String paypal;
     private String compte_bancari;
 
+    public Persona(){
+
+    }
     public Persona(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf,
                    String correu, int cp, String paypal, String compte_bancari) {
         super();

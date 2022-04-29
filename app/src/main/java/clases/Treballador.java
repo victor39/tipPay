@@ -20,6 +20,11 @@ public class Treballador extends Persona{
     public Treballador(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, int cp, String paypal, String compte_bancari) {
         super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, compte_bancari);
     }
+    public Treballador(){
+        super();
+
+    }
+
 
     public static ArrayList<Treballador> tots(Activity act){
         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
