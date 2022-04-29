@@ -9,7 +9,7 @@ public class Client extends Persona{
 
     ArrayList<Empresa> empresasFav;
 
-    public Client(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, int cp, String paypal, String compte_bancari, ArrayList<Empresa> empresaFav) {
+    public Client(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari, ArrayList<Empresa> empresaFav) {
         super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, compte_bancari);
         this.empresasFav = empresaFav;
 

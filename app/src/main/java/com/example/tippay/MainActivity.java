@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         String dni = "41533673C";
         String nom = "Adrià";
         String cognom1 = "Duran";
@@ -36,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         LocalDate datanaix = LocalDate.of(1999, 05, 01);
         String telefono = "722572442";
         String correu = "aduran@inspalamos.cat";
-        int codipostal = 17250;
+        String codipostal = "17250";
         String paypal = "123345";
         String comptebancari = "ES1233456789";
 
@@ -44,6 +42,20 @@ public class MainActivity extends AppCompatActivity {
         Treballador tre = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, comptebancari);
         tre.insert(MainActivity.this);
     }
+
+    public void IniciarSessio(View view) {
+        Intent iniciarSessio = new Intent ( this , IniciarSessio.class);
+        startActivity(iniciarSessio);
+    }
+    public void registrarEmpresa(View view) {
+        Intent registrarEmpresa = new Intent ( this , registreEmpresa.class);
+        startActivity(registrarEmpresa);
+    }
+    public void registrarPersona(View view) {
+        Intent registrarPersona = new Intent ( this , registrePersona.class);
+        startActivity(registrarPersona);
+    }
+
 
     public void intento(View view) {
         try {

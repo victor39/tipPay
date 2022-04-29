@@ -30,7 +30,7 @@ public class Treballador extends Persona{
         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
 
         try {
-            String url = "https://ffames.cat/tippay/treballador-tots.php";
+            String url = "https://ffames.cat/tippay/Treballadror-insert.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,

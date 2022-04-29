@@ -9,7 +9,7 @@ public class Propietari extends Persona{
 
     Empresa empresa;
 
-    public Propietari(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, int cp, String paypal, String compte_bancari, Empresa empresa) {
+    public Propietari(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari, Empresa empresa) {
         super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, compte_bancari);
         this.empresa = empresa;
     }
