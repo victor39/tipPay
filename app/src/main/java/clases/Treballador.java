@@ -4,6 +4,7 @@ import android.app.Application;
 import android.widget.TextView;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
@@ -17,8 +18,8 @@ import java.util.Map;
 
 public class Treballador extends Persona{
 
-    public Treballador(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari) {
-        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, compte_bancari);
+    public Treballador(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari, String contrasena) {
+        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, compte_bancari, contrasena);
     }
     public Treballador(){
         super();
@@ -30,7 +31,7 @@ public class Treballador extends Persona{
         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
 
         try {
-            String url = "https://ffames.cat/tippay/Treballadror-insert.php";
+            String url = "https://ffames.cat/tippay/Treballador-insert.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -84,6 +85,8 @@ public class Treballador extends Persona{
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String comptebancari = this.getCompte_bancari();
+        String contrasena = this.getContrasena();
+
         try {
             String url = "https://ffames.cat/tippay/Treballador-insert.php";
             StringRequest postRequest = new
@@ -126,13 +129,14 @@ public class Treballador extends Persona{
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("comptebancari", comptebancari);
+                            params.put("contrasena", contrasena);
                             return params;
                         }
                     };
             //ejecutar y pasar parametros
-
-            Volley.newRequestQueue(act.getApplicationContext()).add(postRequest);
-            System.out.println("HOLA");
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+            System.out.println(telefono);
         } catch (Exception e) {
             e.printStackTrace();
         }
