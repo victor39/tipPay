@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String dni = "41533673C";
+        String dni = "4153363C";
         String nom = "Adria";
         String cognom1 = "Duran";
         String cognom2 = "Portell";
