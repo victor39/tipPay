@@ -15,6 +15,7 @@ import java.time.LocalDate;
 
 import clases.Treballador;
 
+@RequiresApi(api = Build.VERSION_CODES.O)
 public class MainActivity extends AppCompatActivity {
 
     Connection connect;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     Treballador tre = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, comptebancari);
 
-        tre.insert(MainActivity .this);
+        tre.insert();
 
     public void intento(View view) {
         try {
