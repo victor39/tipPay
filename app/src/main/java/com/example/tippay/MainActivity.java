@@ -45,10 +45,6 @@ public class MainActivity extends AppCompatActivity {
         tre.insert(MainActivity.this);
     }
 
-
-
-
-
     public void intento(View view) {
         try {
             Connexio con = new Connexio();

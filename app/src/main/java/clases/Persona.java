@@ -11,7 +11,7 @@ public class Persona {
     private LocalDate dataNaixement;
     private String telf;
     private String correu;
-    private int cp;
+    private String cp;
     private String paypal;
     private String compte_bancari;
 
@@ -19,7 +19,7 @@ public class Persona {
 
     }
     public Persona(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf,
-                   String correu, int cp, String paypal, String compte_bancari) {
+                   String correu, String cp, String paypal, String compte_bancari) {
         super();
         this.dni = dni;
         this.nom = nom;
@@ -89,11 +89,11 @@ public class Persona {
         this.correu = correu;
     }
 
-    public int getCp() {
+    public String getCp() {
         return cp;
     }
 
-    public void setCp(int cp) {
+    public void setCp(String cp) {
         this.cp = cp;
     }
 

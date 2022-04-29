@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class Treballador extends Persona{
 
-    public Treballador(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, int cp, String paypal, String compte_bancari) {
+    public Treballador(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari) {
         super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, compte_bancari);
     }
     public Treballador(){
@@ -81,7 +81,7 @@ public class Treballador extends Persona{
         LocalDate datanaix = this.getDataNaixement();
         String telefono = this.getTelf();
         String correu = this.getCorreu();
-        int codipostal = this.getCp();
+        String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String comptebancari = this.getCompte_bancari();
         try {
@@ -146,7 +146,7 @@ public class Treballador extends Persona{
         LocalDate datanaix = this.getDataNaixement();
         String telefono = this.getTelf();
         String correu = this.getCorreu();
-        int codipostal = this.getCp();
+        String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String comptebancari = this.getCompte_bancari();
         try {
