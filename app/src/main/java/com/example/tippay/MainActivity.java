@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         LocalDate datanaix = LocalDate.of(1999,05,01);
         String telefono = "722572442";
         String correu = "aduran@inspalamos.cat";
-        String codipostal = "17250";
+        int codipostal = 17250;
         String paypal = "123345";
         String comptebancari = "ES1233456789";
 

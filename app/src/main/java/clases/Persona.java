@@ -3,6 +3,7 @@ package clases;
 import java.time.LocalDate;
 
 public class Persona {
+
     private String dni;
     private String nom;
     private String cognom1;
@@ -10,12 +11,12 @@ public class Persona {
     private LocalDate dataNaixement;
     private String telf;
     private String correu;
-    private String cp;
+    private int cp;
     private String paypal;
     private String compte_bancari;
 
     public Persona(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf,
-                   String correu, String cp, String paypal, String compte_bancari) {
+                   String correu, int cp, String paypal, String compte_bancari) {
         super();
         this.dni = dni;
         this.nom = nom;
@@ -85,11 +86,11 @@ public class Persona {
         this.correu = correu;
     }
 
-    public String getCp() {
+    public int getCp() {
         return cp;
     }
 
-    public void setCp(String cp) {
+    public void setCp(int cp) {
         this.cp = cp;
     }
 

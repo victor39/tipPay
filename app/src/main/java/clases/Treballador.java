@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class Treballador extends Persona{
 
-    public Treballador(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari) {
+    public Treballador(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, int cp, String paypal, String compte_bancari) {
         super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, compte_bancari);
     }
 
@@ -76,7 +76,7 @@ public class Treballador extends Persona{
         LocalDate datanaix = this.getDataNaixement();
         String telefono = this.getTelf();
         String correu = this.getCorreu();
-        String codipostal = this.getCp();
+        int codipostal = this.getCp();
         String paypal = this.getPaypal();
         String comptebancari = this.getCompte_bancari();
         try {
@@ -118,7 +118,7 @@ public class Treballador extends Persona{
                             params.put("datanaix", datanaix.toString());
                             params.put("telefono", telefono);
                             params.put("correu", correu);
-                            params.put("codipostal", codipostal);
+                            params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("comptebancari", comptebancari);
                             return params;
@@ -141,7 +141,7 @@ public class Treballador extends Persona{
         LocalDate datanaix = this.getDataNaixement();
         String telefono = this.getTelf();
         String correu = this.getCorreu();
-        String codipostal = this.getCp();
+        int codipostal = this.getCp();
         String paypal = this.getPaypal();
         String comptebancari = this.getCompte_bancari();
         try {
@@ -179,7 +179,7 @@ public class Treballador extends Persona{
                             params.put("datanaix", datanaix.toString());
                             params.put("telefono", telefono);
                             params.put("correu", correu);
-                            params.put("codipostal", codipostal);
+                            params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("comptebancari", comptebancari);
                             return params;
@@ -191,4 +191,9 @@ public class Treballador extends Persona{
             e.printStackTrace();
         }
     }
+
+    public void delete(Activity act){
+
+    }
+
 }
