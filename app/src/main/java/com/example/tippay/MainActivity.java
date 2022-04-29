@@ -2,6 +2,7 @@ package com.example.tippay;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ComponentActivity;
 
 import android.os.Build;
 import android.content.Intent;
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     String dni = "41533673C";
     String nom = "Adrià";
     String cognom1 = "Duran";
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     Treballador tre = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, comptebancari);
 
-        tre.insert();
+    tre.insert(this,MainActivity);
 
     public void intento(View view) {
         try {
