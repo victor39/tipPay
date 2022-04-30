@@ -108,7 +108,6 @@ public class Treballador extends Persona{
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
                                     error.printStackTrace();
-                                    System.out.println("manel");
                                 }
                             }
                     ) {
@@ -177,7 +176,6 @@ public class Treballador extends Persona{
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
                                     error.printStackTrace();
-                                    System.out.println("manel");
                                 }
                             }
                     ) {
@@ -235,7 +233,6 @@ public class Treballador extends Persona{
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
                                     error.printStackTrace();
-                                    System.out.println("manel");
                                 }
                             }
                     ) {

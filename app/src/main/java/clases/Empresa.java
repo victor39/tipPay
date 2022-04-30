@@ -2,12 +2,22 @@ package clases;
 
 import android.app.Activity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Empresa {
 
-    private int cp;
+    private String NIE;
+    private String cp;
     private int cordenades;
     private Propietari propietari;
     private String direccio;
@@ -15,8 +25,9 @@ public class Empresa {
     private String paypal;
     private String compte_bancari;
 
-    public Empresa(int cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal, String compte_bancari) {
+    public Empresa(String NIE, String cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal, String compte_bancari) {
 
+        this.NIE = NIE;
         this.cp = cp;
         this.cordenades = cordenades;
         this.propietari = propietari;
@@ -27,11 +38,19 @@ public class Empresa {
 
     }
 
-    public int getCp() {
+    public String getNIE() {
+        return NIE;
+    }
+
+    public void setNIE(String NIE) {
+        this.NIE = NIE;
+    }
+
+    public String getCp() {
         return cp;
     }
 
-    public void setCp(int cp) {
+    public void setCp(String cp) {
         this.cp = cp;
     }
 
@@ -78,7 +97,8 @@ public class Empresa {
     @Override
     public String toString() {
         return "Empresa{" +
-                "cp=" + cp +
+                "NIE='" + NIE + '\'' +
+                ", cp='" + cp + '\'' +
                 ", cordenades=" + cordenades +
                 ", propietari=" + propietari +
                 ", direccio='" + direccio + '\'' +
@@ -89,14 +109,182 @@ public class Empresa {
 
     public void insert(Activity act){
 
+        String NIE = this.NIE;
+        String cp = this.cp;
+        int cordenades = this.cordenades;
+        String propietari = this.propietari.getDni();
+        String direccio = this.direccio;
+        ArrayList<Treballador> treballadors;
+        String paypal = this.paypal;
+        String compte_bancari = this.compte_bancari;
+
+        try {
+            String url = "https://ffames.cat/tippay/Empresa-insert.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+
+                                    String resultado = response;
+
+
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("NIE", NIE);
+                            params.put("cp", cp);
+                            params.put("cordenades", cordenades + "");
+                            params.put("propietari", propietari);
+                            params.put("direccio", direccio);
+                            params.put("paypal", paypal);
+                            params.put("compte_bancari", compte_bancari);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void update(Activity act){
 
+        String NIE = this.NIE;
+        String cp = this.cp;
+        int cordenades = this.cordenades;
+        String propietari = this.propietari.getDni();
+        String direccio = this.direccio;
+        ArrayList<Treballador> treballadors;
+        String paypal = this.paypal;
+        String compte_bancari = this.compte_bancari;
+
+        try {
+            String url = "https://ffames.cat/tippay/Empresa-update.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+
+                                    String resultado = response;
+
+
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("NIE", NIE);
+                            params.put("cp", cp);
+                            params.put("cordenades", cordenades + "");
+                            params.put("propietari", propietari);
+                            params.put("direccio", direccio);
+                            params.put("paypal", paypal);
+                            params.put("compte_bancari", compte_bancari);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void delete(Activity act){
 
+        String NIE = this.NIE;
+        String cp = this.cp;
+        int cordenades = this.cordenades;
+        String propietari = this.propietari.getDni();
+        String direccio = this.direccio;
+        ArrayList<Treballador> treballadors;
+        String paypal = this.paypal;
+        String compte_bancari = this.compte_bancari;
+
+        try {
+            String url = "https://ffames.cat/tippay/Empresa-delete.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+
+                                    String resultado = response;
+
+
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("NIE", NIE);
+                            params.put("cp", cp);
+                            params.put("cordenades", cordenades + "");
+                            params.put("propietari", propietari);
+                            params.put("direccio", direccio);
+                            params.put("paypal", paypal);
+                            params.put("compte_bancari", compte_bancari);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //buscar todas las empresas por codigo postal
