@@ -9,7 +9,7 @@
 
     $servername = "ellaboratori.cat";
     $username = "tippay";
-    $password = "T1pp@y2022!";
+    $password = "T1pp@y2022!";  https://ffames.cat/tippay/
     $dbname = "2022dam2tippay";
 
     // Create connection

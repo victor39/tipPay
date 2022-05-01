@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TipPay">
         <activity
+            android:name=".PayPal"
+            android:exported="true" />
+        <activity
             android:name=".HistorialPagaments"
             android:exported="true" />
         <activity
