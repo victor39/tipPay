@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/IniciarSessioPassword"
+        android:id="@+id/textContraseñaINICIAR"
         android:layout_width="239dp"
         android:layout_height="65dp"
         android:layout_marginBottom="200dp"
@@ -32,15 +32,15 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/textIniciarSessio"
+        android:id="@+id/textIniciarSessioINICIAR"
         android:layout_width="234dp"
         android:layout_height="63dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginBottom="284dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -48,29 +48,35 @@
         android:id="@+id/btIniciarSessio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="144dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginBottom="100dp"
         android:text="Iniciar Sessió"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/cerrar"
-        android:layout_width="94dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="312dp"
+        android:id="@+id/button2"
+        android:layout_width="80dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="320dp"
         android:layout_marginBottom="676dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="328dp"
-        android:layout_marginBottom="676dp"
+        android:id="@+id/button3"
+        android:layout_width="83dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="313dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="668dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

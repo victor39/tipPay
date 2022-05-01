@@ -1,7 +1,6 @@
 package clases;
+
 import android.app.Activity;
-import android.app.Application;
-import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -10,67 +9,26 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Treballador extends Persona{
+public class Client extends Persona{
 
-    public Treballador(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari, String contrasena) {
-        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, compte_bancari, contrasena);
+    ArrayList<Empresa> empresasFav;
+
+    public Client(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari, String contrasena, ArrayList<Empresa> empresaFav) {
+        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena, compte_bancari);
+        this.empresasFav = empresaFav;
     }
-    public Treballador(){
-        super();
 
+    public ArrayList<Empresa> getEmpresasFav() {
+        return empresasFav;
     }
 
-
-    public static ArrayList<Treballador> tots(Activity act){
-        ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
-
-        try {
-            String url = "https://ffames.cat/tippay/Treballador-insert.php";
-            StringRequest postRequest = new
-                    //crear constructor
-                    StringRequest(Request.Method.POST, url,
-                            new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(String response) {
-                                    //devuelve el resultado de la consulta
-                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-                                    String resultado = response;
-                                    //while llenando
-
-                                }
-                            },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    //si hay un error lo muestra
-                                    error.printStackTrace();
-
-                                }
-                            }
-                    ) {
-                        //generar clave-valor
-                        @Override
-                        protected Map<String, String> getParams() {
-                            Map<String, String> params = new HashMap<>();
-                            // the POST parameters:
-                            return params;
-                        }
-                    };
-            //ejecutar y pasar parametros
-            Volley.newRequestQueue(act).add(postRequest);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        //una linea por trabajador
-        //while hasta que se acaben las
-        return treballadors;
+    public void setEmpresasFav(ArrayList<Empresa> empresasFav) {
+        this.empresasFav = empresasFav;
     }
 
     public void insert(Activity act){
@@ -88,7 +46,7 @@ public class Treballador extends Persona{
         String contrasena = this.getContrasena();
 
         try {
-            String url = "https://ffames.cat/tippay/Treballador-insert.php";
+            String url = "https://ffames.cat/tippay/Client-insert.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -156,7 +114,7 @@ public class Treballador extends Persona{
         String contrasena = this.getContrasena();
 
         try {
-            String url = "https://ffames.cat/tippay/Treballador-update.php";
+            String url = "https://ffames.cat/tippay/Client-update.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -213,7 +171,7 @@ public class Treballador extends Persona{
         String dni = this.getDni();
 
         try {
-            String url = "https://ffames.cat/tippay/Treballador-delete.php";
+            String url = "https://ffames.cat/tippay/Client-delete.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -254,5 +212,4 @@ public class Treballador extends Persona{
             e.printStackTrace();
         }
     }
-
 }

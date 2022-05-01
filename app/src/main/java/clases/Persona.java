@@ -3,6 +3,7 @@ package clases;
 import java.time.LocalDate;
 
 public class Persona {
+
     private String dni;
     private String nom;
     private String cognom1;
@@ -13,9 +14,13 @@ public class Persona {
     private String cp;
     private String paypal;
     private String compte_bancari;
+    private String contrasena;
 
+    public Persona(){
+
+    }
     public Persona(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf,
-                   String correu, String cp, String paypal, String compte_bancari) {
+                   String correu, String cp, String paypal, String compte_bancari, String contrasena) {
         super();
         this.dni = dni;
         this.nom = nom;
@@ -27,8 +32,8 @@ public class Persona {
         this.cp = cp;
         this.paypal = paypal;
         this.compte_bancari = compte_bancari;
+        this.contrasena = contrasena;
     }
-
     public String getDni() {
         return dni;
     }
@@ -43,6 +48,7 @@ public class Persona {
 
     public void setNom(String nom) {
         this.nom = nom;
+
     }
 
     public String getCognom1() {
@@ -107,6 +113,14 @@ public class Persona {
 
     public void setCompte_bancari(String compte_bancari) {
         this.compte_bancari = compte_bancari;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     @Override
