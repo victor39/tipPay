@@ -7,6 +7,7 @@ import android.os.Build;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String dni = "4153363C";
+
+        /*String dni = "4153363C";
         String nom = "Adria";
         String cognom1 = "Duran";
         String cognom2 = "Portell";
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Treballador tre = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, comptebancari, contrasena);
         //tre.insert(MainActivity.this);
         //tre.update(MainActivity.this);
-        tre.delete(MainActivity.this);
+        tre.delete(MainActivity.this);*/
     }
 
     public void IniciarSessio(View view) {
@@ -57,7 +59,10 @@ public class MainActivity extends AppCompatActivity {
         Intent registrarPersona = new Intent ( this , registrePersona.class);
         startActivity(registrarPersona);
     }
-
+    public void sortir(View view){
+        Toast.makeText(MainActivity.this, "Has tancat la aplicació", Toast.LENGTH_SHORT).show();
+        finishAffinity();
+    }
 
     public void intento(View view) {
         try {

@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/registreNom2"
+        android:id="@+id/registreUsuariNom"
         android:layout_width="215dp"
         android:layout_height="59dp"
         android:layout_marginTop="264dp"
@@ -29,7 +29,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nom" />
 
     <Button
         android:id="@+id/btSeguent2"
@@ -94,7 +95,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/registreUsuariEmail"
         android:layout_width="216dp"
         android:layout_height="55dp"
         android:layout_marginTop="188dp"
@@ -104,5 +105,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:text="Email" />
 </androidx.constraintlayout.widget.ConstraintLayout>

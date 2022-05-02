@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btSeguent3"
+        android:id="@+id/btRegistrarEmp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
@@ -33,6 +33,7 @@
         android:id="@+id/returnRegistre4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="returnRegistreEmpresa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"
@@ -54,7 +55,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/registreEmpresContra"
+        android:id="@+id/registrarContraEmpr"
         android:layout_width="215dp"
         android:layout_height="61dp"
         android:layout_marginTop="384dp"
@@ -67,7 +68,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/registreEmpreContra"
+        android:id="@+id/registrarContraEmp2"
         android:layout_width="215dp"
         android:layout_height="61dp"
         android:layout_marginTop="468dp"
@@ -86,6 +87,7 @@
         android:layout_marginTop="220dp"
         android:ems="10"
         android:inputType="textEmailAddress"
+        android:text="email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +95,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/registreNomEmpresa"
+        android:id="@+id/registrarNomEmpre"
         android:layout_width="215dp"
         android:layout_height="59dp"
         android:layout_marginTop="296dp"
@@ -106,9 +108,9 @@
         tools:text="Nom" />
 
     <TextView
-        android:id="@+id/registrarNomEmpresa"
-        android:layout_width="169dp"
-        android:layout_height="40dp"
+        android:id="@+id/textNomEmpresa"
+        android:layout_width="207dp"
+        android:layout_height="45dp"
         android:layout_marginTop="152dp"
         android:text="CridaNomEmpresa"
         app:layout_constraintEnd_toEndOf="parent"

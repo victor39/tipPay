@@ -71,6 +71,7 @@ public class IniciarSessio extends AppCompatActivity {
                 Map<String, String> parametros = new HashMap<String,String>();
                 parametros.put("Dni",adni.getText().toString());
                 parametros.put("Contraseña",aContra.getText().toString());
+                //como mirar la booleana que tengo en la BBDD
 
                 return parametros;
             }
@@ -86,12 +87,12 @@ public class IniciarSessio extends AppCompatActivity {
             startActivity(gTreballadors);
         } else if (response.equalsIgnoreCase("c")) {
 
-            Intent gTreballadors = new Intent(this, registreUsuari.class);
-            startActivity(gTreballadors);
+            Intent usuari = new Intent(this, registreUsuari.class);
+            startActivity(usuari);
         }
         else if (response.equalsIgnoreCase("e")) {
-            Intent gTreballadors = new Intent(this, GTreballadors.class);
-            startActivity(gTreballadors);
+            Intent empresari = new Intent(this, GTreballadors.class);
+            startActivity(empresari);
         }
     }
 }

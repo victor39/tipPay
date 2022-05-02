@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registreUsuari">
+    tools:context=".registrePersona">
 
     <TextView
         android:id="@+id/textView"
@@ -31,15 +31,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/registreContraseña"
+        android:id="@+id/registreCompteBancari"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="576dp"
+        android:layout_marginTop="568dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Nom"
+        android:text="Compte Bancari"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -68,13 +67,38 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/registreAdreca"
+        android:id="@+id/registreCognom2"
         android:layout_width="215dp"
         android:layout_height="59dp"
         android:layout_marginTop="292dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Adreça"
+        android:text="Cognom2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Cognom2" />
+
+    <EditText
+        android:id="@+id/registreDataNaix"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="348dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Data Naixement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/registreTelef"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="404dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Telefon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -83,7 +107,7 @@
         android:id="@+id/registreCP"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="348dp"
+        android:layout_marginTop="508dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="CP"
@@ -92,60 +116,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/registrePoblacio"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="404dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Població"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/registreProvincia"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="512dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Provincia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/registreTelefon"
+        android:id="@+id/registreCorreu"
         android:layout_width="214dp"
         android:layout_height="53dp"
         android:layout_marginTop="460dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Telefón"
+        android:text="Correu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/btSeguent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="seguent"
-        android:onClick="registrarUsuari"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:text="Correu" />
 
     <Button
         android:id="@+id/returnRegistre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="returnPersona"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.037"
@@ -165,4 +154,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btSeguentRegistre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="643dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="seguent"
+        android:text="Seguent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

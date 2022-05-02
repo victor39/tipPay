@@ -16,7 +16,7 @@ public class Persona {
     private String compte_bancari;
     private String contrasena;
 
-    public Persona(){
+    public Persona(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari){
 
     }
     public Persona(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf,
