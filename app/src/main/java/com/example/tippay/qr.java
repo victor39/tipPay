@@ -14,7 +14,7 @@ public class qr extends AppCompatActivity {
         setContentView(R.layout.activity_qr);
     }
     public void paypal(View view) {
-        Intent volver = new Intent(this,IniciarTreballador.class);
+        Intent volver = new Intent(this,PayPal.class);
         startActivity(volver);
     }
     public void volverQR(View view) {

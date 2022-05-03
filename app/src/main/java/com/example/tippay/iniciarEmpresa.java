@@ -12,7 +12,6 @@ public class iniciarEmpresa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_empresa);
-
     }
     public void gestionarTreballadors(View view) {
         Intent gTreballadors = new Intent ( this , GTreballadors.class);

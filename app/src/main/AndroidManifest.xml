@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TipPay">
         <activity
+            android:name=".afegirTreballador"
+            android:exported="true" />
+        <activity
             android:name=".qr"
             android:exported="true" />
         <activity
