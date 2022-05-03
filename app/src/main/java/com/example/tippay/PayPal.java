@@ -26,15 +26,15 @@ import java.math.BigDecimal;
 
 public class PayPal extends AppCompatActivity {
 
-    public static final String clientKey = "AX57OFlEcUcpJ3PQtZ2eyu6XRoPSJU4dujAs5WV-Oms6TSMGujy_An9zqz3XE1TeV4ehE_nK5nEudPc0";
-    public static final int PAYPAL_REQUEST_CODE = 123;
+    public static final String clientKey = "AewBQqgAdj01PzIY8-9XdU9mtK6rEUPTld1jGAmXmQVWfslV0k2-3Gdeskn6C2q_mfxjpUM_x8QVTsTv";
+    public static final int PAYPAL_REQUEST_CODE = 1;
 
     // Paypal Configuration Object
     private static PayPalConfiguration config = new PayPalConfiguration()
-            // Start with mock environment.  When ready,
+            // Start with mock environment. ENVIRONMENT_NO_NETWORK  When ready,
             // switch to sandbox (ENVIRONMENT_SANDBOX)
             // or live (ENVIRONMENT_PRODUCTION)
-            .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
+            .environment(PayPalConfiguration.ENVIRONMENT_NO_NETWORK)
             // on below line we are passing a client id.
             .clientId(clientKey);
     private EditText amountEdt;
@@ -69,7 +69,7 @@ public class PayPal extends AppCompatActivity {
         String amount = amountEdt.getText().toString();
 
         // Creating a paypal payment on below line.
-        PayPalPayment payment = new PayPalPayment(new BigDecimal(String.valueOf(amount)), "EUR", "Course Fees",
+        PayPalPayment payment = new PayPalPayment(new BigDecimal(String.valueOf(amount)), "EUR", "Propina",
                 PayPalPayment.PAYMENT_INTENT_SALE);
 
         // Creating Paypal Payment activity intent

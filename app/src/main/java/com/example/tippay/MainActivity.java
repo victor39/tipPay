@@ -81,4 +81,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(switchActivityIntent);
 
     }
+
+    public void treballador(View view) {
+
+    }
 }
