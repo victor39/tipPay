@@ -97,13 +97,9 @@ public class registreUsuari extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public void registrarUsuari(View view) {
-        Intent registrarUsuari = new Intent(this, registrePersona.class);
-        startActivity(registrarUsuari);
-    }
 
     public void sessioIniciada(View view) {
-        Intent sessioIniciada = new Intent(this, IniciarSessio.class);
+        Intent sessioIniciada = new Intent(this, principalClient.class);
         startActivity(sessioIniciada);
     }
 

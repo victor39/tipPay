@@ -10,11 +10,12 @@
         android:id="@+id/textIniciar"
         android:layout_width="214dp"
         android:layout_height="85dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="120dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Iniciar Sessió"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,15 +56,16 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btReturnIniciar"
         android:layout_width="80dp"
         android:layout_height="58dp"
+        android:onClick="returnIniciar"
         android:layout_marginStart="3dp"
         android:layout_marginEnd="320dp"
-        android:layout_marginBottom="676dp"
+        android:layout_marginBottom="636dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -73,7 +75,7 @@
         android:layout_height="58dp"
         android:layout_marginStart="313dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="668dp"
+        android:layout_marginBottom="636dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

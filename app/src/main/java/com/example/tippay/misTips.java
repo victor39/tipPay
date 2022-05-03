@@ -6,16 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class favoritos extends AppCompatActivity {
+public class misTips extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favoritos);
-    }
+        setContentView(R.layout.activity_mis_tips);
 
-    public void returnClient(View view) {
-        Intent returnClient = new Intent(this, principalClient.class);
-        startActivity(returnClient);
+    }
+    public void returnTips(View view) {
+        Intent returnTips = new Intent(this, IniciarTreballador.class);
+        startActivity(returnTips);
     }
 }

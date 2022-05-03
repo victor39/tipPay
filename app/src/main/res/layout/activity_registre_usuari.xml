@@ -46,14 +46,18 @@
 
     <Button
         android:id="@+id/returnRegistre2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="63dp"
+        android:layout_height="52dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#0CFFFFFF"
+        android:drawableBottom="@android:drawable/ic_menu_revert"
+        android:onClick="returnMain"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.017"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button

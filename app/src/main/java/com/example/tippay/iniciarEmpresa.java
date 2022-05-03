@@ -14,9 +14,14 @@ public class iniciarEmpresa extends AppCompatActivity {
         setContentView(R.layout.activity_iniciar_empresa);
 
     }
-    public void gTreballadors(View view) {
+    public void gestionarTreballadors(View view) {
         Intent gTreballadors = new Intent ( this , GTreballadors.class);
         startActivity(gTreballadors);
     }
+    public void gestionarTips(View view) {
+        Intent gTips = new Intent ( this , Gtips.class);
+        startActivity(gTips);
+    }
+
 
 }

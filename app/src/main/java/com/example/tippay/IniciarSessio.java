@@ -44,7 +44,6 @@ public class IniciarSessio extends AppCompatActivity {
         });
 
     }
-
     public void validarUsuari(String URL){
         StringRequest stringRequest= new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
@@ -70,8 +69,7 @@ public class IniciarSessio extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> parametros = new HashMap<String,String>();
                 parametros.put("Dni",adni.getText().toString());
-                parametros.put("Contraseña",aContra.getText().toString());
-                //como mirar la booleana que tengo en la BBDD
+                parametros.put("Contrasena",aContra.getText().toString());
 
                 return parametros;
             }
@@ -79,20 +77,25 @@ public class IniciarSessio extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
     public void iniciar (String response) {
+        String [] separar = response.split("#");
+        String treballador = separar[0];
+        String propietari = separar [1];
         
-        if (response.equalsIgnoreCase("t")) {
-            Intent gTreballadors = new Intent(this, GTreballadors.class);
+        if (treballador.equalsIgnoreCase("1")) {
+            Intent gTreballadors = new Intent(this, IniciarTreballador.class);
             startActivity(gTreballadors);
-        } else if (response.equalsIgnoreCase("c")) {
-
-            Intent usuari = new Intent(this, registreUsuari.class);
+        } else if (treballador.equalsIgnoreCase("0")) {
+            Intent usuari = new Intent(this, principalClient.class);
+            startActivity(usuari);
+        } else if (propietari.equalsIgnoreCase("1")) {
+            Intent usuari = new Intent(this, IniciarTreballador.class);
             startActivity(usuari);
         }
-        else if (response.equalsIgnoreCase("e")) {
-            Intent empresari = new Intent(this, GTreballadors.class);
-            startActivity(empresari);
-        }
+
+    }
+    public void returnIniciar(View view) {
+        Intent returnIniciar = new Intent(this, MainActivity.class);
+        startActivity(returnIniciar);
     }
 }

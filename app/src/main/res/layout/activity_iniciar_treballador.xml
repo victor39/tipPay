@@ -10,33 +10,36 @@
         android:id="@+id/iniciTreballadorHistorial"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="380dp"
+        android:layout_marginBottom="432dp"
+        android:onClick="historialTreballador"
         android:text="@string/historial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/iniciTreballadroFavoritos"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="360dp"
+        android:onClick="favoritos"
         android:text="@string/favoritos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/iniciTreballadorTIPS"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="228dp"
+        android:layout_marginBottom="296dp"
+        android:onClick="misTips"
         android:text="Mis TIPs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -56,6 +59,7 @@
         android:layout_width="133dp"
         android:layout_height="50dp"
         android:layout_marginBottom="64dp"
+        android:onClick="pagar"
         android:text="pagar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +70,8 @@
         android:id="@+id/butonQR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="528dp"
+        android:layout_marginTop="488dp"
+        android:onClick="QR"
         android:text="QR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -132,15 +132,17 @@
 
     <Button
         android:id="@+id/returnRegistre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="61dp"
+        android:layout_height="52dp"
+        android:background="#08FFFFFF"
+        android:drawableBottom="@android:drawable/ic_menu_revert"
         android:onClick="returnPersona"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintHorizontal_bias="0.074"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.023"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
@@ -160,15 +162,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
-        android:layout_marginTop="643dp"
         android:layout_marginEnd="157dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="32dp"
+        android:checkable="false"
         android:onClick="seguent"
         android:text="Seguent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

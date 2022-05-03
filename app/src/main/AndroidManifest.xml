@@ -2,12 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tippay">
-    <uses-permission android:name="android.permission.INTERNET"
+
+    <uses-permission
+        android:name="android.permission.INTERNET"
         tools:ignore="ManifestOrder" />
     <uses-permission
         android:name="android.permission.INTERNET"
         tools:ignore="ManifestOrder" />
-
 
     <application
         android:allowBackup="true"
@@ -16,6 +17,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TipPay">
+        <activity
+            android:name=".qr"
+            android:exported="true" />
+        <activity
+            android:name=".misTips"
+            android:exported="true" />
+        <activity
+            android:name=".Gtips"
+            android:exported="true" />
+        <activity
+            android:name=".principalClient"
+            android:exported="true" />
         <activity
             android:name=".favoritos"
             android:exported="true" />
@@ -27,9 +40,6 @@
             android:exported="true" />
         <activity
             android:name=".IniciarTreballador"
-            android:exported="true" />
-        <activity
-            android:name=".IniciClient"
             android:exported="true" />
         <activity
             android:name=".tancarSessio"
@@ -59,4 +69,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
