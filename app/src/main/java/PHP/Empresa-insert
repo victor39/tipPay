@@ -1,0 +1,31 @@
+<?php
+    $Nom = $_POST['nom'];
+    $CodiPostal = $_POST['codipostal'];
+    $Coordenades = $_POST['coordenades'];
+    $Propietari = $_POST['propietari'];
+    $Direccio = $_POST['direccio'];
+    $Ocupacio = $_POST['ocupacio'];
+    $PayPal = $_POST['paypal'];
+
+    $servername = "ellaboratori.cat";
+    $username = "tippay";
+    $password = "T1pp@y2022!";  https://ffames.cat/tippay/
+    $dbname = "2022dam2tippay";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO Persona ('Nom', 'Codi_postal', 'Coordenades', 'Propietari', 'Direccio', 'Ocupacio', 'Paypal') VALUES (".$Nom.",".$CodiPostal.",".$Coordenades.",".$Propietari.",".$Direccio.",".$Ocupacio.",".$PayPal.")";
+
+    if ($conn->query($sql) === TRUE) {
+      echo "1";
+    } else {
+      echo "0";
+    }
+
+    $conn->close();
+?>

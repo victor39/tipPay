@@ -3,6 +3,7 @@ package com.example.tippay;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.content.Intent;
 import android.os.Bundle;
@@ -76,5 +77,17 @@ public class MainActivity extends AppCompatActivity {
         catch(Exception ex){
 
         }
+    }
+
+    public void paypal(View view) {
+
+        Intent switchActivityIntent = new Intent(this, PayPal.class);
+        switchActivityIntent.putExtra("message", "From: " + MainActivity.class.getSimpleName());
+        startActivity(switchActivityIntent);
+
+    }
+
+    public void treballador(View view) {
+
     }
 }

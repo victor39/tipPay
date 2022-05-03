@@ -50,7 +50,8 @@ public class IniciarSessio extends AppCompatActivity {
             //mirarem si l'dni i contraseña son correctas
             public void onResponse(String response) {
                 if(!response.isEmpty()){
-                    iniciar(response);
+                    //iniciar(response);
+                    Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
 
                 }else{
                     Toast.makeText(IniciarSessio.this, "Usuario o contraseña incorrecta ", Toast.LENGTH_SHORT).show();
