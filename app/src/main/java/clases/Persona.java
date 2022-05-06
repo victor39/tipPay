@@ -8,19 +8,15 @@ public class Persona {
     private String nom;
     private String cognom1;
     private String cognom2;
-    private LocalDate dataNaixement;
+    private String dataNaixement;
     private String telf;
     private String correu;
     private String cp;
     private String paypal;
-    private String compte_bancari;
     private String contrasena;
 
-    public Persona(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari){
-
-    }
-    public Persona(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf,
-                   String correu, String cp, String paypal, String compte_bancari, String contrasena) {
+    public Persona(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf,
+                   String correu, String cp, String paypal, String contrasena) {
         super();
         this.dni = dni;
         this.nom = nom;
@@ -31,9 +27,10 @@ public class Persona {
         this.correu = correu;
         this.cp = cp;
         this.paypal = paypal;
-        this.compte_bancari = compte_bancari;
         this.contrasena = contrasena;
     }
+
+
     public String getDni() {
         return dni;
     }
@@ -67,11 +64,11 @@ public class Persona {
         this.cognom2 = cognom2;
     }
 
-    public LocalDate getDataNaixement() {
+    public String getDataNaixement() {
         return dataNaixement;
     }
 
-    public void setDataNaixement(LocalDate dataNaixement) {
+    public void setDataNaixement(String dataNaixement) {
         this.dataNaixement = dataNaixement;
     }
 
@@ -107,14 +104,6 @@ public class Persona {
         this.paypal = paypal;
     }
 
-    public String getCompte_bancari() {
-        return compte_bancari;
-    }
-
-    public void setCompte_bancari(String compte_bancari) {
-        this.compte_bancari = compte_bancari;
-    }
-
     public String getContrasena() {
         return contrasena;
     }
@@ -135,7 +124,6 @@ public class Persona {
                 ", correu='" + correu + '\'' +
                 ", cp='" + cp + '\'' +
                 ", paypal='" + paypal + '\'' +
-                ", compte_bancari='" + compte_bancari + '\'' +
                 '}';
     }
 }

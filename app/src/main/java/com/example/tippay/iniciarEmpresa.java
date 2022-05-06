@@ -10,6 +10,7 @@ public class iniciarEmpresa extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.setTitle("Inici Empresa");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_empresa);
     }

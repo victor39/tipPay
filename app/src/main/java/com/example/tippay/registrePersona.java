@@ -9,12 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class registrePersona extends AppCompatActivity {
-    EditText adni, aNom, aCognom,aCognom2,aNaix,aTelefon,aCorreu,aCP ,aCompteBancari ;
-    Button btSeguent;
-    Bundle bundle = new Bundle();
+    EditText adni, aNom, aCognom,aCognom2,aNaix,aTelefon,aCorreu,aCP ,aPayPal ;
+    Button btSeguent,informacio;
+    Bundle valores = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.setTitle("Registre");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registre_persona);
 
@@ -26,23 +27,22 @@ public class registrePersona extends AppCompatActivity {
         aNaix = findViewById(R.id.registreDataNaix);
         aTelefon = findViewById(R.id.registreTelef);
         aCorreu = findViewById(R.id.registreCorreu);
-        aCP = findViewById(R.id.registreDataNaix);
-        aCompteBancari = findViewById(R.id.registreCompteBancari);
+        aCP = findViewById(R.id.registreCP);
+        aPayPal = findViewById(R.id.registrePAYPAL);
 
     }
-
     public void seguent(View view) {
-        Intent seguent = new Intent(this, registreUsuari.class);
-        bundle.putString("dni", String.valueOf(adni.getText()));
-        bundle.putString("nom", String.valueOf(aNom.getText()));
-        bundle.putString("cognom", String.valueOf(aCognom.getText()));
-        bundle.putString("cognom2", String.valueOf(aCognom2.getText()));
-        bundle.putString("dataNaix", String.valueOf(aNaix.getText()));
-        bundle.putString("telefon", String.valueOf(aTelefon.getText()));
-        bundle.putString("correu", String.valueOf(aCorreu.getText()));
-        bundle.putString("Cp", String.valueOf(aCP.getText()));
-        bundle.putString("CompteBancari", String.valueOf(aCompteBancari.getText()));
-        seguent.putExtras(bundle);
+        Intent seguent = new Intent(this, registraUsuari.class);
+        valores.putString("dni", String.valueOf(adni.getText()));
+        valores.putString("nom", String.valueOf(aNom.getText()));
+        valores.putString("cognom", String.valueOf(aCognom.getText()));
+        valores.putString("cognom2", String.valueOf(aCognom2.getText()));
+        valores.putString("dataNaix", String.valueOf(aNaix.getText()));
+        valores.putString("telefon", String.valueOf(aTelefon.getText()));
+        valores.putString("correu", String.valueOf(aCorreu.getText()));
+        valores.putString("Cp", String.valueOf(aCP.getText()));
+        valores.putString("PayPal", String.valueOf(aPayPal.getText()));
+        seguent.putExtras(valores);
         startActivity(seguent);
 
     }
@@ -51,6 +51,11 @@ public class registrePersona extends AppCompatActivity {
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
 
+    }
+
+    public void info(View view) {
+        Intent main = new Intent(this, informacioPopUp.class);
+        startActivity(main);
     }
 }
 

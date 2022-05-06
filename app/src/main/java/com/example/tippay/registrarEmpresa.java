@@ -1,9 +1,11 @@
 package com.example.tippay;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,20 +21,32 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
+import clases.Empresa;
+import clases.Propietari;
+import clases.Treballador;
+
 public class registrarEmpresa extends AppCompatActivity {
-    String nomEmpresa ,nieEmp,dniEmp,ubiEmp,nomProp,tipus;
+    String nomEmpresa ,nieEmp,dniEmp,ubiEmp,nomProp,tipus,cp ,direccio,paypal,compteBanc;
+    int ubi;
     TextView nomText;
     EditText email,nomEdit,contrasena,contrasena2;
     Button btregistrarEmp;
+    ArrayList <Treballador> treb = new ArrayList<>();
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_empresa);
-        Bundle nom =getIntent().getExtras();
+        Bundle nom = getIntent().getExtras();
+
+        ArrayList <Treballador> treb = new ArrayList<>();
 
         btregistrarEmp = findViewById(R.id.btRegistrarEmp);
         email = findViewById(R.id.registrarEmailEmpr);
@@ -40,65 +54,28 @@ public class registrarEmpresa extends AppCompatActivity {
         contrasena = findViewById(R.id.registrarContraEmpr);
         contrasena2 = findViewById(R.id.registrarContraEmp2);
 
+         //falta cp Y direccio PAYPAL
         nieEmp = nom.getString("nie");
         dniEmp = nom.getString("dni");
         ubiEmp = nom.getString("ubi");
         nomProp = nom.getString("nomProp");
         tipus = nom.getString("tipus");
 
-         nomEmpresa = nom.getString("nomEmp");
-         nomText = findViewById(R.id.textNomEmpresa);
-         nomText.setText(nomEmpresa);
 
-        btregistrarEmp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validarUsuari("https://ffames.cat/tippay/Empresa-insert.php");
-            }
-        });
+        nomEmpresa = nom.getString("nomEmp");
+        nomText = findViewById(R.id.textNomEmpresa);
+        nomText.setText(nomEmpresa);
+
+        //Propietari pro = new Propietari(dni, prop, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, contrasena3);
+       // pro.insert(registrarEmpresa.this);
+
+        //Empresa emp = new Empresa(nieEmp,cp,ubi,pro,direccio,treb,compteBanc,paypal);
+       // emp.insert(registrarEmpresa.this);
     }
 
-    public void validarUsuari(String URL) {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if (response.isEmpty()) {
-
-                } else {
-                    Toast.makeText(registrarEmpresa.this, "Usuario o contraseña incorrecta ", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //llençar l'error per veure que falla
-                Toast.makeText(registrarEmpresa.this, error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }) {
-            @Nullable
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("nie",nieEmp);
-                parametros.put("dni",dniEmp);
-                parametros.put("ubi",ubiEmp);
-                parametros.put("nomProp",nomProp);
-                parametros.put("tipus",tipus);
-                parametros.put("nomEmp",nomEmpresa);
-                // los de este activity:
-                parametros.put("contrasena",contrasena.getText().toString());
-                parametros.put("contrasena2",contrasena2.getText().toString());
-                parametros.put("email",email.getText().toString());
-                parametros.put("nom",nomEdit.getText().toString());
-
-                return parametros;
-            }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }
     public void iniciarEmpresa(View view) {
+       // Empresa emp = new Empresa(nieEmp,cp,ubiEmp,pro,direccio,treb,compteBanc);
+        // emp.insert(this);
         Intent iniciarEmpresa = new Intent ( this , IniciarTreballador.class);
         startActivity(iniciarEmpresa);
     }

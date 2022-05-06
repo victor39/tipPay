@@ -22,7 +22,6 @@ public class registreEmpresa extends AppCompatActivity {
         nomEmp = findViewById(R.id.registreEmpresaNom);
         nomProp = findViewById(R.id.registreEmpreNomPropietari);
         tipus = findViewById(R.id.registreEmpresaTipusLocal);
-
     }
     public void registre2Empresa(View view) {
         Intent registreEmpresa2 = new Intent ( this , registrarEmpresa.class);
@@ -33,7 +32,6 @@ public class registreEmpresa extends AppCompatActivity {
         bundle.putString("nomProp", String.valueOf(nomProp.getText()));
         bundle.putString("tipus", String.valueOf(tipus.getText()));
         registreEmpresa2.putExtras(bundle);
-
         startActivity(registreEmpresa2);
     }
     public void returnEmpresa(View view) {

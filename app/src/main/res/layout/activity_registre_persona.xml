@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="284dp"
-        android:layout_height="79dp"
+        android:layout_width="254dp"
+        android:layout_height="66dp"
         android:layout_marginTop="48dp"
         android:text="REGISTRE "
         android:textSize="48sp"
@@ -22,23 +22,25 @@
         android:id="@+id/registreNom"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="164dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nom"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/registreCompteBancari"
+        android:id="@+id/registrePAYPAL"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="568dp"
+        android:layout_marginTop="536dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Compte Bancari"
+        android:text="Pay Pal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +48,7 @@
         android:id="@+id/registreDNI"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="104dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="DNI"
@@ -58,11 +60,12 @@
         android:id="@+id/registreCognom"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="216dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Cognom"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,7 +73,7 @@
         android:id="@+id/registreCognom2"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="272dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Cognom2"
@@ -80,10 +83,23 @@
         tools:text="Cognom2" />
 
     <EditText
+        android:id="@+id/registreCorreu"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="440dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="correu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Cognom2" />
+
+    <EditText
         android:id="@+id/registreDataNaix"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="348dp"
+        android:layout_marginTop="328dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Data Naixement"
@@ -95,7 +111,7 @@
         android:id="@+id/registreTelef"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="404dp"
+        android:layout_marginTop="384dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Telefon"
@@ -107,28 +123,14 @@
         android:id="@+id/registreCP"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="508dp"
+        android:layout_marginTop="480dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="CP"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/registreCorreu"
-        android:layout_width="214dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="460dp"
-        android:ems="10"
-        android:inputType="number"
-        android:text="Correu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:text="Correu" />
 
     <Button
         android:id="@+id/returnRegistre"
@@ -139,16 +141,17 @@
         android:onClick="returnPersona"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintHorizontal_bias="0.002"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/registreInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="info"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.975"
@@ -163,7 +166,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
         android:layout_marginEnd="157dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="88dp"
         android:checkable="false"
         android:onClick="seguent"
         android:text="Seguent"
