@@ -18,8 +18,8 @@ import java.util.Map;
 
 public class Treballador extends Persona{
 
-    public Treballador(String dni, String nom, String cognom1, String cognom2, LocalDate dataNaixement, String telf, String correu, String cp, String paypal, String compte_bancari, String contrasena) {
-        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, compte_bancari, contrasena);
+    public Treballador(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena) {
+        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena);
     }
 
     public static ArrayList<Treballador> tots(Activity act){
@@ -45,7 +45,6 @@ public class Treballador extends Persona{
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
                                     error.printStackTrace();
-
                                 }
                             }
                     ) {
@@ -74,12 +73,11 @@ public class Treballador extends Persona{
         String nom = this.getNom();
         String cognom1 = this.getCognom1();
         String cognom2 = this.getCognom2();
-        LocalDate datanaix = this.getDataNaixement();
+        String datanaix = this.getDataNaixement();
         String telefono = this.getTelf();
         String correu = this.getCorreu();
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
-        String comptebancari = this.getCompte_bancari();
         String contrasena = this.getContrasena();
 
         try {
@@ -92,10 +90,7 @@ public class Treballador extends Persona{
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
-
-
                                 }
                             },
                             new Response.ErrorListener() {
@@ -122,7 +117,6 @@ public class Treballador extends Persona{
                             params.put("correu", correu);
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
-                            params.put("comptebancari", comptebancari);
                             params.put("contrasena", contrasena);
                             return params;
                         }
@@ -130,7 +124,7 @@ public class Treballador extends Persona{
             //ejecutar y pasar parametros
             RequestQueue requestQueue = Volley.newRequestQueue(act);
             requestQueue.add(postRequest);
-            System.out.println(telefono);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -142,12 +136,11 @@ public class Treballador extends Persona{
         String nom = this.getNom();
         String cognom1 = this.getCognom1();
         String cognom2 = this.getCognom2();
-        LocalDate datanaix = this.getDataNaixement();
+        String datanaix = this.getDataNaixement();
         String telefono = this.getTelf();
         String correu = this.getCorreu();
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
-        String comptebancari = this.getCompte_bancari();
         String contrasena = this.getContrasena();
 
         try {
@@ -190,7 +183,6 @@ public class Treballador extends Persona{
                             params.put("correu", correu);
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
-                            params.put("comptebancari", comptebancari);
                             params.put("contrasena", contrasena);
                             return params;
                         }

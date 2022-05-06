@@ -10,39 +10,41 @@
         android:id="@+id/IniciarSessio"
         android:layout_width="188dp"
         android:layout_height="49dp"
+        android:layout_marginTop="248dp"
         android:onClick="IniciarSessio"
         android:text="IniciarSessió "
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/registrarEmpresa"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/registrarClient"
         android:layout_width="198dp"
         android:layout_height="48dp"
+        android:layout_marginTop="448dp"
         android:onClick="registrarPersona"
         android:text="Registrar Client"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657" />
+        app:layout_constraintVertical_bias="0.068" />
 
     <Button
         android:id="@+id/registrarEmpresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="356dp"
         android:onClick="registrarEmpresa"
         android:text="Registrar Empresa"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/registrarClient"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.543" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -62,36 +64,32 @@
         android:id="@+id/Sortir"
         android:layout_width="48dp"
         android:layout_height="49dp"
+        android:layout_marginStart="34dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="360dp"
+        android:layout_marginBottom="666dp"
         android:backgroundTint="#00FFFFFF"
         android:drawableBottom="@android:drawable/ic_delete"
         android:onClick="sortir"
         android:text="X"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/informacioInicial"
         android:layout_width="48dp"
         android:layout_height="49dp"
-        android:layout_marginStart="308dp"
-        android:layout_marginTop="4dp"
-        android:onClick="treballador"
+        android:layout_marginEnd="55dp"
+        android:onClick="informacio"
         android:text="i"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="paypal"
-        android:text="PayPal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Sortir"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintVertical_bias="0.023" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,12 +10,14 @@
         android:id="@+id/textIniciar"
         android:layout_width="214dp"
         android:layout_height="85dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginBottom="494dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Iniciar Sessió"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,23 +52,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
+        android:layout_marginTop="583dp"
+        android:layout_marginEnd="134dp"
         android:layout_marginBottom="100dp"
         android:text="Iniciar Sessió"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btReturnIniciar"
         android:layout_width="80dp"
         android:layout_height="58dp"
-        android:onClick="returnIniciar"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="320dp"
-        android:layout_marginBottom="636dp"
+        android:layout_marginBottom="656dp"
+        android:onClick="returnIniciar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
@@ -74,11 +82,13 @@
         android:layout_width="83dp"
         android:layout_height="58dp"
         android:layout_marginStart="313dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="636dp"
+        android:layout_marginBottom="656dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

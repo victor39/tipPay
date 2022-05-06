@@ -24,11 +24,12 @@ import java.util.Map;
 public class IniciarSessio extends AppCompatActivity {
 
     EditText adni , aContra;
-
     Button btnIniciar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setTitle("Iniciar Sessio");
         setContentView(R.layout.activity_iniciar_sessio);
 
         btnIniciar=findViewById(R.id.btIniciarSessio);

@@ -25,7 +25,7 @@ public class Empresa {
     private String paypal;
     private String compte_bancari;
 
-    public Empresa(String NIE, String cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal, String compte_bancari) {
+    public Empresa(String NIE, String cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal) {
 
         this.NIE = NIE;
         this.cp = cp;
@@ -34,7 +34,6 @@ public class Empresa {
         this.direccio = direccio;
         this.treballadors = treballadors;
         this.paypal = paypal;
-        this.compte_bancari = compte_bancari;
 
     }
 
@@ -86,13 +85,6 @@ public class Empresa {
         this.paypal = paypal;
     }
 
-    public String getCompte_bancari() {
-        return compte_bancari;
-    }
-
-    public void setCompte_bancari(String compte_bancari) {
-        this.compte_bancari = compte_bancari;
-    }
 
     @Override
     public String toString() {
@@ -103,7 +95,6 @@ public class Empresa {
                 ", propietari=" + propietari +
                 ", direccio='" + direccio + '\'' +
                 ", paypal='" + paypal + '\'' +
-                ", compte_bancari='" + compte_bancari + '\'' +
                 '}';
     }
 
@@ -116,7 +107,6 @@ public class Empresa {
         String direccio = this.direccio;
         ArrayList<Treballador> treballadors;
         String paypal = this.paypal;
-        String compte_bancari = this.compte_bancari;
 
         try {
             String url = "https://ffames.cat/tippay/Empresa-insert.php";
@@ -128,7 +118,7 @@ public class Empresa {
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
+                                    System.out.println(response);
                                     String resultado = response;
 
 
@@ -155,7 +145,6 @@ public class Empresa {
                             params.put("propietari", propietari);
                             params.put("direccio", direccio);
                             params.put("paypal", paypal);
-                            params.put("compte_bancari", compte_bancari);
                             return params;
                         }
                     };

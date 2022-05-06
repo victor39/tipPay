@@ -12,8 +12,8 @@ public class IniciarTreballador extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_treballador);
-
-
+        this.setTitle("Iniciar Treballador");
+        
     }
     public void historialTreballador(View view) {
         Intent historialTreballador = new Intent(this, HistorialPagaments.class);

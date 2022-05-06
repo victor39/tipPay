@@ -18,6 +18,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TipPay">
         <activity
+            android:name=".informacioPopUp"
+            android:exported="true"
+            android:theme="@style/Theme.TipPay.TemapopUP" />
+        <activity
+            android:name=".registraUsuari"
+            android:exported="true" />
+        <activity
             android:name=".afegirTreballador"
             android:exported="true" />
         <activity
@@ -52,9 +59,6 @@
             android:exported="true" />
         <activity
             android:name=".registrarEmpresa"
-            android:exported="true" />
-        <activity
-            android:name=".registreUsuari"
             android:exported="true" />
         <activity
             android:name=".registreEmpresa"
