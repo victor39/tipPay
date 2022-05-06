@@ -24,9 +24,8 @@ public class Empresa {
     private String direccio;
     private ArrayList<Treballador> treballadors;
     private String paypal;
-    private String compte_bancari;
 
-    public Empresa(String NIE, String nom, String cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal, String compte_bancari) {
+    public Empresa(String NIE, String nom, String cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal) {
 
         this.NIE = NIE;
         this.nom = nom;
@@ -36,8 +35,6 @@ public class Empresa {
         this.direccio = direccio;
         this.treballadors = treballadors;
         this.paypal = paypal;
-        this.compte_bancari = compte_bancari;
-
     }
 
     public String getNIE() {
@@ -180,7 +177,6 @@ public class Empresa {
         String direccio = this.direccio;
         ArrayList<Treballador> treballadors;
         String paypal = this.paypal;
-        String compte_bancari = this.compte_bancari;
 
         try {
             String url = "https://ffames.cat/tippay/Empresa-update.php";
@@ -220,7 +216,6 @@ public class Empresa {
                             params.put("propietari", propietari);
                             params.put("direccio", direccio);
                             params.put("paypal", paypal);
-                            params.put("compte_bancari", compte_bancari);
                             return params;
                         }
                     };
