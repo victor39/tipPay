@@ -40,12 +40,12 @@ public class Propietari extends Persona{
         return propietari;
     }
 
-    static public ArrayList propinesPropietari(Activity act, String dni, final VolleyCallBack callBack){
+    static public void propinesPropietari(Activity act, String dni, final VolleyCallBack callBack){
 
         ArrayList<Propina> propinas = new ArrayList<>();
 
         try {
-            String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
+            String url = "https://ffames.cat/tippay/Empresa-buscarTotsPropines.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -55,6 +55,16 @@ public class Propietari extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
+
+                                    String[] res = resultado.split("=");
+
+                                    for (int i = 0; i < res.length; i++){
+
+                                        String[] valores = res[i].split("#");
+
+                                        Propina p = new Propina(valores[0], valores[1], valores[2], Double.parseDouble(valores[3]), valores[4]);
+                                        propinas.add(p);
+                                    }
 
                                     callBack.onSuccess(propinas);
                                 }
@@ -86,7 +96,6 @@ public class Propietari extends Persona{
             e.printStackTrace();
         }
 
-        return propinas;
     }
 
     public void insert(Activity act){
