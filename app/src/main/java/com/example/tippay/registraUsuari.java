@@ -40,8 +40,6 @@ public class registraUsuari extends AppCompatActivity {
         correu = findViewById(R.id.registreUsuariEmail);
         contraseña = findViewById(R.id.registreUsuariContra);
         contraseña2 = findViewById(R.id.registreUsuariContra2);
-
-
     }
     public void sessioIniciada(View view) {
         if((contraseña.getText().toString().equals(contraseña2.getText().toString()))){
