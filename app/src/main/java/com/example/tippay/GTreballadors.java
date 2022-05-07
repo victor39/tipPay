@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import Inteficies.VolleyCallBack;
 import clases.Empresa;
 import clases.Propina;
 import clases.Treballador;
@@ -24,7 +25,12 @@ public class GTreballadors extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gtreballadors);
 
-        //Empresa.totsTreballadors();
+        Empresa.totsTreballadors(this, IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
+            @Override
+            public void onSuccess(ArrayList treballadors) {
+
+            }
+        });
 
     }
 

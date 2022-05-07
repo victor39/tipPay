@@ -18,6 +18,8 @@ import Inteficies.VolleyCallBack;
 
 public class Propietari extends Persona{
 
+    String nie;
+
     public Propietari(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena,String nomUsuari) {
         super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena,nomUsuari);
 
@@ -25,6 +27,13 @@ public class Propietari extends Persona{
 
     public Propietari() {
         super();
+    }
+
+    public void setEmpresa(String nie){
+        this.nie = nie;
+    }
+    public String getEmpresa(){
+        return nie;
     }
 
     @Override

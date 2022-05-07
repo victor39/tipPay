@@ -34,7 +34,7 @@ public class IniciarSessio extends AppCompatActivity {
     static Propietari prp = new Propietari();
     static char var = 'a';
 
-    String nomUsuari ,dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena ,treballador,propietari;
+    String nomUsuari ,dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena ,treballador,propietari,nie;
     EditText adni , aContra;
     Button btnIniciar;
 
@@ -109,8 +109,13 @@ public class IniciarSessio extends AppCompatActivity {
         nomUsuari = separar[12];
 
         if (propietari.equalsIgnoreCase("1")) {
+
             prp = new Propietari(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, nomUsuari);
+
+            prp.totsEmpresa();
+
             var = 'P';
+            prp.setEmpresa(nie);
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, iniciarEmpresa.class);
             startActivity(usuari);
