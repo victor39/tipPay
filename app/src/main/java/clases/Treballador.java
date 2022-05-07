@@ -74,6 +74,7 @@ public class Treballador extends Persona{
         }
     }
 
+    //borrar
     public void insert(Activity act){
 
         String dni = this.getDni();
