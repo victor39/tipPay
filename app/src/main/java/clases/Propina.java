@@ -5,43 +5,48 @@ import android.app.Activity;
 import java.util.ArrayList;
 
 public class Propina {
-    Client client;
-    Empresa empresa;
-    Treballador treballador;
+
+    String dniClient;
+    String nieEmpresa;
+    String dniTreballador;
     double propina;
     String data;
 
-    public Propina(Client client, Empresa empresa, Treballador treballador, double propina, String data) {
-        this.client = client;
-        this.empresa = empresa;
-        this.treballador = treballador;
+    public Propina(String dniClient, String dniTreballador, String nieEmpresa, double propina, String data) {
+        this.dniClient = dniClient;
+        this.nieEmpresa = nieEmpresa;
+        this.dniTreballador = dniTreballador;
         this.propina = propina;
         this.data = data;
     }
 
-    public Client getClient() {
-        return client;
+    public String getClient() {
+        return dniClient;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClient(String dniClient) {
+        this.dniClient = dniClient;
     }
 
-    public Empresa getEmpresa() {
-        return empresa;
+    public String getEmpresa() {
+        return nieEmpresa;
     }
 
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
+    public void setEmpresa(String nieEmpresa) {
+        this.nieEmpresa = nieEmpresa;
     }
 
-    public Treballador getTreballador() {
-        return treballador;
+    public String getTreballador() {
+        return dniTreballador;
     }
 
-    public void setTreballador(Treballador treballador) {
-        this.treballador = treballador;
+    public void setTreballador(String dniTreballador) {
+        this.dniTreballador = dniTreballador;
     }
+
+    public String getData(){return data;}
+
+    public void setData(String data){this.data = data;}
 
     public double getPropina() {
         return propina;
@@ -54,9 +59,9 @@ public class Propina {
     @Override
     public String toString() {
         return "Propina{" +
-                "client=" + client +
-                ", empresa=" + empresa +
-                ", treballador=" + treballador +
+                "client=" + dniClient +
+                ", empresa=" + nieEmpresa +
+                ", treballador=" + dniTreballador +
                 ", propina=" + propina +
                 ", data=" + data +
                 '}';
