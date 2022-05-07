@@ -35,7 +35,7 @@ public class Client extends Persona{
         this.empresasFav = empresasFav;
     }
 
-    static public void propinesClient(Activity act,String dni){
+    static public void propinesClient(Activity act,String dni, ArrayList<Propina> propinas){
 
         try {
             String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";

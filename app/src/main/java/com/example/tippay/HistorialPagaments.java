@@ -16,7 +16,9 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 
 import clases.Client;
+import clases.Propietari;
 import clases.Propina;
+import clases.Treballador;
 
 public class HistorialPagaments extends AppCompatActivity {
 
@@ -26,8 +28,9 @@ public class HistorialPagaments extends AppCompatActivity {
         setContentView(R.layout.activity_historial_pagaments);
 
         ArrayList<Propina> propinas = new ArrayList<>();
-        //if(IniciarSessio)
-        //Client.propinesClient(propinas, );
+        if(IniciarSessio.var == 'C') Client.propinesClient(this, IniciarSessio.clt.getDni(), propinas);
+        if(IniciarSessio.var == 'T') Treballador.propinesTreballador(this, IniciarSessio.trb.getDni(), propinas);
+        if(IniciarSessio.var == 'P') Propietari.propinesPropietari(this, IniciarSessio.prp.getDni(), propinas);
 
     }
 
