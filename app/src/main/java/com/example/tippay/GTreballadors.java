@@ -24,7 +24,7 @@ public class GTreballadors extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gtreballadors);
 
-        Empresa.totsTreballadors();
+        //Empresa.totsTreballadors();
 
     }
 

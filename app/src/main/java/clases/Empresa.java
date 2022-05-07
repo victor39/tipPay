@@ -292,6 +292,7 @@ public class Empresa {
 
                                     for (int i = 0; i < res.length; i++){
                                         String[] valores = res[i].split("#");
+
                                         Treballador tre = new Treballador(valores[2], valores[3], valores[4], valores[5], valores[6],valores[7], valores[8], valores[9], valores[10],valores[11]);
                                         treballadors.add(tre);
 
