@@ -40,7 +40,7 @@ public class IniciarSessio extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validarUsuari("https://ffames.cat/tippay/validar.php");
+                validarUsuari("https://ffames.cat/tippay/Usuari-validar.php");
             }
         });
 

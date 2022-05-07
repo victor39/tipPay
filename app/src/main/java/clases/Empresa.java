@@ -165,7 +165,7 @@ public class Empresa {
         String direccio = this.direccio;
         ArrayList<Treballador> treballadors;
         String paypal = this.paypal;
-        String compte_bancari = this.compte_bancari;
+
 
         try {
             String url = "https://ffames.cat/tippay/Empresa-update.php";
@@ -204,7 +204,6 @@ public class Empresa {
                             params.put("propietari", propietari);
                             params.put("direccio", direccio);
                             params.put("paypal", paypal);
-                            params.put("compte_bancari", compte_bancari);
                             return params;
                         }
                     };
@@ -225,7 +224,6 @@ public class Empresa {
         String direccio = this.direccio;
         ArrayList<Treballador> treballadors;
         String paypal = this.paypal;
-        String compte_bancari = this.compte_bancari;
 
         try {
             String url = "https://ffames.cat/tippay/Empresa-delete.php";
@@ -264,7 +262,6 @@ public class Empresa {
                             params.put("propietari", propietari);
                             params.put("direccio", direccio);
                             params.put("paypal", paypal);
-                            params.put("compte_bancari", compte_bancari);
                             return params;
                         }
                     };
