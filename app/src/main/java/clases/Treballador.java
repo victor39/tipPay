@@ -74,51 +74,6 @@ public class Treballador extends Persona{
         }
     }
 
-    public static ArrayList<Treballador> tots(Activity act){
-        ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
-
-        try {
-            String url = "https://ffames.cat/tippay/Treballador-insert.php";
-            StringRequest postRequest = new
-                    //crear constructor
-                    StringRequest(Request.Method.POST, url,
-                            new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(String response) {
-                                    //devuelve el resultado de la consulta
-                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-                                    String resultado = response;
-                                    //while llenando
-
-                                }
-                            },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    //si hay un error lo muestra
-                                    error.printStackTrace();
-                                }
-                            }
-                    ) {
-                        //generar clave-valor
-                        @Override
-                        protected Map<String, String> getParams() {
-                            Map<String, String> params = new HashMap<>();
-                            // the POST parameters:
-                            return params;
-                        }
-                    };
-            //ejecutar y pasar parametros
-            Volley.newRequestQueue(act).add(postRequest);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        //una linea por trabajador
-        //while hasta que se acaben las
-        return treballadors;
-    }
-
     public void insert(Activity act){
 
         String dni = this.getDni();
