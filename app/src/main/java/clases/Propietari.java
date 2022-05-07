@@ -41,7 +41,7 @@ public class Propietari extends Persona{
     static public void propinesPropietari(Activity act, String dni, ArrayList<Propina> propinas){
 
         try {
-            String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
+            String url = "https://ffames.cat/tippay/Empresa-buscarTotsPropines.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -52,7 +52,15 @@ public class Propietari extends Persona{
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
 
+                                    String[] res = resultado.split("|");
 
+                                    for (int i = 0; i < res.length; i++){
+
+                                        String[] valores = res[i].split("#");
+
+                                        Propina p = new Propina(valores[0], valores[1], valores[2], Double.parseDouble(valores[3]), valores[4]);
+                                        propinas.add(p);
+                                    }
                                 }
                             },
                             new Response.ErrorListener() {
