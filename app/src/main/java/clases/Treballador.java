@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Inteficies.VolleyCallBack;
+
 public class Treballador extends Persona{
 
     public Treballador(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena) {
@@ -25,7 +27,9 @@ public class Treballador extends Persona{
     public Treballador() {
     }
 
-    static public void propinesTreballador(Activity act,String dni, ArrayList<Propina> propinas){
+    static public ArrayList propinesTreballador(Activity act, String dni, final VolleyCallBack callBack){
+
+        ArrayList<Propina> propinas = new ArrayList<>();
 
         try {
             String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
@@ -39,7 +43,7 @@ public class Treballador extends Persona{
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
 
-
+                                    callBack.onSuccess(propinas);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -69,6 +73,7 @@ public class Treballador extends Persona{
             e.printStackTrace();
         }
 
+        return propinas;
     }
 
     public static ArrayList<Treballador> tots(Activity act){

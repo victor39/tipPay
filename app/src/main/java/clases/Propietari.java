@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Inteficies.VolleyCallBack;
+
 public class Propietari extends Persona{
 
 
@@ -38,7 +40,9 @@ public class Propietari extends Persona{
         return propietari;
     }
 
-    static public void propinesPropietari(Activity act, String dni, ArrayList<Propina> propinas){
+    static public ArrayList propinesPropietari(Activity act, String dni, final VolleyCallBack callBack){
+
+        ArrayList<Propina> propinas = new ArrayList<>();
 
         try {
             String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
@@ -52,7 +56,7 @@ public class Propietari extends Persona{
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
 
-
+                                    callBack.onSuccess(propinas);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -82,6 +86,7 @@ public class Propietari extends Persona{
             e.printStackTrace();
         }
 
+        return propinas;
     }
 
     public void insert(Activity act){
