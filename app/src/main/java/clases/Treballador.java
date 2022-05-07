@@ -27,7 +27,7 @@ public class Treballador extends Persona{
     public Treballador() {
     }
 
-    static public ArrayList propinesTreballador(Activity act, String dni, final VolleyCallBack callBack){
+    static public void propinesTreballador(Activity act, String dni, final VolleyCallBack callBack){
 
         ArrayList<Propina> propinas = new ArrayList<>();
 
@@ -72,8 +72,6 @@ public class Treballador extends Persona{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return propinas;
     }
 
     public static ArrayList<Treballador> tots(Activity act){

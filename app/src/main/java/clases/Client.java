@@ -38,7 +38,7 @@ public class Client extends Persona{
         this.empresasFav = empresasFav;
     }
 
-    static public ArrayList propinesClient(Activity act, String dni, final VolleyCallBack callBack){
+    static public void propinesClient(Activity act, String dni, final VolleyCallBack callBack){
 
         ArrayList<Propina> propinas = new ArrayList<>();
 
@@ -95,10 +95,7 @@ public class Client extends Persona{
         } catch (Exception e) {
             System.out.println(e.toString());
         }
-        System.out.println("hey");
-        System.out.println("FUERA" + propinas);
 
-        return propinas;
     }
 
     public void insert(Activity act){
