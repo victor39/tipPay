@@ -104,7 +104,7 @@ public class Client extends Persona{
         String nomUsuari = this.getNomUsuari();
 
         try {
-            String url = "https://ffames.cat/tippay/Client-insert.php";
+            String url = "https://ffames.cat/tippay/Persona-insert.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,

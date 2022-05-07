@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 
 import clases.Client;
-import clases.Treballador;
 
 public class registraUsuari extends AppCompatActivity {
 

@@ -207,18 +207,6 @@ public class Treballador extends Persona{
                                 }
                             }
                     ) {
-
-        String dni = this.getDni();
-        String nom = this.getNom();
-        String cognom1 = this.getCognom1();
-        String cognom2 = this.getCognom2();
-        String datanaix = this.getDataNaixement();
-        String telefono = this.getTelf();
-        String correu = this.getCorreu();
-        String codipostal = this.getCp();
-        String paypal = this.getPaypal();
-        String contrasena = this.getContrasena();
-        String nomUsuari = this.getNomUsuari();
                         //generar clave-valor
                         @Override
                         protected Map<String, String> getParams() {
@@ -271,16 +259,6 @@ public class Treballador extends Persona{
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("dni", dni);
-                            params.put("nom", nom);
-                            params.put("cognom1", cognom1);
-                            params.put("cognom2", cognom2);
-                            params.put("datanaix", datanaix.toString());
-                            params.put("telefono", telefono);
-                            params.put("correu", correu);
-                            params.put("codipostal", codipostal+"");
-                            params.put("paypal", paypal);
-                            params.put("contrasena", contrasena);
-                            params.put("nomUsuari",nomUsuari);
                             return params;
                         }
                     };

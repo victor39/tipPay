@@ -1,9 +1,9 @@
 package com.example.tippay;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,32 +13,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
 
 import clases.Empresa;
 import clases.Propietari;
 import clases.Treballador;
 
 public class registrarEmpresa extends AppCompatActivity {
-    String nomEmpresa ,nieEmp,dniEmp,ubiEmp,nomProp,tipus,cp ,direccio,paypal,compteBanc;
+    String nomEmp ,nieEmp,dniEmp,ubiEmp,nomProp,cpEmp,direccio,paypal;
     int ubi;
-    TextView nomText;
-    EditText email,nomEdit,contrasena,contrasena2;
+    EditText email,contrasena,contrasena2,nomP;
     Button btregistrarEmp;
     ArrayList <Treballador> treb = new ArrayList<>();
 
+    @SuppressLint("WrongViewCast")
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,34 +36,43 @@ public class registrarEmpresa extends AppCompatActivity {
 
         ArrayList <Treballador> treb = new ArrayList<>();
 
+        // valores de este activity
         btregistrarEmp = findViewById(R.id.btRegistrarEmp);
         email = findViewById(R.id.registrarEmailEmpr);
-        nomEdit = findViewById(R.id.registrarNomEmpre);
+        nomP = findViewById(R.id.validarNomProp);
         contrasena = findViewById(R.id.registrarContraEmpr);
         contrasena2 = findViewById(R.id.registrarContraEmp2);
 
-         //falta cp Y direccio PAYPAL
+        //valores devuelva registre
         nieEmp = nom.getString("nie");
+        nomEmp = nom.getString("nomEmp");
+        cpEmp = nom.getString("cpEmp");
+        ubi = nom.getInt("ubi");
         dniEmp = nom.getString("dni");
-        ubiEmp = nom.getString("ubi");
         nomProp = nom.getString("nomProp");
-        tipus = nom.getString("tipus");
+        direccio = nom.getString("direccio");
+        paypal = nom.getString("paypal");
+
+        if (contrasena.getText().equals(contrasena2.getText())){
+            Propietari prp = new Propietari(IniciarSessio.clt.getDni(),IniciarSessio.clt.getNom(),IniciarSessio.clt.getCognom1(),IniciarSessio.clt.getCognom2(),IniciarSessio.clt.getDataNaixement(),IniciarSessio.clt.getTelf(),IniciarSessio.clt.getCorreu(),
+                    IniciarSessio.clt.getCp(),IniciarSessio.clt.getPaypal(),IniciarSessio.clt.getContrasena(),IniciarSessio.clt.getNomUsuari());
+            IniciarSessio.var = 'P';
+            //pro.updateNouPropietari();
+            Empresa emp = new Empresa(nieEmp,nomEmp,cpEmp,ubi,prp,direccio,null,paypal);
+            emp.insert(registrarEmpresa.this);
+        }else{
+            Toast.makeText(registrarEmpresa.this, "Tornar a omplir la contraseña", Toast.LENGTH_SHORT).show();
+            contrasena.setText("");
+            contrasena2.setText("");
+        }
 
 
-        nomEmpresa = nom.getString("nomEmp");
-        nomText = findViewById(R.id.textNomEmpresa);
-        nomText.setText(nomEmpresa);
 
-        //Propietari pro = new Propietari(dni, prop, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, contrasena3);
-       // pro.insert(registrarEmpresa.this);
 
-        //Empresa emp = new Empresa(nieEmp,cp,ubi,pro,direccio,treb,compteBanc,paypal);
-       // emp.insert(registrarEmpresa.this);
+
     }
 
     public void iniciarEmpresa(View view) {
-       // Empresa emp = new Empresa(nieEmp,cp,ubiEmp,pro,direccio,treb,compteBanc);
-        // emp.insert(this);
         Intent iniciarEmpresa = new Intent ( this , IniciarTreballador.class);
         startActivity(iniciarEmpresa);
     }
