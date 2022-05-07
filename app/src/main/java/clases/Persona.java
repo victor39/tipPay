@@ -29,7 +29,8 @@ public class Persona {
         this.paypal = paypal;
         this.contrasena = contrasena;
     }
-
+    public Persona (){
+    }
 
     public String getDni() {
         return dni;

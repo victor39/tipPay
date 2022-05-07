@@ -22,6 +22,10 @@ public class Propietari extends Persona{
 
     }
 
+    public Propietari() {
+        super();
+    }
+
     @Override
     public String toString() {
         return super.toString() + " Propietari{" + '}';
