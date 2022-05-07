@@ -187,8 +187,8 @@ public class Empresa {
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
+                                    System.out.println(response);
 
 
                                 }
@@ -239,10 +239,8 @@ public class Empresa {
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
-
-
+                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -287,7 +285,7 @@ public class Empresa {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
-
+                                    System.out.println(response);
                                     String[] res = resultado.split("=");
 
                                     for (int i = 0; i < res.length; i++){
@@ -344,6 +342,7 @@ public class Empresa {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
+                                    System.out.println(response);
 
                                     String[] res = resultado.split("=");
 

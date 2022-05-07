@@ -62,6 +62,7 @@ public class Propietari extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
+                                    System.out.println(response);
 
                                     String[] res = resultado.split("=");
 
@@ -186,6 +187,7 @@ public class Propietari extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
+                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -263,8 +265,6 @@ public class Propietari extends Persona{
         }
     }
 
-
-
     public void buscarPropietari(Activity act){
 
         String dni = this.getDni();
@@ -335,4 +335,60 @@ public class Propietari extends Persona{
         }
     }
 
+    public void buscarEmpresa(Activity act, final VolleyCallBack callBack){
+
+        String dni = this.getDni();
+        ArrayList<Empresa> empreses = new ArrayList<Empresa>();
+
+        try {
+            String url = "https://ffames.cat/tippay/Propietari-buscarEmpresa.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println(response);
+
+                                    String[] res = resultado.split("=");
+
+                                    for (int i = 0; i < res.length; i++){
+                                        Propietari pro = new Propietari();
+                                        ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
+                                        String[] valores = res[i].split("#");
+                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], Integer.parseInt(valores[3]), pro,valores[5], treballadors, valores[9]);
+                                        empreses.add(emp);
+                                    }
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
