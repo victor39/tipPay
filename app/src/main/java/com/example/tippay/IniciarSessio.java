@@ -83,7 +83,7 @@ public class IniciarSessio extends AppCompatActivity {
         String [] separar = response.split("#");
         String treballador = separar[0];
         String propietari = separar [1];
-        
+        /*
         if (treballador.equalsIgnoreCase("1")) {
             Intent gTreballadors = new Intent(this, IniciarTreballador.class);
             startActivity(gTreballadors);
@@ -94,7 +94,7 @@ public class IniciarSessio extends AppCompatActivity {
             Intent usuari = new Intent(this, IniciarTreballador.class);
             startActivity(usuari);
         }
-
+*/
     }
     public void returnIniciar(View view) {
         Intent returnIniciar = new Intent(this, MainActivity.class);
