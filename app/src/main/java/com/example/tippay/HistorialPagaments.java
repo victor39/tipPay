@@ -15,6 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
+import Inteficies.VolleyCallBack;
 import clases.Client;
 import clases.Propietari;
 import clases.Propina;
@@ -28,11 +29,30 @@ public class HistorialPagaments extends AppCompatActivity {
         setContentView(R.layout.activity_historial_pagaments);
 
         ArrayList<Propina> propinas = new ArrayList<>();
-        if(IniciarSessio.var == 'C') Client.propinesClient(this, IniciarSessio.clt.getDni(), propinas);
-        if(IniciarSessio.var == 'T') Treballador.propinesTreballador(this, IniciarSessio.trb.getDni(), propinas);
-        if(IniciarSessio.var == 'P') Propietari.propinesPropietari(this, IniciarSessio.prp.getDni(), propinas);
 
-        emplenarTaula(propinas, IniciarSessio.var);
+        if(IniciarSessio.var == 'C') Client.propinesClient(this, IniciarSessio.clt.getDni(), new VolleyCallBack(){
+            @Override
+            public void onSuccess(ArrayList prop){
+
+                emplenarTaula(prop, IniciarSessio.var);
+            }
+        });
+
+        if(IniciarSessio.var == 'T') Treballador.propinesTreballador(this, IniciarSessio.trb.getDni(), new VolleyCallBack(){
+            @Override
+            public void onSuccess(ArrayList prop){
+
+                emplenarTaula(prop, IniciarSessio.var);
+            }
+        });
+
+        if(IniciarSessio.var == 'P') Propietari.propinesPropietari(this, IniciarSessio.prp.getDni(), new VolleyCallBack(){
+            @Override
+            public void onSuccess(ArrayList prop){
+
+                emplenarTaula(prop, IniciarSessio.var);
+            }
+        });
 
     }
 
@@ -118,11 +138,11 @@ public class HistorialPagaments extends AppCompatActivity {
             String text = "";
 
             if(tipus == 'C'){
-
+                text = propinas.get(i).getTreballador();
             }
 
             if(tipus == 'T' || tipus == 'P'){
-
+                text = propinas.get(i).getClient();
             }
 
             t2v.setText(text); // treballador o persona

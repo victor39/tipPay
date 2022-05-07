@@ -10,10 +10,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tippay.HistorialPagaments;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import Inteficies.VolleyCallBack;
 
 public class Client extends Persona{
 
@@ -35,7 +38,9 @@ public class Client extends Persona{
         this.empresasFav = empresasFav;
     }
 
-    static public void propinesClient(Activity act,String dni, ArrayList<Propina> propinas){
+    static public void propinesClient(Activity act, String dni, final VolleyCallBack callBack){
+
+        ArrayList<Propina> propinas = new ArrayList<>();
 
         try {
             String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
@@ -49,15 +54,19 @@ public class Client extends Persona{
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
 
-                                    String[] res = resultado.split("|");
+                                    String[] res = resultado.split("=");
 
                                     for (int i = 0; i < res.length; i++){
 
                                         String[] valores = res[i].split("#");
 
                                         Propina p = new Propina(valores[0], valores[1], valores[2], Double.parseDouble(valores[3]), valores[4]);
+                                        System.out.println("DENTRO " + p.toString());
                                         propinas.add(p);
                                     }
+
+                                    callBack.onSuccess(propinas);
+
                                 }
                             },
                             new Response.ErrorListener() {
@@ -84,7 +93,7 @@ public class Client extends Persona{
             requestQueue.add(postRequest);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.toString());
         }
 
     }

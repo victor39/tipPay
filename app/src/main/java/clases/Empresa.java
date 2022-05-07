@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Inteficies.VolleyCallBack;
+
 public class Empresa {
 
     private String NIE;
@@ -35,7 +37,6 @@ public class Empresa {
         this.direccio = direccio;
         this.treballadors = treballadors;
         this.paypal = paypal;
-
     }
 
     public String getNIE() {
@@ -108,7 +109,7 @@ public class Empresa {
                 '}';
     }
 
-    public void insert(Activity act){
+    public void insert(Activity act ){
 
         String NIE = this.NIE;
         String nom = this.nom;
@@ -131,8 +132,6 @@ public class Empresa {
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     System.out.println(response);
                                     String resultado = response;
-
-
                                 }
                             },
                             new Response.ErrorListener() {
@@ -143,7 +142,6 @@ public class Empresa {
                                 }
                             }
                     ) {
-
                         //generar clave-valor
                         @Override
                         protected Map<String, String> getParams() {
@@ -275,7 +273,7 @@ public class Empresa {
     }
 
     //buscar todas las empresas por codigo postal
-    public static ArrayList<Treballador> tots(Activity act, String nie){
+    public static void tots(Activity act, String nie, final VolleyCallBack callBack){
         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
 
         try {
@@ -295,13 +293,11 @@ public class Empresa {
                                     for (int i = 0; i < res.length; i++){
 
                                         String[] valores = res[i].split("#");
-                                        //dni = 2 //nom 3 //cognom1 4 // cognom2 5// datanaix 6// telef // correu // cp // paypal // contrasena
-                                        //echo $columna['Treballador'] ."#". $columna['Propietari'] ."#". $columna['DNI'] ."#". $columna['Nom'] ."#". $columna['Cognom1']."#". $columna['Cognom2'] ."#".
-                                        // $columna['DataNaix']."#". $columna['Telefon'] ."#". $columna['Correu']."#". $columna['CodiPostal'] ."#". $columna['Cognom1']."|";
-                                        //public Treballador(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena)
-                                        //Treballador tre = new Treballador(valores[0], valores[1], valores[2], Double.parseDouble(valores[3]), valores[4]);
-                                        //treballadors.add(tre);
+                                        Treballador tre = new Treballador(valores[2], valores[3], valores[4], valores[5], valores[6],valores[7], valores[8], valores[9], valores[10],valores[11]);
+                                        treballadors.add(tre);
+
                                     }
+                                    callBack.onSuccess(treballadors);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -331,7 +327,7 @@ public class Empresa {
             e.printStackTrace();
         }
 
-        return treballadors;
+        //return treballadors;
     }
 
 
