@@ -13,6 +13,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="664dp"
+        android:onClick="enrere"
         android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,35 +45,7 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <EditText
-                android:id="@+id/editTextTextPersonName3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Data" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Beneficiari" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Quantitat" />
-        </TableRow>
+            android:layout_height="match_parent"/>
 
         <TableRow
             android:layout_width="match_parent"

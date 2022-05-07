@@ -9,12 +9,14 @@ public class Propina {
     Empresa empresa;
     Treballador treballador;
     double propina;
+    String data;
 
-    public Propina(Client client, Empresa empresa, Treballador treballador, double propina) {
+    public Propina(Client client, Empresa empresa, Treballador treballador, double propina, String data) {
         this.client = client;
         this.empresa = empresa;
         this.treballador = treballador;
         this.propina = propina;
+        this.data = data;
     }
 
     public Client getClient() {
@@ -56,6 +58,7 @@ public class Propina {
                 ", empresa=" + empresa +
                 ", treballador=" + treballador +
                 ", propina=" + propina +
+                ", data=" + data +
                 '}';
     }
 
