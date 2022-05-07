@@ -6,42 +6,40 @@ import java.util.ArrayList;
 
 public class Propina {
 
-    String dniClient;
-    String nieEmpresa;
-    String dniTreballador;
+    String client;
+    String empresa;
+    String treballador;
     double propina;
     String data;
 
-    public Propina(String dniClient, String dniTreballador, String nieEmpresa, double propina, String data) {
-        this.dniClient = dniClient;
-        this.nieEmpresa = nieEmpresa;
-        this.dniTreballador = dniTreballador;
+    public Propina(String client, String treballador, String empresa, double propina, String data) {
+        this.client = client;
+        this.empresa = empresa;
+        this.treballador = treballador;
         this.propina = propina;
         this.data = data;
     }
 
     public String getClient() {
-        return dniClient;
+        return client;
     }
 
     public void setClient(String dniClient) {
-        this.dniClient = dniClient;
+        this.client = dniClient;
     }
 
-    public String getEmpresa() {
-        return nieEmpresa;
-    }
+    public String getEmpresa() { return empresa; }
 
     public void setEmpresa(String nieEmpresa) {
-        this.nieEmpresa = nieEmpresa;
+        this.empresa = nieEmpresa;
     }
 
     public String getTreballador() {
-        return dniTreballador;
+        return treballador;
     }
 
     public void setTreballador(String dniTreballador) {
-        this.dniTreballador = dniTreballador;
+        this.treballador = dniTreballador;
     }
 
     public String getData(){return data;}
@@ -59,9 +57,9 @@ public class Propina {
     @Override
     public String toString() {
         return "Propina{" +
-                "client=" + dniClient +
-                ", empresa=" + nieEmpresa +
-                ", treballador=" + dniTreballador +
+                "client=" + client +
+                ", empresa=" + empresa +
+                ", treballador=" + treballador +
                 ", propina=" + propina +
                 ", data=" + data +
                 '}';
