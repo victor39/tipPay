@@ -109,13 +109,13 @@ public class IniciarSessio extends AppCompatActivity {
         nomUsuari = separar[12];
 
         if (propietari.equalsIgnoreCase("1")) {
-            prp = new Propietari(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena);
+            prp = new Propietari(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, nomUsuari);
             var = 'P';
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, iniciarEmpresa.class);
             startActivity(usuari);
         } else if (treballador.equalsIgnoreCase("1")) {
-            trb = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena);
+            trb = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, nomUsuari);
             var = 'T';
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com treballador", Toast.LENGTH_SHORT).show();
             Intent gTreballadors = new Intent(this, IniciarTreballador.class);
