@@ -1,9 +1,11 @@
 package com.example.tippay;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -121,8 +123,8 @@ public class IniciarSessio extends AppCompatActivity {
             startActivity(gTreballadors);
 
         } else if (treballador.equalsIgnoreCase("0")) {
-            clt = new Client(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, null);
-            var = 'C';
+            clt = new Client(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, null,nomUsuari);
+            var = 'c';
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com Client", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, principalClient.class);
             startActivity(usuari);
@@ -131,7 +133,7 @@ public class IniciarSessio extends AppCompatActivity {
 
 
     }
-
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void returnIniciar(View view) {
         Intent returnIniciar = new Intent(this, MainActivity.class);
         startActivity(returnIniciar);

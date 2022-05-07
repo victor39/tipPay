@@ -22,8 +22,8 @@ public class Client extends Persona{
 
     ArrayList<Empresa> empresasFav;
 
-    public Client(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena, ArrayList<Empresa> empresaFav) {
-        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena);
+    public Client(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena, ArrayList<Empresa> empresaFav, String nomUsuari) {
+        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena,nomUsuari);
         this.empresasFav = empresaFav;
     }
 
@@ -110,9 +110,10 @@ public class Client extends Persona{
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String contrasena = this.getContrasena();
+        String nomUsuari = this.getNomUsuari();
 
         try {
-            String url = "https://ffames.cat/tippay/Client-insert.php";
+            String url = "https://ffames.cat/tippay/Persona-insert.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -122,6 +123,7 @@ public class Client extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
+                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -143,12 +145,14 @@ public class Client extends Persona{
                             params.put("nom", nom);
                             params.put("cognom1", cognom1);
                             params.put("cognom2", cognom2);
-                            params.put("datanaix", datanaix.toString());
+                            params.put("datanaix", datanaix);
                             params.put("telefono", telefono);
                             params.put("correu", correu);
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("contrasena", contrasena);
+                            params.put("nomUsuari",nomUsuari);
+
                             return params;
                         }
                     };
@@ -160,6 +164,8 @@ public class Client extends Persona{
             e.printStackTrace();
         }
     }
+
+
 
     public void update(Activity act){
 
@@ -173,6 +179,7 @@ public class Client extends Persona{
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String contrasena = this.getContrasena();
+        String nomUsuari = this.getNomUsuari();
 
         try {
             String url = "https://ffames.cat/tippay/Client-update.php";
@@ -214,6 +221,7 @@ public class Client extends Persona{
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("contrasena", contrasena);
+                            params.put("nomUsuari",nomUsuari);
                             return params;
                         }
                     };

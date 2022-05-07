@@ -69,10 +69,7 @@ public class MainActivity extends AppCompatActivity {
         Intent iniciarSessio = new Intent ( this , IniciarSessio.class);
         startActivity(iniciarSessio);
     }
-    public void registrarEmpresa(View view) {
-        Intent registrarEmpresa = new Intent ( this , registreEmpresa.class);
-        startActivity(registrarEmpresa);
-    }
+
     public void registrarPersona(View view) {
         Intent registrarPersona = new Intent ( this , registrePersona.class);
         startActivity(registrarPersona);
