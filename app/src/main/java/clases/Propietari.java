@@ -97,6 +97,7 @@ public class Propietari extends Persona{
 
     }
 
+    //borrar
     public void insert(Activity act){
 
         String dni = this.getDni();
@@ -209,6 +210,7 @@ public class Propietari extends Persona{
         }
     }
 
+    //borrar
     public void delete(Activity act){
         String dni = this.getDni();
 
