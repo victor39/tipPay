@@ -273,7 +273,7 @@ public class Empresa {
     }
 
     //buscar todas los trabajadores de una empresa
-    public static void totsTreballadors(Activity act, String nie, final VolleyCallBack callBack){
+   /* public static void totsTreballadors(Activity act, String nie, final VolleyCallBack callBack){
         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
 
         try {
@@ -327,7 +327,7 @@ public class Empresa {
         }
 
 
-    }
+    }*/
 
     //todas las empresas por cp
     public static void todasCP(Activity act, String cp, final VolleyCallBack callBack){

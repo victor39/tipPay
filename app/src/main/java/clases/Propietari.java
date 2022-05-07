@@ -177,6 +177,7 @@ public class Propietari extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
+                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -184,6 +185,7 @@ public class Propietari extends Persona{
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
                                     error.printStackTrace();
+                                    System.out.println(error);
                                 }
                             }
                     ) {
