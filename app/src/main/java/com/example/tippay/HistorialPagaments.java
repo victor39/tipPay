@@ -28,29 +28,15 @@ public class HistorialPagaments extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial_pagaments);
 
-        ArrayList<Propina> propinas = new ArrayList<>();
-
-        if(IniciarSessio.var == 'C') Client.propinesClient(this, IniciarSessio.clt.getDni(), new VolleyCallBack(){
+        Client.propinesClient(this, IniciarSessio.clt.getDni(), new VolleyCallBack(){
             @Override
             public void onSuccess(ArrayList prop){
 
                 emplenarTaula(prop, IniciarSessio.var);
             }
-        });
-
-        if(IniciarSessio.var == 'T') Treballador.propinesTreballador(this, IniciarSessio.trb.getDni(), new VolleyCallBack(){
             @Override
-            public void onSuccess(ArrayList prop){
+            public void onSuccess() {
 
-                emplenarTaula(prop, IniciarSessio.var);
-            }
-        });
-
-        if(IniciarSessio.var == 'P') Propietari.propinesPropietari(this, IniciarSessio.prp.getDni(), new VolleyCallBack(){
-            @Override
-            public void onSuccess(ArrayList prop){
-
-                emplenarTaula(prop, IniciarSessio.var);
             }
         });
 

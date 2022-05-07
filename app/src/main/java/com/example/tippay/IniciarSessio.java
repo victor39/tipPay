@@ -20,10 +20,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Inteficies.VolleyCallBack;
 import clases.Client;
+import clases.Empresa;
 import clases.Propietari;
 import clases.Treballador;
 
@@ -112,10 +115,20 @@ public class IniciarSessio extends AppCompatActivity {
 
             prp = new Propietari(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, nomUsuari);
 
-            prp.totsEmpresa();
+            prp.buscarEmpresa(this, nie, new VolleyCallBack() {
+                @Override
+                public void onSuccess(ArrayList empreses) {
+                    ArrayList<Empresa> emps = empreses;
+
+                    prp.setEmpresa(emps.get(0).getNIE());
+                }
+                @Override
+                public void onSuccess() {
+
+                }
+            });
 
             var = 'P';
-            prp.setEmpresa(nie);
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, iniciarEmpresa.class);
             startActivity(usuari);
@@ -128,7 +141,7 @@ public class IniciarSessio extends AppCompatActivity {
 
         } else if (treballador.equalsIgnoreCase("0")) {
             clt = new Client(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, null,nomUsuari);
-            var = 'c';
+            var = 'C';
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com Client", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, principalClient.class);
             startActivity(usuari);

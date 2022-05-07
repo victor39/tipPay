@@ -335,7 +335,7 @@ public class Propietari extends Persona{
         }
     }
 
-    public void buscarEmpresa(Activity act, final VolleyCallBack callBack){
+    public void buscarEmpresa(Activity act,String nie, final VolleyCallBack callBack){
 
         String dni = this.getDni();
         ArrayList<Empresa> empreses = new ArrayList<Empresa>();
@@ -357,11 +357,13 @@ public class Propietari extends Persona{
 
                                     for (int i = 0; i < res.length; i++){
                                         Propietari pro = new Propietari();
-                                        ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
+                                        ArrayList<Treballador> treballadors = new ArrayList<>();
                                         String[] valores = res[i].split("#");
-                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], Integer.parseInt(valores[3]), pro,valores[5], treballadors, valores[9]);
+                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], Integer.parseInt(valores[3]), pro,valores[5], treballadors, valores[6]);
                                         empreses.add(emp);
                                     }
+
+                                    callBack.onSuccess(empreses);
                                 }
                             },
                             new Response.ErrorListener() {
