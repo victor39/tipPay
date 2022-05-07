@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.setTitle("Principal");
-    /*
+/*
         String dni = "56";
         String nom = "jo";
         String cognom1 = "tu";
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         Empresa emp = new Empresa(nieEmp,cp,ubi,pro,direccio,treb,paypal);
         emp.insert(MainActivity.this);
 
-        pro.buscarPropietari(MainActivity.this);*/
-
+        pro.buscarPropietari(MainActivity.this);
+*/
         //Treballador tre = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, contrasena);
        // tre.insert(MainActivity.this);
        // tre.update(MainActivity.this);

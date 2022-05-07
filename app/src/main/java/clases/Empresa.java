@@ -17,17 +17,18 @@ import java.util.Map;
 public class Empresa {
 
     private String NIE;
+    private String nom;
     private String cp;
     private int cordenades;
     private Propietari propietari;
     private String direccio;
     private ArrayList<Treballador> treballadors;
     private String paypal;
-    private String compte_bancari;
 
-    public Empresa(String NIE, String cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal) {
+    public Empresa(String NIE, String nom, String cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal) {
 
         this.NIE = NIE;
+        this.nom = nom;
         this.cp = cp;
         this.cordenades = cordenades;
         this.propietari = propietari;
@@ -43,6 +44,14 @@ public class Empresa {
 
     public void setNIE(String NIE) {
         this.NIE = NIE;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getCp() {
@@ -90,6 +99,7 @@ public class Empresa {
     public String toString() {
         return "Empresa{" +
                 "NIE='" + NIE + '\'' +
+                ", nom='" + nom + '\'' +
                 ", cp='" + cp + '\'' +
                 ", cordenades=" + cordenades +
                 ", propietari=" + propietari +
@@ -101,6 +111,7 @@ public class Empresa {
     public void insert(Activity act){
 
         String NIE = this.NIE;
+        String nom = this.nom;
         String cp = this.cp;
         int cordenades = this.cordenades;
         String propietari = this.propietari.getDni();
@@ -159,6 +170,7 @@ public class Empresa {
     public void update(Activity act){
 
         String NIE = this.NIE;
+        String nom = this.nom;
         String cp = this.cp;
         int cordenades = this.cordenades;
         String propietari = this.propietari.getDni();
@@ -199,6 +211,7 @@ public class Empresa {
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("NIE", NIE);
+                            params.put("nom", nom);
                             params.put("cp", cp);
                             params.put("cordenades", cordenades + "");
                             params.put("propietari", propietari);
@@ -218,13 +231,6 @@ public class Empresa {
     public void delete(Activity act){
 
         String NIE = this.NIE;
-        String cp = this.cp;
-        int cordenades = this.cordenades;
-        String propietari = this.propietari.getDni();
-        String direccio = this.direccio;
-        ArrayList<Treballador> treballadors;
-        String paypal = this.paypal;
-
         try {
             String url = "https://ffames.cat/tippay/Empresa-delete.php";
             StringRequest postRequest = new
@@ -257,11 +263,6 @@ public class Empresa {
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("NIE", NIE);
-                            params.put("cp", cp);
-                            params.put("cordenades", cordenades + "");
-                            params.put("propietari", propietari);
-                            params.put("direccio", direccio);
-                            params.put("paypal", paypal);
                             return params;
                         }
                     };
