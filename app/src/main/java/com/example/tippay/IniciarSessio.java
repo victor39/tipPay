@@ -36,7 +36,6 @@ public class IniciarSessio extends AppCompatActivity {
     EditText adni , aContra;
     Button btnIniciar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,20 +106,20 @@ public class IniciarSessio extends AppCompatActivity {
         contrasena= separar[11];
         nomUsuari = separar[12];
         if (treballador.equalsIgnoreCase("1")) {
-            trb = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena);
+            trb = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena,nomUsuari);
             var = 't';
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com treballador", Toast.LENGTH_SHORT).show();
             Intent gTreballadors = new Intent(this, IniciarTreballador.class);
             startActivity(gTreballadors);
 
         } else if (treballador.equalsIgnoreCase("0")) {
-            clt = new Client(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, null);
+            clt = new Client(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, null,nomUsuari);
             var = 'c';
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com Client", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, principalClient.class);
             startActivity(usuari);
         } else if (propietari.equalsIgnoreCase("1")) {
-            prp = new Propietari(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena);
+            prp = new Propietari(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena,nomUsuari);
             var = 'p';
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, IniciarTreballador.class);

@@ -10,14 +10,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import clases.Client;
 import clases.Treballador;
 
 public class registraUsuari extends AppCompatActivity {
 
     String contra ,adni, aNom, aCognom,aCognom2,aNaix,aTelefon,aCorreu,aCP ,aPayPal ,data;
-    EditText nom,correu ,contraseña,contraseña2;
+    EditText nomUsuari,correu ,contraseña,contraseña2;
     Bundle extras = new Bundle();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,26 +36,29 @@ public class registraUsuari extends AppCompatActivity {
         aPayPal = extras.getString("PayPal");
         data = extras.getString("dataNaix");
 
-        nom = findViewById(R.id.registreUsuariNomUsuari);
+        nomUsuari = findViewById(R.id.registreUsuariNomUsuari);
         correu = findViewById(R.id.registreUsuariEmail);
         contraseña = findViewById(R.id.registreUsuariContra);
         contraseña2 = findViewById(R.id.registreUsuariContra2);
 
 
+
     }
     public void sessioIniciada(View view) {
         if((contraseña.getText().toString().equals(contraseña2.getText().toString()))){
-            contra = contraseña.toString();
+            contra = contraseña.getText().toString();
+            System.out.println(contra);
             Intent sessioIniciada = new Intent(this, principalClient.class);
-            extras.putString("nom", String.valueOf(nom.getText()));
+            extras.putString("nom", String.valueOf(nomUsuari.getText()));
             startActivity(sessioIniciada);
 
-            Treballador tre = new Treballador(adni, aNom, aCognom, aCognom2,data,aTelefon, aCorreu,aCP, aPayPal,contra);
-            tre.insert(registraUsuari.this);
-            Toast toast1 = Toast.makeText(getApplicationContext(),"Usuari afegit /n Benvingut " + nom, Toast.LENGTH_SHORT);toast1.show();
-
+            Client clt = new Client(adni, aNom, aCognom, aCognom2,data,aTelefon, aCorreu,aCP, aPayPal,contra,null,nomUsuari.getText().toString());
+            clt.insert(registraUsuari.this);
+            Toast toast1 = Toast.makeText(getApplicationContext(),"Usuari afegit /n Benvingut " + nomUsuari, Toast.LENGTH_SHORT);toast1.show();
+            System.out.println("Usuari afegit");
         }else {
-            Toast toast1 = Toast.makeText(getApplicationContext(),"Tornar a omplir contraseña", Toast.LENGTH_SHORT);toast1.show();
+            Toast toast2 = Toast.makeText(getApplicationContext(),"Tornar a omplir contraseña", Toast.LENGTH_SHORT);toast2.show();
+            System.out.println("Contraseña erronea");
             contraseña.setText("");
             contraseña2.setText("");
         }

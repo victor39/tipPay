@@ -17,8 +17,8 @@ public class Propietari extends Persona{
 
 
 
-    public Propietari(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena) {
-        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena);
+    public Propietari(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena,String nomUsuari) {
+        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena,nomUsuari);
 
     }
 

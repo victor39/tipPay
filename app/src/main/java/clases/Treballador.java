@@ -18,8 +18,8 @@ import java.util.Map;
 
 public class Treballador extends Persona{
 
-    public Treballador(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena) {
-        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena);
+    public Treballador(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena,String nomUsuari) {
+        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena,nomUsuari);
     }
 
     public Treballador() {
@@ -82,6 +82,7 @@ public class Treballador extends Persona{
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String contrasena = this.getContrasena();
+        String nomUsuari = this.getNomUsuari();
 
         try {
             String url = "https://ffames.cat/tippay/Treballador-insert.php";
@@ -121,6 +122,7 @@ public class Treballador extends Persona{
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("contrasena", contrasena);
+                            params.put("nomUsuari", nomUsuari);
                             return params;
                         }
                     };
@@ -145,6 +147,7 @@ public class Treballador extends Persona{
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String contrasena = this.getContrasena();
+        String nomUsuari = this.getNomUsuari();
 
         try {
             String url = "https://ffames.cat/tippay/Treballador-update.php";
@@ -187,6 +190,7 @@ public class Treballador extends Persona{
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("contrasena", contrasena);
+                            params.put("nomUsuari",nomUsuari);
                             return params;
                         }
                     };

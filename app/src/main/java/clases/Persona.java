@@ -14,9 +14,10 @@ public class Persona {
     private String cp;
     private String paypal;
     private String contrasena;
+    private String nomUsuari;
 
     public Persona(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf,
-                   String correu, String cp, String paypal, String contrasena) {
+                   String correu, String cp, String paypal, String contrasena,String nomUsuari) {
         super();
         this.dni = dni;
         this.nom = nom;
@@ -28,6 +29,7 @@ public class Persona {
         this.cp = cp;
         this.paypal = paypal;
         this.contrasena = contrasena;
+        this.nomUsuari = nomUsuari;
     }
     public Persona (){
     }
@@ -46,7 +48,6 @@ public class Persona {
 
     public void setNom(String nom) {
         this.nom = nom;
-
     }
 
     public String getCognom1() {
@@ -109,9 +110,19 @@ public class Persona {
         return contrasena;
     }
 
+    public String getNomUsuari() {
+        return nomUsuari;
+    }
+
+    public void setNomUsuari(String NomUsuari) {
+        this.nomUsuari = nomUsuari;
+    }
+
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
+
+
 
     @Override
     public String toString() {
@@ -125,6 +136,7 @@ public class Persona {
                 ", correu='" + correu + '\'' +
                 ", cp='" + cp + '\'' +
                 ", paypal='" + paypal + '\'' +
+                ", nomUsuari='" + nomUsuari + '\'' +
                 '}';
     }
 }
