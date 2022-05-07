@@ -35,6 +35,7 @@ public class Empresa {
         this.direccio = direccio;
         this.treballadors = treballadors;
         this.paypal = paypal;
+
     }
 
     public String getNIE() {
@@ -92,7 +93,6 @@ public class Empresa {
     public void setPaypal(String paypal) {
         this.paypal = paypal;
     }
-
 
 
     @Override
@@ -177,6 +177,7 @@ public class Empresa {
         String direccio = this.direccio;
         ArrayList<Treballador> treballadors;
         String paypal = this.paypal;
+
 
         try {
             String url = "https://ffames.cat/tippay/Empresa-update.php";

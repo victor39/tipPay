@@ -21,10 +21,21 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
+import clases.Client;
+import clases.Propietari;
+import clases.Treballador;
+
 public class IniciarSessio extends AppCompatActivity {
 
+    static Client clt = new Client();
+    static Treballador trb = new Treballador();
+    static Propietari prp = new Propietari();
+    static char var = 'a';
+
+    String nomUsuari ,dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena ,treballador,propietari;
     EditText adni , aContra;
     Button btnIniciar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +51,7 @@ public class IniciarSessio extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validarUsuari("https://ffames.cat/tippay/validar.php");
+                validarUsuari("https://ffames.cat/tippay/Usuari-validar.php");
             }
         });
 
@@ -80,21 +91,44 @@ public class IniciarSessio extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
     public void iniciar (String response) {
-        String [] separar = response.split("#");
-        String treballador = separar[0];
-        String propietari = separar [1];
-        /*
+        System.out.println(response);
+        String[] separar = response.split("#");
+        treballador = separar[0];
+        propietari = separar[1];
+        dni=separar[2];
+        nom = separar[3];
+        cognom1=separar[4];
+        cognom2= separar[5];
+        datanaix = separar[6];
+        telefon = separar[7];
+        correu = separar [8];
+        cp = separar[9];
+        paypal = separar[10];
+        contrasena= separar[11];
+        nomUsuari = separar[12];
         if (treballador.equalsIgnoreCase("1")) {
+            trb = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena);
+            var = 't';
+            Toast.makeText(IniciarSessio.this, "Has iniciat sessió com treballador", Toast.LENGTH_SHORT).show();
             Intent gTreballadors = new Intent(this, IniciarTreballador.class);
             startActivity(gTreballadors);
+
         } else if (treballador.equalsIgnoreCase("0")) {
+            clt = new Client(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, null);
+            var = 'c';
+            Toast.makeText(IniciarSessio.this, "Has iniciat sessió com Client", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, principalClient.class);
             startActivity(usuari);
         } else if (propietari.equalsIgnoreCase("1")) {
+            prp = new Propietari(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena);
+            var = 'p';
+            Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, IniciarTreballador.class);
             startActivity(usuari);
+
         }
-*/
+
+
     }
     public void returnIniciar(View view) {
         Intent returnIniciar = new Intent(this, MainActivity.class);

@@ -22,7 +22,10 @@ public class Treballador extends Persona{
         super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena);
     }
 
-    public static ArrayList<Treballador> tots(Activity act, String NIE ){
+    public Treballador() {
+    }
+
+    public static ArrayList<Treballador> tots(Activity act){
         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
 
         try {

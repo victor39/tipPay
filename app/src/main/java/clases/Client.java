@@ -23,6 +23,9 @@ public class Client extends Persona{
         this.empresasFav = empresaFav;
     }
 
+    public Client() {
+    }
+
     public ArrayList<Empresa> getEmpresasFav() {
         return empresasFav;
     }
