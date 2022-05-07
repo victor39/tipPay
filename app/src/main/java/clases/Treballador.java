@@ -43,7 +43,7 @@ public class Treballador extends Persona{
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
 
-                                    callBack.onSuccess(propinas);
+
                                 }
                             },
                             new Response.ErrorListener() {

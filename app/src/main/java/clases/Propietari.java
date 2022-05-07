@@ -18,8 +18,6 @@ import Inteficies.VolleyCallBack;
 
 public class Propietari extends Persona{
 
-
-
     public Propietari(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena) {
         super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena);
 
@@ -164,18 +162,9 @@ public class Propietari extends Persona{
         }
     }
 
-    public void update(Activity act){
+    public void updateNouPropietari(Activity act){
 
         String dni = this.getDni();
-        String nom = this.getNom();
-        String cognom1 = this.getCognom1();
-        String cognom2 = this.getCognom2();
-        String datanaix = this.getDataNaixement();
-        String telefono = this.getTelf();
-        String correu = this.getCorreu();
-        String codipostal = this.getCp();
-        String paypal = this.getPaypal();
-        String contrasena = this.getContrasena();
 
         try {
             String url = "https://ffames.cat/tippay/Propietari-update.php";
@@ -187,10 +176,7 @@ public class Propietari extends Persona{
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
-
-
                                 }
                             },
                             new Response.ErrorListener() {
@@ -209,15 +195,6 @@ public class Propietari extends Persona{
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("dni", dni);
-                            params.put("nom", nom);
-                            params.put("cognom1", cognom1);
-                            params.put("cognom2", cognom2);
-                            params.put("datanaix", datanaix.toString());
-                            params.put("telefono", telefono);
-                            params.put("correu", correu);
-                            params.put("codipostal", codipostal+"");
-                            params.put("paypal", paypal);
-                            params.put("contrasena", contrasena);
                             return params;
                         }
                     };
@@ -276,6 +253,9 @@ public class Propietari extends Persona{
             e.printStackTrace();
         }
     }
+
+
+
     public void buscarPropietari(Activity act){
 
         String dni = this.getDni();
