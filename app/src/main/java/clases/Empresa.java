@@ -353,7 +353,6 @@ public class Empresa {
                                         String[] valores = res[i].split("#");
                                         Empresa emp = new Empresa(valores[0], valores[1], valores[2], Integer.parseInt(valores[3]), pro,valores[5], treballadors, valores[9]);
                                         empreses.add(emp);
-
                                     }
                                     callBack.onSuccess(empreses);
                                 }
