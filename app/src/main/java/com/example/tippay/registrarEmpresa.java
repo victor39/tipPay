@@ -57,7 +57,7 @@ public class registrarEmpresa extends AppCompatActivity {
             Propietari prp = new Propietari(IniciarSessio.clt.getDni(),IniciarSessio.clt.getNom(),IniciarSessio.clt.getCognom1(),IniciarSessio.clt.getCognom2(),IniciarSessio.clt.getDataNaixement(),IniciarSessio.clt.getTelf(),IniciarSessio.clt.getCorreu(),
                     IniciarSessio.clt.getCp(),IniciarSessio.clt.getPaypal(),IniciarSessio.clt.getContrasena(),IniciarSessio.clt.getNomUsuari());
             IniciarSessio.var = 'P';
-            //pro.updateNouPropietari();
+            prp.updateNouPropietari(registrarEmpresa.this);
             Empresa emp = new Empresa(nieEmp,nomEmp,cpEmp,ubi,prp,direccio,null,paypal);
             emp.insert(registrarEmpresa.this);
         }else{
