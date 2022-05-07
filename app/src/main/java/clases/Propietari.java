@@ -52,7 +52,7 @@ public class Propietari extends Persona{
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
 
-                                    String[] res = resultado.split("|");
+                                    String[] res = resultado.split("=");
 
                                     for (int i = 0; i < res.length; i++){
 

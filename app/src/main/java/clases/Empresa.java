@@ -275,8 +275,62 @@ public class Empresa {
     }
 
     //buscar todas las empresas por codigo postal
-    public static ArrayList<Treballador> tots(Activity act, int cp){
+    public static ArrayList<Treballador> tots(Activity act, String nie){
         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
+
+        try {
+            String url = "https://ffames.cat/tippay/Empresa-buscarTotsTreballadors.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+
+                                    String[] res = resultado.split("=");
+
+                                    for (int i = 0; i < res.length; i++){
+
+                                        String[] valores = res[i].split("#");
+                                        //dni = 2 //nom 3 //cognom1 4 // cognom2 5// datanaix 6// telef // correu // cp // paypal // contrasena
+                                        //echo $columna['Treballador'] ."#". $columna['Propietari'] ."#". $columna['DNI'] ."#". $columna['Nom'] ."#". $columna['Cognom1']."#". $columna['Cognom2'] ."#".
+                                        // $columna['DataNaix']."#". $columna['Telefon'] ."#". $columna['Correu']."#". $columna['CodiPostal'] ."#". $columna['Cognom1']."|";
+                                        //public Treballador(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena)
+                                        //Treballador tre = new Treballador(valores[0], valores[1], valores[2], Double.parseDouble(valores[3]), valores[4]);
+                                        //treballadors.add(tre);
+                                    }
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("nie", nie);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return treballadors;
     }
 
