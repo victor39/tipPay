@@ -8,6 +8,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.tippay.HistorialPagaments;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -32,6 +33,60 @@ public class Client extends Persona{
 
     public void setEmpresasFav(ArrayList<Empresa> empresasFav) {
         this.empresasFav = empresasFav;
+    }
+
+    static public void propinesClient(Activity act,String dni, ArrayList<Propina> propinas){
+
+        try {
+            String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+
+                                    String[] res = resultado.split("|");
+
+                                    for (int i = 0; i < res.length; i++){
+
+                                        String[] valores = res[i].split("#");
+
+                                        Propina p = new Propina(valores[0], valores[1], valores[2], Double.parseDouble(valores[3]), valores[4]);
+                                        propinas.add(p);
+                                    }
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void insert(Activity act){

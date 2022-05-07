@@ -19,6 +19,7 @@ public class registraUsuari extends AppCompatActivity {
     EditText nomUsuari,correu ,contraseña,contraseña2;
     Bundle extras = new Bundle();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,6 @@ public class registraUsuari extends AppCompatActivity {
         correu = findViewById(R.id.registreUsuariEmail);
         contraseña = findViewById(R.id.registreUsuariContra);
         contraseña2 = findViewById(R.id.registreUsuariContra2);
-
 
 
     }

@@ -36,6 +36,7 @@ public class IniciarSessio extends AppCompatActivity {
     EditText adni , aContra;
     Button btnIniciar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,6 +130,7 @@ public class IniciarSessio extends AppCompatActivity {
 
 
     }
+
     public void returnIniciar(View view) {
         Intent returnIniciar = new Intent(this, MainActivity.class);
         startActivity(returnIniciar);

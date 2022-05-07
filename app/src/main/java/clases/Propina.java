@@ -5,41 +5,46 @@ import android.app.Activity;
 import java.util.ArrayList;
 
 public class Propina {
-    Client client;
-    Empresa empresa;
-    Treballador treballador;
-    double propina;
 
-    public Propina(Client client, Empresa empresa, Treballador treballador, double propina) {
+    String client;
+    String empresa;
+    String treballador;
+    double propina;
+    String data;
+
+    public Propina(String client, String treballador, String empresa, double propina, String data) {
         this.client = client;
         this.empresa = empresa;
         this.treballador = treballador;
         this.propina = propina;
+        this.data = data;
     }
 
-    public Client getClient() {
+    public String getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClient(String dniClient) {
+        this.client = dniClient;
     }
 
-    public Empresa getEmpresa() {
-        return empresa;
+    public String getEmpresa() { return empresa; }
+
+    public void setEmpresa(String nieEmpresa) {
+        this.empresa = nieEmpresa;
     }
 
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
-    public Treballador getTreballador() {
+    public String getTreballador() {
         return treballador;
     }
 
-    public void setTreballador(Treballador treballador) {
-        this.treballador = treballador;
+    public void setTreballador(String dniTreballador) {
+        this.treballador = dniTreballador;
     }
+
+    public String getData(){return data;}
+
+    public void setData(String data){this.data = data;}
 
     public double getPropina() {
         return propina;
@@ -56,6 +61,7 @@ public class Propina {
                 ", empresa=" + empresa +
                 ", treballador=" + treballador +
                 ", propina=" + propina +
+                ", data=" + data +
                 '}';
     }
 

@@ -49,11 +49,12 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList <Treballador> treb = new ArrayList<>();
         String nieEmp = "3445";
+        String nomb = "nom";
         String cp = "344";
         int ubi = 434;
         String direccio = "direccio";
 
-        Empresa emp = new Empresa(nieEmp,cp,ubi,pro,direccio,treb,paypal);
+        Empresa emp = new Empresa(nieEmp,nomb, cp,ubi,pro,direccio,treb,paypal);
         emp.insert(MainActivity.this);
 
         pro.buscarPropietari(MainActivity.this);
@@ -74,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(registrarPersona);
     }
     public void informacio(View view) {
-        Intent informacio = new Intent ( this , informacioPopUp.class);
-        startActivity(informacio);
+        //Intent informacio = new Intent ( this , informacioPopUp.class);
+        //startActivity(informacio);
     }
     public void sortir(View view){
         Toast.makeText(MainActivity.this, "Has tancat la aplicació", Toast.LENGTH_SHORT).show();

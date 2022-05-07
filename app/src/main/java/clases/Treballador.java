@@ -25,6 +25,52 @@ public class Treballador extends Persona{
     public Treballador() {
     }
 
+    static public void propinesTreballador(Activity act,String dni, ArrayList<Propina> propinas){
+
+        try {
+            String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+
+
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static ArrayList<Treballador> tots(Activity act){
         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
 
@@ -135,7 +181,32 @@ public class Treballador extends Persona{
         }
     }
 
-    public void update(Activity act){
+    static void updateNouTreballador(Activity act, String dni){;
+
+        try {
+            String url = "https://ffames.cat/tippay/Treballador-updateNou.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+
+                                    String resultado = response;
+
+
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
 
         String dni = this.getDni();
         String nom = this.getNom();
@@ -148,9 +219,28 @@ public class Treballador extends Persona{
         String paypal = this.getPaypal();
         String contrasena = this.getContrasena();
         String nomUsuari = this.getNomUsuari();
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void updateVellTreballador(Activity act, String dni){
 
         try {
-            String url = "https://ffames.cat/tippay/Treballador-update.php";
+            String url = "https://ffames.cat/tippay/Treballador-updateVell.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -197,7 +287,6 @@ public class Treballador extends Persona{
             //ejecutar y pasar parametros
             RequestQueue requestQueue = Volley.newRequestQueue(act);
             requestQueue.add(postRequest);
-            System.out.println(telefono);
         } catch (Exception e) {
             e.printStackTrace();
         }

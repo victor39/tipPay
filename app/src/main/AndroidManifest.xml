@@ -70,6 +70,9 @@
             android:name=".IniciarSessio"
             android:exported="true" />
         <activity
+            android:name=".HistorialPagaments"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

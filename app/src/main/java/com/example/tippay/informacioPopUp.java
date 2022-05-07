@@ -23,4 +23,5 @@ public class informacioPopUp extends AppCompatActivity {
         getWindow().setLayout((int)(ancho * 0.85), (int)(alto * 0.7));
 
     }
+
 }
