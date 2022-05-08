@@ -1,8 +1,10 @@
 package com.example.tippay;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -28,5 +30,14 @@ public class principalClient extends AppCompatActivity {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void inici(View view) {
+        Intent rInici = new Intent ( this , MainActivity.class);
+        startActivity(rInici);
+    }
 
+    public void anarPagar(View view) {
+        Intent pagar = new Intent ( this , pagarEmpresa.class);
+        startActivity(pagar);
+    }
 }

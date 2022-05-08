@@ -344,14 +344,15 @@ public class Empresa {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
-
+                                    System.out.println(response);
                                     String[] res = resultado.split("=");
 
                                     for (int i = 0; i < res.length; i++){
                                         Propietari pro = new Propietari();
                                         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
                                         String[] valores = res[i].split("#");
-                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], Integer.parseInt(valores[3]), pro,valores[5], treballadors, valores[9]);
+                                        //porque peta aunque devuelva un integer :S
+                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], '1', pro,valores[5], treballadors, valores[6]);
                                         empreses.add(emp);
                                     }
                                     callBack.onSuccess(empreses);
@@ -372,7 +373,7 @@ public class Empresa {
 
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
-                            params.put("cp", cp);
+                            params.put("codipostal", cp);
                             return params;
                         }
                     };

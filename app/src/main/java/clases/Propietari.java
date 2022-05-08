@@ -177,7 +177,7 @@ public class Propietari extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
-                                    System.out.println(response);
+                                    System.out.println("respuesta de onRESPONSE 2 "+ response);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -197,13 +197,15 @@ public class Propietari extends Persona{
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("dni", dni);
+                            System.out.println("ntra ?");
                             return params;
+
                         }
                     };
             //ejecutar y pasar parametros
             RequestQueue requestQueue = Volley.newRequestQueue(act);
-
             requestQueue.add(postRequest);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

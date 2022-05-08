@@ -2,6 +2,7 @@ package com.example.tippay;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -94,5 +95,11 @@ public class GTreballadors extends AppCompatActivity {
 
     public void acomiadar(String dni){
         System.out.println(dni);
+    }
+
+    
+    public void atras(View view) {
+        Intent returnClient = new Intent(this, iniciarEmpresa.class);
+        startActivity(returnClient);
     }
 }

@@ -2,7 +2,9 @@ package com.example.tippay;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class afegirTreballador extends AppCompatActivity {
 
@@ -10,6 +12,9 @@ public class afegirTreballador extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_afegir_treballador);
-
+    }
+    public void atras(View view) {
+        Intent returnClient = new Intent(this, iniciarEmpresa.class);
+        startActivity(returnClient);
     }
 }

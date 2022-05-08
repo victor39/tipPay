@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import clases.Empresa;
@@ -20,10 +22,11 @@ import clases.Propietari;
 import clases.Treballador;
 
 public class registrarEmpresa extends AppCompatActivity {
-    String nomEmp ,nieEmp,dniEmp,ubiEmp,nomProp,cpEmp,direccio,paypal;
+    String nomEmp ,nieEmp,dniEmp,nomProp,cpEmp,direccio,paypal;
     int ubi;
     EditText email,contrasena,contrasena2,nomP;
     Button btregistrarEmp;
+    TextView mostrar;
     ArrayList <Treballador> treb = new ArrayList<>();
 
     @SuppressLint("WrongViewCast")
@@ -34,7 +37,7 @@ public class registrarEmpresa extends AppCompatActivity {
         setContentView(R.layout.activity_registrar_empresa);
         Bundle nom = getIntent().getExtras();
 
-        ArrayList <Treballador> treb = new ArrayList<>();
+        mostrar = findViewById(R.id.textNomEmpresa);
 
         // valores de este activity
         btregistrarEmp = findViewById(R.id.btRegistrarEmp);
@@ -42,6 +45,7 @@ public class registrarEmpresa extends AppCompatActivity {
         nomP = findViewById(R.id.validarNomProp);
         contrasena = findViewById(R.id.registrarContraEmpr);
         contrasena2 = findViewById(R.id.registrarContraEmp2);
+
 
         //valores devuelva registre
         nieEmp = nom.getString("nie");
@@ -53,33 +57,28 @@ public class registrarEmpresa extends AppCompatActivity {
         direccio = nom.getString("direccio");
         paypal = nom.getString("paypal");
 
-        if (contrasena.getText().equals(contrasena2.getText())){
-            System.out.println("entramos dentro ?");
-            Propietari prp = new Propietari(IniciarSessio.clt.getDni(),IniciarSessio.clt.getNom(),IniciarSessio.clt.getCognom1(),IniciarSessio.clt.getCognom2(),IniciarSessio.clt.getDataNaixement(),IniciarSessio.clt.getTelf(),IniciarSessio.clt.getCorreu(),
-                    IniciarSessio.clt.getCp(),IniciarSessio.clt.getPaypal(),IniciarSessio.clt.getContrasena(),IniciarSessio.clt.getNomUsuari());
-            IniciarSessio.var = 'P';
-            prp.updateNouPropietari(registrarEmpresa.this);
-            Empresa emp = new Empresa(nieEmp,nomEmp,cpEmp,ubi,prp,direccio,null,paypal);
-            emp.insert(registrarEmpresa.this);
-        }else{
-            Toast.makeText(registrarEmpresa.this, "Tornar a omplir la contraseña", Toast.LENGTH_SHORT).show();
-            contrasena.setText("");
-            contrasena2.setText("");
-        }
-
-
-
-
-
+        mostrar.setText("RESTAURANT : " + nomEmp);
     }
 
     public void iniciarEmpresa(View view) {
-        Intent iniciarEmpresa = new Intent ( this , IniciarTreballador.class);
-        startActivity(iniciarEmpresa);
+
+        if (contrasena.getText().equals(contrasena2.getText())) {
+            Propietari prp = new Propietari(IniciarSessio.clt.getDni(), IniciarSessio.clt.getNom(), IniciarSessio.clt.getCognom1(), IniciarSessio.clt.getCognom2(), IniciarSessio.clt.getDataNaixement(), IniciarSessio.clt.getTelf(), IniciarSessio.clt.getCorreu(),
+                    IniciarSessio.clt.getCp(), IniciarSessio.clt.getPaypal(), IniciarSessio.clt.getContrasena(), IniciarSessio.clt.getNomUsuari());
+            IniciarSessio.var = 'P';
+            prp.updateNouPropietari(registrarEmpresa.this);
+            Empresa emp = new Empresa(nieEmp, nomEmp, cpEmp, '2', prp, direccio, null, paypal);
+            emp.insert(registrarEmpresa.this);
+            Intent iniciarEmpresa = new Intent(this, IniciarTreballador.class);
+            startActivity(iniciarEmpresa);
+        } else
+            Toast.makeText(registrarEmpresa.this, "Tornar a omplir la contraseña", Toast.LENGTH_SHORT).show();
+        contrasena.setText("");
+        contrasena2.setText("");
     }
 
     public void returnRegistreEmpresa(View view) {
-        Intent returnRegistre = new Intent ( this , registreEmpresa.class);
+        Intent returnRegistre = new Intent ( this , principalClient.class);
         startActivity(returnRegistre);
 
     }

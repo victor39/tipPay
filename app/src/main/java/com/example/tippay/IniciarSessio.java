@@ -92,7 +92,6 @@ public class IniciarSessio extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
     public void iniciar (String response) {
-        System.out.println(response);
         String[] separar = response.split("#");
         treballador = separar[0];
         propietari = separar[1];
