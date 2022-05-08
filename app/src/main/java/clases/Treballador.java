@@ -73,6 +73,7 @@ public class Treballador extends Persona{
         }
     }
 
+    //borrar
     public void insert(Activity act){
 
         String dni = this.getDni();
@@ -138,7 +139,7 @@ public class Treballador extends Persona{
         }
     }
 
-    static void updateNouTreballador(Activity act, String dni){;
+    static public void updateNouTreballador(Activity act, String dni){;
 
         try {
             String url = "https://ffames.cat/tippay/Treballador-updateNou.php";
@@ -182,7 +183,7 @@ public class Treballador extends Persona{
         }
     }
 
-    static void updateVellTreballador(Activity act, String dni){
+    static public void updateVellTreballador(Activity act, String dni){
 
         try {
             String url = "https://ffames.cat/tippay/Treballador-updateVell.php";

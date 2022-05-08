@@ -165,6 +165,7 @@ public class Empresa {
         }
     }
 
+    //borrar
     public void update(Activity act){
 
         String NIE = this.NIE;
@@ -189,6 +190,7 @@ public class Empresa {
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
 
                                     String resultado = response;
+                                    System.out.println(response);
 
 
                                 }
@@ -226,6 +228,7 @@ public class Empresa {
         }
     }
 
+    //borrar
     public void delete(Activity act){
 
         String NIE = this.NIE;
@@ -239,10 +242,8 @@ public class Empresa {
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
-
-
+                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -273,7 +274,7 @@ public class Empresa {
     }
 
     //buscar todas los trabajadores de una empresa
-   /* public static void totsTreballadors(Activity act, String nie, final VolleyCallBack callBack){
+    public static void totsTreballadors(Activity act, String nie, final VolleyCallBack callBack){
         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
 
         try {
@@ -287,7 +288,7 @@ public class Empresa {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
-
+                                    System.out.println(response);
                                     String[] res = resultado.split("=");
 
                                     for (int i = 0; i < res.length; i++){

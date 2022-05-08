@@ -53,7 +53,7 @@ public class Client extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
-
+                                    System.out.println(response);
                                     String[] res = resultado.split("=");
 
                                     for (int i = 0; i < res.length; i++){
@@ -143,6 +143,7 @@ public class Client extends Persona{
                             // the POST parameters:
                             params.put("dni", dni);
                             params.put("nom", nom);
+                            params.put("nomUsuari",nomUsuari);
                             params.put("cognom1", cognom1);
                             params.put("cognom2", cognom2);
                             params.put("datanaix", datanaix);
@@ -151,7 +152,6 @@ public class Client extends Persona{
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("contrasena", contrasena);
-                            params.put("nomUsuari",nomUsuari);
 
                             return params;
                         }
@@ -165,8 +165,7 @@ public class Client extends Persona{
         }
     }
 
-
-
+    //borrar
     public void update(Activity act){
 
         String dni = this.getDni();
@@ -191,8 +190,8 @@ public class Client extends Persona{
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
+                                    System.out.println(response);
 
                                 }
                             },
@@ -234,6 +233,7 @@ public class Client extends Persona{
         }
     }
 
+    //borrar
     public void delete(Activity act){
         String dni = this.getDni();
 
@@ -247,10 +247,8 @@ public class Client extends Persona{
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
-
-
+                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {

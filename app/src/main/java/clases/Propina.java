@@ -125,11 +125,4 @@ public class Propina {
         }
     }
 
-    public void update(Activity act){
-
-    }
-
-    public void delete(Activity act){
-
-    }
 }

@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import Inteficies.VolleyCallBack;
 import clases.Empresa;
 import clases.Propina;
 import clases.Treballador;
@@ -25,7 +27,18 @@ public class GTreballadors extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gtreballadors);
 
-        //Empresa.totsTreballadors();
+        System.out.println("EMPRESA " + IniciarSessio.prp.getEmpresa());
+
+        Empresa.totsTreballadors(this, IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
+            @Override
+            public void onSuccess(ArrayList treballadors) {
+                emplenarTaula(treballadors);
+            }
+            @Override
+            public void onSuccess(){
+
+            }
+        });
 
     }
 
@@ -94,7 +107,46 @@ public class GTreballadors extends AppCompatActivity {
     }
 
     public void acomiadar(String dni){
+
         System.out.println(dni);
+
+        Treballador.updateVellTreballador(this, dni);
+        Empresa.acomiadarTreballador(this, dni, IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
+            @Override
+            public void onSuccess(ArrayList propinas) {
+
+            }
+
+            @Override
+            public void onSuccess() {
+                finish();
+                startActivity(getIntent());
+            }
+        });
+
+    }
+
+    public void afegirTreballador(View view){
+
+        EditText txt = findViewById(R.id.dniTreb);
+
+        if(txt.getText().toString() != ""){
+
+            Treballador.updateNouTreballador(this, txt.getText().toString());
+            Empresa.contractarTreballador(this, txt.getText().toString(), IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
+                @Override
+                public void onSuccess(ArrayList propinas) {
+
+                }
+
+                @Override
+                public void onSuccess() {
+                    finish();
+                    startActivity(getIntent());
+                }
+            });
+        }
+
     }
 
     
