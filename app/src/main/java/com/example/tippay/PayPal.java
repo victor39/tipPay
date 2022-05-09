@@ -78,6 +78,8 @@ public class PayPal extends AppCompatActivity {
         // Getting the amount from editText
         String amount = amountEdt.getText().toString();
 
+        PayPal.propina = Float.parseFloat(amount);
+
         // Creating a paypal payment on below line.
         PayPalPayment payment = new PayPalPayment(new BigDecimal(String.valueOf(amount)), "EUR", "Propina",
                 PayPalPayment.PAYMENT_INTENT_SALE);
