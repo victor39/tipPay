@@ -162,10 +162,11 @@ public class Persona {
     }
 
     static public void validarUsuari(Activity act, String dni, String psw, final VolleyCallBack callBack){
-        try {
-            String url = "https://ffames.cat/tippay/Usuarui-validar.php";
-            StringRequest postRequest = new
-                    //crear constructor
+         try {
+             ArrayList<Persona> persones = new ArrayList<Persona>();
+             String url = "https://ffames.cat/tippay/Usuarui-validar.php";
+             StringRequest postRequest = new
+                     //crear constructor
                     StringRequest(Request.Method.POST, url,
                             new Response.Listener<String>() {
                                 @Override
@@ -175,9 +176,12 @@ public class Persona {
                                     String resultado = response;
                                     System.out.println(resultado);
                                     String[] valores = resultado.split("#");
-                                    Treballador tre = new Treballador(valores[2], valores[4], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[2]);
+                                    Persona pre = new Persona(valores[2], valores[4], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[2]);
+                                    persones.add(pre);
+                                    callBack.onSuccess(persones);
 
                                 }
+
                             },
                             new Response.ErrorListener() {
                                 @Override
