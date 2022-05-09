@@ -161,9 +161,8 @@ public class Persona {
                 '}';
     }
 
-    static public void validarUsuari(Activity act, String dni, String psw){
+    static public void validarUsuari(Activity act, String dni, String psw, VolleyCallBack callBack){
          try {
-             ArrayList<Persona> persones = new ArrayList<Persona>();
              String url = "https://ffames.cat/tippay/Usuari-validar.php";
              StringRequest postRequest = new
                      //crear constructor
@@ -176,17 +175,21 @@ public class Persona {
                                     String resultado = response;
                                     System.out.println(resultado);
                                     String[] valores = resultado.split("#");
-                                    if(valores[0] == "1"){
+                                    if(valores[0].equals("1")){
                                         IniciarSessio.trb =  new Treballador(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
                                         IniciarSessio.var= 'T';
+
+                                        callBack.onSuccess();
                                     }
-                                    else if(valores[1] == "1"){
+                                    else if(valores[1].equals("1")){
                                         IniciarSessio.prp = new Propietari(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
                                         IniciarSessio.var = 'P';
+                                        callBack.onSuccess();
                                     }
-                                    else if(valores[0] == "0"){
+                                    else if(valores[0].equals("0")){
                                         IniciarSessio.clt = new Client(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12],null, valores[4]);
                                         IniciarSessio.var = 'C';
+                                        callBack.onSuccess();
                                     }
                                 }
 
