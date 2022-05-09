@@ -27,18 +27,46 @@ public class HistorialPagaments extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial_pagaments);
+        if(IniciarSessio.var == 'C'){
+            Client.propinesClient(this, IniciarSessio.clt.getDni(), new VolleyCallBack(){
+                @Override
+                public void onSuccess(ArrayList prop){
 
-        Client.propinesClient(this, IniciarSessio.clt.getDni(), new VolleyCallBack(){
-            @Override
-            public void onSuccess(ArrayList prop){
+                    emplenarTaula(prop, IniciarSessio.var);
+                }
+                @Override
+                public void onSuccess() {
 
-                emplenarTaula(prop, IniciarSessio.var);
-            }
-            @Override
-            public void onSuccess() {
+                }
+            });
+        }
+        else if(IniciarSessio.var == 'T'){
+            Client.propinesClient(this, IniciarSessio.trb.getDni(), new VolleyCallBack(){
+                @Override
+                public void onSuccess(ArrayList prop){
 
-            }
-        });
+                    emplenarTaula(prop, IniciarSessio.var);
+                }
+                @Override
+                public void onSuccess() {
+
+                }
+            });
+        }
+        else if(IniciarSessio.var == 'P') {
+            Client.propinesClient(this, IniciarSessio.prp.getDni(), new VolleyCallBack() {
+                @Override
+                public void onSuccess(ArrayList prop) {
+
+                    emplenarTaula(prop, IniciarSessio.var);
+                }
+
+                @Override
+                public void onSuccess() {
+
+                }
+            });
+        }
 
     }
 
