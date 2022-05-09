@@ -31,10 +31,12 @@
 
     <Button
         android:id="@+id/returnRegistre4"
-        android:layout_width="46dp"
+        android:layout_width="48dp"
         android:layout_height="46dp"
+        android:background="#00FFFFFF"
         android:onClick="returnRegistreEmpresa"
-        app:icon="?attr/actionModeCloseDrawable"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconTint="#A38F8F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
@@ -45,8 +47,12 @@
 
     <Button
         android:id="@+id/registreInfo3"
-        android:layout_width="39dp"
+        android:layout_width="48dp"
         android:layout_height="44dp"
+        android:background="#08FFFFFF"
+        android:textAlignment="center"
+        app:icon="@android:drawable/ic_menu_info_details"
+        app:iconTint="#040000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.984"
@@ -54,59 +60,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/registrarContraEmpr"
-        android:layout_width="215dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="384dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/registrarContraEmp2"
-        android:layout_width="215dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="468dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/registrarEmailEmpr"
-        android:layout_width="216dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="220dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/validarNomProp"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="296dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Nom" />
 
     <TextView
         android:id="@+id/textNomEmpresa"
@@ -117,5 +70,73 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="310dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="220dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.017">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registrarEmailEmpr"
+            android:layout_width="306dp"
+            android:layout_height="61dp"
+            android:hint="Email " />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout9"
+        android:layout_width="307dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="372dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/validarNomProp"
+            android:layout_width="315dp"
+            android:layout_height="54dp"
+            android:hint="Nom propietari " />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout10"
+        android:layout_width="305dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout9">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registrarContraEmp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="305dp"
+        android:layout_height="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout10"
+        app:layout_constraintVertical_bias="0.122"
+        tools:layout_editor_absoluteX="48dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registrarContraEmpr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Repeteix contraseña"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

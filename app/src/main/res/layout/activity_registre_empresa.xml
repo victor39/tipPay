@@ -7,18 +7,6 @@
     tools:context=".registreEmpresa">
 
 
-    <EditText
-        android:id="@+id/registreEmpresaUbicacio"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="336dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="ubicació"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="284dp"
@@ -28,19 +16,6 @@
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/registreEmpresaCP"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="276dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="CP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,60 +31,14 @@
         app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/registreEmpresaNIE"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="152dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="NIE Empresa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/registreEmpresaDNI"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="392dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="DNI Propietari"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/registreEmpresaDireccio"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="448dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Direccio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/registreEmpresaPAY"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="504dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Pay Pal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/returnRegistre3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#00FFFFFF"
         android:onClick="returnEmpresa"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconTint="#AC9292"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.037"
@@ -120,25 +49,131 @@
 
     <Button
         android:id="@+id/registreInfo4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        app:icon="@android:drawable/ic_dialog_info"
+        app:iconTint="#131313"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/registreEmpresaNom"
-        android:layout_width="215dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="208dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Nom Empresa"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout11"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.866">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registreEmpresaPAY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PayPal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TExtInput">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registreEmpresaDireccio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Direccio Empresa " />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TExtInput"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout12"
+        app:layout_constraintVertical_bias="0.137">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registreEmpresaDNI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dni Empresa" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout12"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="403dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registreEmpresaUbicacio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ubicacio Empresa " />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout13"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="327dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registreEmpresaCP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="CP EMPRESA " />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout14"
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.859">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registreEmpresaNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom Empresa " />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="265dp"
+        android:layout_height="50dp"
+        android:hint="NIE"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.84">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registreEmpresaNIE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

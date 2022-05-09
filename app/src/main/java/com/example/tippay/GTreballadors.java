@@ -42,9 +42,9 @@ public class GTreballadors extends AppCompatActivity {
 
     }
 
-    protected void emplenarTaula(ArrayList<Treballador> treballadors){
+    protected void emplenarTaula(ArrayList<Treballador> treballadors) {
 
-        TableRow.LayoutParams paramsExample = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT,1f);
+        TableRow.LayoutParams paramsExample = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT, 1f);
 
         TableLayout stk = (TableLayout) findViewById(R.id.table_main);
         TableRow tbrow0 = new TableRow(this);
@@ -72,8 +72,8 @@ public class GTreballadors extends AppCompatActivity {
 
         stk.addView(tbrow0);
 
-        for(int i = 0; i < treballadors.size(); i++){
-            TableRow tbrow = new TableRow (this);
+        for (int i = 0; i < treballadors.size(); i++) {
+            TableRow tbrow = new TableRow(this);
 
             TextView t1v = new TextView(this);
             t1v.setText(treballadors.get(i).getDni()); //data de pagament
@@ -92,6 +92,9 @@ public class GTreballadors extends AppCompatActivity {
             Button bt0 = new Button(this);
             bt0.setText("Acomiadar");
             bt0.setLayoutParams(paramsExample);
+        }
+    }
+             /*
             bt0.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -106,50 +109,49 @@ public class GTreballadors extends AppCompatActivity {
 
     }
 
-    public void acomiadar(String dni){
+       public void acomiadar(String dni){
 
-        System.out.println(dni);
+           System.out.println(dni)          /*
+           Treballador.updateVellTreballador(this, dni);
+           Empresa.acomiadarTreballador(this, dni, IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
+               @Override
+               public void onSuccess(ArrayList propinas) {
 
-        Treballador.updateVellTreballador(this, dni);
-        Empresa.acomiadarTreballador(this, dni, IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
-            @Override
-            public void onSuccess(ArrayList propinas) {
+               }
 
-            }
+               @Override
+               public void onSuccess() {
+                   finish();
+                   startActivity(getIntent());
+               }
+           });
 
-            @Override
-            public void onSuccess() {
-                finish();
-                startActivity(getIntent());
-            }
-        });
+       }
 
-    }
+       public void afegirTreballador(View view){
 
-    public void afegirTreballador(View view){
+           EditText txt = findViewById(R.id.dniTreb);
 
-        EditText txt = findViewById(R.id.dniTreb);
+           if(txt.getText().toString() != ""){
 
-        if(txt.getText().toString() != ""){
+               Treballador.updateNouTreballador(this, txt.getText().toString());
+               Empresa.contractarTreballador(this, txt.getText().toString(), IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
+                   @Override
+                   public void onSuccess(ArrayList propinas) {
 
-            Treballador.updateNouTreballador(this, txt.getText().toString());
-            Empresa.contractarTreballador(this, txt.getText().toString(), IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
-                @Override
-                public void onSuccess(ArrayList propinas) {
+                   }
 
-                }
+                   @Override
+                   public void onSuccess() {
+                       finish();
+                       startActivity(getIntent());
+                   }
+               });
+           }
 
-                @Override
-                public void onSuccess() {
-                    finish();
-                    startActivity(getIntent());
-                }
-            });
-        }
+       }
 
-    }
-
-    
+       */
     public void atras(View view) {
         Intent returnClient = new Intent(this, iniciarEmpresa.class);
         startActivity(returnClient);

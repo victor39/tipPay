@@ -39,6 +39,9 @@ public class Empresa {
         this.paypal = paypal;
     }
 
+    public Empresa() {
+    }
+
     public String getNIE() {
         return NIE;
     }
@@ -98,15 +101,7 @@ public class Empresa {
 
     @Override
     public String toString() {
-        return "Empresa{" +
-                "NIE='" + NIE + '\'' +
-                ", nom='" + nom + '\'' +
-                ", cp='" + cp + '\'' +
-                ", cordenades=" + cordenades +
-                ", propietari=" + propietari +
-                ", direccio='" + direccio + '\'' +
-                ", paypal='" + paypal + '\'' +
-                '}';
+        return this.nom + "/" + this.NIE;
     }
 
     public void insert(Activity act ){
@@ -328,8 +323,7 @@ public class Empresa {
         }
 
 
-    }*/
-
+    }
     //todas las empresas por cp
     public static void todasCP(Activity act, String cp, final VolleyCallBack callBack){
         ArrayList<Empresa> empreses = new ArrayList<Empresa>();

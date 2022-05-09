@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import org.w3c.dom.Text;
-
 public class registreEmpresa extends AppCompatActivity {
     EditText  nieEmp,dniEmp,ubiEmp,nomEmp,nomProp,direccio, cpEmp,paypal;
     Bundle bundle = new Bundle();
@@ -25,7 +23,7 @@ public class registreEmpresa extends AppCompatActivity {
         nomEmp = findViewById(R.id.registreEmpresaNom);
         cpEmp = findViewById(R.id.registreEmpresaCP);
         ubiEmp = findViewById(R.id.registreEmpresaUbicacio);
-        dniEmp = findViewById(R.id.registreEmpresaDNI);
+        dniEmp = findViewById(R.id.TExtInput);
         nomProp = findViewById(R.id.registreEmpresaDireccio);
         direccio = findViewById(R.id.registreEmpresaDireccio);
         paypal = findViewById(R.id.registreEmpresaPAY);
