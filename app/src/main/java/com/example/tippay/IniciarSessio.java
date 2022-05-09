@@ -36,7 +36,8 @@ public class IniciarSessio extends AppCompatActivity {
     public static Client clt = new Client();
     public static Treballador trb = new Treballador();
     public static Propietari prp = new Propietari();
-    public static char var = 'a';
+    public static char var;
+
     String dniRecollir , contraRecollir;
     EditText adni , aContra;
     Button btnIniciar;
@@ -48,44 +49,54 @@ public class IniciarSessio extends AppCompatActivity {
         setContentView(R.layout.activity_iniciar_sessio);
 
         btnIniciar = findViewById(R.id.btIniciarSessio);
+
         adni = findViewById(R.id.textIniciarSessioINICIAR);
         aContra = findViewById(R.id.textContraseñaINICIAR);
-
     }
 
     public void iniciar(View view){
+
         dniRecollir = adni.getText().toString();
         contraRecollir = aContra.getText().toString();
         System.out.println(dniRecollir);
         System.out.println(contraRecollir);
 
-        Persona.validarUsuari(IniciarSessio.this, dniRecollir, contraRecollir);
-        if (var==('P')) {
-            prp.buscarEmpresa(this, prp.getDni(), new VolleyCallBack() {
-                @Override
-                public void onSuccess(ArrayList empreses) {
-                    ArrayList<Empresa> emps = empreses;
-                    prp.setEmpresa(emps.get(0).getNIE());
+        Persona.validarUsuari(IniciarSessio.this, dniRecollir, contraRecollir, new VolleyCallBack(){
+
+            @Override
+            public void onSuccess(ArrayList propinas) {
+
+            }
+            @Override
+            public void onSuccess() {
+                    if (IniciarSessio.var == 'P') {
+                        IniciarSessio.prp.buscarEmpresa(IniciarSessio.this, prp.getDni(), new VolleyCallBack() {
+                            @Override
+                            public void onSuccess(ArrayList empreses) {
+                                ArrayList<Empresa> emps = empreses;
+                                prp.setEmpresa(emps.get(0).getNIE());
+                            }
+                            @Override
+                            public void onSuccess() {
+                            }
+                        });
+                        Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
+                        Intent usuari = new Intent(IniciarSessio.this, iniciarEmpresa.class);
+                        startActivity(usuari);
+                    } else if (IniciarSessio.var == 'T' ) {
+
+                        Toast.makeText(IniciarSessio.this, "Has iniciat sessió com treballador", Toast.LENGTH_SHORT).show();
+                        Intent gTreballadors = new Intent(IniciarSessio.this, IniciarTreballador.class);
+                        startActivity(gTreballadors);
+
+                    } else if (IniciarSessio.var == 'C') {
+                        Toast.makeText(IniciarSessio.this, "Has iniciat sessió com Client", Toast.LENGTH_SHORT).show();
+                        Intent usuari = new Intent(IniciarSessio.this, principalClient.class);
+                        startActivity(usuari);
+
+                    }
                 }
-                @Override
-                public void onSuccess() {
-                }
-            });
-            Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
-            Intent usuari = new Intent(this, iniciarEmpresa.class);
-            startActivity(usuari);
-        } else if (var ==('T')) {
-
-            Toast.makeText(IniciarSessio.this, "Has iniciat sessió com treballador", Toast.LENGTH_SHORT).show();
-            Intent gTreballadors = new Intent(this, IniciarTreballador.class);
-            startActivity(gTreballadors);
-
-        } else if (var == ('C')) {
-            Toast.makeText(IniciarSessio.this, "Has iniciat sessió com Client", Toast.LENGTH_SHORT).show();
-            Intent usuari = new Intent(this, principalClient.class);
-            startActivity(usuari);
-
-        }
+        });
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void returnIniciar(View view) {
