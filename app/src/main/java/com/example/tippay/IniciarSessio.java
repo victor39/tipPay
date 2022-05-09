@@ -58,12 +58,11 @@ public class IniciarSessio extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Persona.validarUsuari(IniciarSessio.this,dniRecollir,contraRecollir ){
+                Persona.validarUsuari(IniciarSessio.this, dniRecollir, contraRecollir) {
                 }
+            }
         });
-
-    }
-    public void iniciar(ArrayList client) {
+    public void iniciar() {
         ArrayList <Persona> person= client;
         dni = person.get(0).getDni();
         dni=person.get(1).getNom();
