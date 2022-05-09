@@ -37,8 +37,7 @@ public class IniciarSessio extends AppCompatActivity {
     public static Treballador trb = new Treballador();
     public static Propietari prp = new Propietari();
     public static char var = 'a';
-
-    String nomUsuari ,dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena ,treballador,propietari,nie;
+    String dniRecollir , contraRecollir;
     EditText adni , aContra;
     Button btnIniciar;
 
@@ -48,45 +47,20 @@ public class IniciarSessio extends AppCompatActivity {
         this.setTitle("Iniciar Sessio");
         setContentView(R.layout.activity_iniciar_sessio);
 
-        btnIniciar=findViewById(R.id.btIniciarSessio);
+        btnIniciar = findViewById(R.id.btIniciarSessio);
 
-        adni=findViewById(R.id.textIniciarSessioINICIAR);
-        aContra=findViewById(R.id.textContraseñaINICIAR);
-        String dniRecollir = adni.toString();
-        String contraRecollir = aContra.toString();
-
-        btnIniciar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Persona.validarUsuari(IniciarSessio.this,dniRecollir,contraRecollir ){
-                }
-        });
-
+        adni = findViewById(R.id.textIniciarSessioINICIAR);
+        aContra = findViewById(R.id.textContraseñaINICIAR);
+        dniRecollir = adni.getText().toString();
+        contraRecollir = aContra.getText().toString();
+        System.out.println(dniRecollir);
+        System.out.println(contraRecollir);
     }
-    public void iniciar(ArrayList client) {
-        ArrayList <Persona> person= client;
-        dni = person.get(0).getDni();
-        dni=person.get(1).getNom();
-        nom = person.get(2).getNom();
 
-        treballador = separar[0];
-        propietari = separar[1];
-
-        cognom1=person.get(3).getCognom1();
-        cognom2= separar[5];
-        datanaix = separar[6];
-        telefon = separar[7];
-        correu = separar [8];
-        cp = separar[9];
-        paypal = separar[10];
-        contrasena= separar[11];
-        nomUsuari = separar[12];
-
-        if (propietari.equalsIgnoreCase("1")) {
-
-            prp = new Propietari(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, nomUsuari);
-
-            prp.buscarEmpresa(this, nie, new VolleyCallBack() {
+    public void iniciar(View view){
+        Persona.validarUsuari(IniciarSessio.this, dniRecollir, contraRecollir);
+        if (var==('P')) {
+            prp.buscarEmpresa(this, prp.getDni(), new VolleyCallBack() {
                 @Override
                 public void onSuccess(ArrayList empreses) {
                     ArrayList<Empresa> emps = empreses;
@@ -94,30 +68,23 @@ public class IniciarSessio extends AppCompatActivity {
                 }
                 @Override
                 public void onSuccess() {
-
                 }
             });
-            var = 'P';
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, iniciarEmpresa.class);
             startActivity(usuari);
-        } else if (treballador.equalsIgnoreCase("1")) {
-            trb = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, nomUsuari);
-            var = 'T';
+        } else if (var ==('T')) {
+
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com treballador", Toast.LENGTH_SHORT).show();
             Intent gTreballadors = new Intent(this, IniciarTreballador.class);
             startActivity(gTreballadors);
 
-        } else if (treballador.equalsIgnoreCase("0")) {
-            clt = new Client(dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena, null,nomUsuari);
-            var = 'C';
+        } else if (var == ('C')) {
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com Client", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, principalClient.class);
             startActivity(usuari);
 
         }
-
-
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void returnIniciar(View view) {

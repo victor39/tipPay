@@ -180,8 +180,14 @@ public class Persona {
                                         IniciarSessio.trb =  new Treballador(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
                                         IniciarSessio.var= 'T';
                                     }
-
-                                    Persona pre = new Persona(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
+                                    else if(valores[1] == "1"){
+                                        IniciarSessio.prp = new Propietari(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
+                                        IniciarSessio.var = 'P';
+                                    }
+                                    else if(valores[0] == "0"){
+                                        IniciarSessio.clt = new Client(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12],null, valores[4]);
+                                        IniciarSessio.var = 'C';
+                                    }
                                 }
 
                             },
@@ -189,6 +195,7 @@ public class Persona {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
+                                    System.out.println(error);
                                     error.printStackTrace();
                                 }
                             }
