@@ -21,13 +21,13 @@ public class Empresa {
     private String NIE;
     private String nom;
     private String cp;
-    private int cordenades;
+    private String cordenades;
     private Propietari propietari;
     private String direccio;
     private ArrayList<Treballador> treballadors;
     private String paypal;
 
-    public Empresa(String NIE, String nom, String cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal) {
+    public Empresa(String NIE, String nom, String cp, String cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal) {
 
         this.NIE = NIE;
         this.nom = nom;
@@ -66,11 +66,11 @@ public class Empresa {
         this.cp = cp;
     }
 
-    public int getCordenades() {
+    public String getCordenades() {
         return cordenades;
     }
 
-    public void setCordenades(int cordenades) {
+    public void setCordenades(String cordenades) {
         this.cordenades = cordenades;
     }
 
@@ -117,7 +117,7 @@ public class Empresa {
         String NIE = this.NIE;
         String nom = this.nom;
         String cp = this.cp;
-        int cordenades = this.cordenades;
+        String cordenades = this.cordenades;
         String propietari = this.propietari.getDni();
         String direccio = this.direccio;
         ArrayList<Treballador> treballadors;
@@ -174,7 +174,7 @@ public class Empresa {
         String NIE = this.NIE;
         String nom = this.nom;
         String cp = this.cp;
-        int cordenades = this.cordenades;
+        String cordenades = this.cordenades;
         String propietari = this.propietari.getDni();
         String direccio = this.direccio;
         ArrayList<Treballador> treballadors;
@@ -355,7 +355,7 @@ public class Empresa {
                                         Propietari pro = new Propietari();
                                         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
                                         String[] valores = res[i].split("#");
-                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], Integer.parseInt(valores[3]), pro,valores[5], treballadors, valores[9]);
+                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], valores[3], pro,valores[5], treballadors, valores[6]);
                                         empreses.add(emp);
                                     }
                                     callBack.onSuccess(empreses);
