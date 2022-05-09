@@ -1,8 +1,10 @@
 package com.example.tippay;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -38,4 +40,9 @@ public class IniciarTreballador extends AppCompatActivity {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void atras(View view) {
+        Intent atras = new Intent(this, MainActivity.class);
+        startActivity(atras);
+    }
 }

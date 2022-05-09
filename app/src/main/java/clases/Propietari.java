@@ -196,6 +196,7 @@ public class Propietari extends Persona{
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
                                     error.printStackTrace();
+                                    System.out.println(error);
                                 }
                             }
                     ) {
@@ -212,8 +213,8 @@ public class Propietari extends Persona{
                     };
             //ejecutar y pasar parametros
             RequestQueue requestQueue = Volley.newRequestQueue(act);
-
             requestQueue.add(postRequest);
+
         } catch (Exception e) {
             e.printStackTrace();
         }

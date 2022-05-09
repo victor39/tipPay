@@ -10,11 +10,11 @@
         android:id="@+id/textView5"
         android:layout_width="244dp"
         android:layout_height="68dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="164dp"
         android:text="LOGO TIPPAY"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

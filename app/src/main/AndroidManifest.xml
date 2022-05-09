@@ -18,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TipPay">
         <activity
+            android:name=".eleccioCambrer"
+            android:exported="false" />
+        <activity
+            android:name=".pagarEmpresa"
+            android:exported="false" />
+        <activity
             android:name=".informacioPopUp"
             android:exported="true"
             android:theme="@style/Theme.TipPay.TemapopUP" />

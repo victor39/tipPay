@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(registrarPersona);
     }
     public void informacio(View view) {
-        //Intent informacio = new Intent ( this , informacioPopUp.class);
-        //startActivity(informacio);
+        Intent informacio = new Intent ( this , PayPal.class);
+        startActivity(informacio);
     }
     public void sortir(View view){
         Toast.makeText(MainActivity.this, "Has tancat la aplicació", Toast.LENGTH_SHORT).show();

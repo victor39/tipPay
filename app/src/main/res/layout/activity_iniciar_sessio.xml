@@ -10,8 +10,6 @@
         android:id="@+id/textIniciar"
         android:layout_width="214dp"
         android:layout_height="85dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginBottom="494dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Iniciar Sessió"
@@ -19,33 +17,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/textContraseñaINICIAR"
-        android:layout_width="239dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="200dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/textIniciarSessioINICIAR"
-        android:layout_width="234dp"
-        android:layout_height="63dp"
-        android:layout_marginBottom="284dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236" />
 
     <Button
         android:id="@+id/btIniciarSessio"
@@ -60,32 +33,73 @@
 
     <Button
         android:id="@+id/btReturnIniciar"
-        android:layout_width="80dp"
-        android:layout_height="58dp"
+        android:layout_width="55dp"
+        android:layout_height="62dp"
         android:layout_marginStart="11dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="320dp"
-        android:layout_marginBottom="656dp"
+        android:background="#14FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        android:foregroundTint="#00FFFFFF"
         android:onClick="returnIniciar"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconTint="#0E0101"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="83dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="313dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="656dp"
+        android:layout_width="54dp"
+        android:layout_height="56dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        app:icon="@android:drawable/ic_dialog_info"
+        app:iconTint="#0C0505"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:strokeColor="#0AFFFFFF"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textIniciarSessio"
+        android:layout_width="320dp"
+        android:layout_height="61dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.405">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textIniciarSessioINICIAR"
+            android:layout_width="316dp"
+            android:layout_height="52dp"
+            android:hint="DNI?" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="316dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textContraseñaINICIAR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

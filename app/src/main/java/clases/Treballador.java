@@ -26,6 +26,10 @@ public class Treballador extends Persona{
 
     public Treballador() {
     }
+    @Override
+    public String toString() {
+        return this.getNom();
+    }
 
     static public void propinesTreballador(Activity act, String dni, final VolleyCallBack callBack){
 
@@ -42,7 +46,6 @@ public class Treballador extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
-
 
                                 }
                             },
@@ -276,6 +279,10 @@ public class Treballador extends Persona{
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
     }
+
+
 
 }

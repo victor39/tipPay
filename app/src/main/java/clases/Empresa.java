@@ -39,6 +39,9 @@ public class Empresa {
         this.paypal = paypal;
     }
 
+    public Empresa() {
+    }
+
     public String getNIE() {
         return NIE;
     }
@@ -389,7 +392,7 @@ public class Empresa {
     }
 
     //activar treballador
-    /*public void nouTreballador(Activity act, String dni ){
+    public void nouTreballador(Activity act, String dni ){
 
         try {
             String url = "https://ffames.cat/tippay/Treballador-updateNou.php";
@@ -428,10 +431,10 @@ public class Empresa {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     //desactivar treballador
-    /*public void vellTreballador(Activity act, String dni ){
+    public void vellTreballador(Activity act, String dni ){
         String NIE = this.NIE;
 
         try {
@@ -471,7 +474,7 @@ public class Empresa {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     //alta nou treballador EmpresaTreballador-insup.php
     public void altaNouTreballador(Activity act, String dni ){
