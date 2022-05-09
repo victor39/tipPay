@@ -24,7 +24,13 @@ import org.json.JSONObject;
 
 import java.math.BigDecimal;
 
+import clases.Propina;
+import clases.Treballador;
+
 public class PayPal extends AppCompatActivity {
+
+    static Treballador treballador = new Treballador();
+    static String empresa = "";
 
     public static final String clientKey = "AewBQqgAdj01PzIY8-9XdU9mtK6rEUPTld1jGAmXmQVWfslV0k2-3Gdeskn6C2q_mfxjpUM_x8QVTsTv";
     public static final int PAYPAL_REQUEST_CODE = 1;
@@ -101,6 +107,7 @@ public class PayPal extends AppCompatActivity {
 
                 // if confirmation is not null
                 if (confirm != null) {
+
                     try {
                         // Getting the payment details
                         String paymentDetails = confirm.toJSONObject().toString(4);
@@ -108,7 +115,15 @@ public class PayPal extends AppCompatActivity {
                         JSONObject payObj = new JSONObject(paymentDetails);
                         String payID = payObj.getJSONObject("response").getString("id");
                         String state = payObj.getJSONObject("response").getString("state");
-                        paymentTV.setText("Payment " + state + "\n with payment id is " + payID);
+                        String pago = payObj.getJSONObject("response").getString("total");
+
+                        /*
+                        if(IniciarSessio.var == 'C'){
+                            Propina propina = new Propina(IniciarSessio.clt, treballador, empresa, pago);
+                        }
+                        */
+
+                        paymentTV.setText("Payment " + state + "\n with payment id is " + payID + ". Pago = " + pago);
                     } catch (JSONException e) {
                         // handling json exception on below line
                         Log.e("Error", "an extremely unlikely failure occurred: ", e);
