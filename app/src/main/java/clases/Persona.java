@@ -190,12 +190,12 @@ public class Persona {
                                     }
                                 }
 
-
                             },
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
+                                    System.out.println(error);
                                     error.printStackTrace();
                                 }
                             }
