@@ -23,7 +23,7 @@ import clases.Treballador;
 
 public class registrarEmpresa extends AppCompatActivity {
     String nomEmp ,nieEmp,dniEmp,nomProp,cpEmp,direccio,paypal;
-    int ubi;
+    String ubi;
     EditText email,contrasena,contrasena2,nomP;
     Button btregistrarEmp;
     TextView mostrar;
@@ -51,7 +51,7 @@ public class registrarEmpresa extends AppCompatActivity {
         nieEmp = nom.getString("nie");
         nomEmp = nom.getString("nomEmp");
         cpEmp = nom.getString("cpEmp");
-        ubi = nom.getInt("ubi");
+        ubi = nom.getString("ubi");
         dniEmp = nom.getString("dni");
         nomProp = nom.getString("nomProp");
         direccio = nom.getString("direccio");
@@ -67,7 +67,7 @@ public class registrarEmpresa extends AppCompatActivity {
                     IniciarSessio.clt.getCp(), IniciarSessio.clt.getPaypal(), IniciarSessio.clt.getContrasena(), IniciarSessio.clt.getNomUsuari());
             IniciarSessio.var = 'P';
             prp.updateNouPropietari(registrarEmpresa.this);
-            Empresa emp = new Empresa(nieEmp, nomEmp, cpEmp, '2', prp, direccio, null, paypal);
+            Empresa emp = new Empresa(nieEmp, nomEmp, cpEmp, ubi, prp, direccio, null, paypal);
             emp.insert(registrarEmpresa.this);
             Intent iniciarEmpresa = new Intent(this, IniciarTreballador.class);
             startActivity(iniciarEmpresa);
