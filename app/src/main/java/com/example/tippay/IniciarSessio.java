@@ -51,6 +51,8 @@ public class IniciarSessio extends AppCompatActivity {
 
         adni = findViewById(R.id.textIniciarSessioINICIAR);
         aContra = findViewById(R.id.textContraseñaINICIAR);
+        System.out.println(dniRecollir);
+        System.out.println(contraRecollir);
         dniRecollir = adni.toString();
         contraRecollir = aContra.toString();
     }
