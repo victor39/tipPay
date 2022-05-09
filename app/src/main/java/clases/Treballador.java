@@ -26,6 +26,10 @@ public class Treballador extends Persona{
 
     public Treballador() {
     }
+    @Override
+    public String toString() {
+        return this.getNom();
+    }
 
     static public void propinesTreballador(Activity act, String dni, final VolleyCallBack callBack){
 
@@ -272,6 +276,10 @@ public class Treballador extends Persona{
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
     }
+
+
 
 }

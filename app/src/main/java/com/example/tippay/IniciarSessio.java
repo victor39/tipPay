@@ -33,10 +33,10 @@ import clases.Treballador;
 
 public class IniciarSessio extends AppCompatActivity {
 
-    static Client clt = new Client();
-    static Treballador trb = new Treballador();
-    static Propietari prp = new Propietari();
-    static char var = 'a';
+    public static Client clt = new Client();
+    public static Treballador trb = new Treballador();
+    public static Propietari prp = new Propietari();
+    public static char var = 'a';
 
     String nomUsuari ,dni, nom, cognom1, cognom2, datanaix, telefon, correu, cp, paypal, contrasena ,treballador,propietari,nie;
     EditText adni , aContra;
@@ -52,23 +52,27 @@ public class IniciarSessio extends AppCompatActivity {
 
         adni=findViewById(R.id.textIniciarSessioINICIAR);
         aContra=findViewById(R.id.textContraseñaINICIAR);
+        String dniRecollir = adni.toString();
+        String contraRecollir = aContra.toString();
 
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Persona.validarUsuari(IniciarSessio.this, );
-            }
+               Persona.validarUsuari(IniciarSessio.this,dniRecollir,contraRecollir ){
+                }
         });
 
     }
+    public void iniciar(ArrayList client) {
+        ArrayList <Persona> person= client;
+        dni = person.get(0).getDni();
+        dni=person.get(1).getNom();
+        nom = person.get(2).getNom();
 
-    public void iniciar (String response) {
-        String[] separar = response.split("#");
         treballador = separar[0];
         propietari = separar[1];
-        dni=separar[2];
-        nom = separar[3];
-        cognom1=separar[4];
+
+        cognom1=person.get(3).getCognom1();
         cognom2= separar[5];
         datanaix = separar[6];
         telefon = separar[7];
@@ -86,7 +90,6 @@ public class IniciarSessio extends AppCompatActivity {
                 @Override
                 public void onSuccess(ArrayList empreses) {
                     ArrayList<Empresa> emps = empreses;
-
                     prp.setEmpresa(emps.get(0).getNIE());
                 }
                 @Override
@@ -94,7 +97,6 @@ public class IniciarSessio extends AppCompatActivity {
 
                 }
             });
-
             var = 'P';
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
             Intent usuari = new Intent(this, iniciarEmpresa.class);
