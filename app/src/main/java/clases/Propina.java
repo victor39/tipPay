@@ -82,7 +82,7 @@ public class Propina {
         Double propina = this.propina;
 
         try {
-            String url = "https://ffames.cat/tippay/Client-insert.php";
+            String url = "https://ffames.cat/tippay/Propina-insert.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,

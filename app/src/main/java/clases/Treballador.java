@@ -36,7 +36,7 @@ public class Treballador extends Persona{
         ArrayList<Propina> propinas = new ArrayList<>();
 
         try {
-            String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
+            String url = "https://ffames.cat/tippay/Treballador-buscarTotsPropines.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -232,6 +232,9 @@ public class Treballador extends Persona{
         }
     }
 
+
+
+    //borrar
     public void delete(Activity act){
         String dni = this.getDni();
 
