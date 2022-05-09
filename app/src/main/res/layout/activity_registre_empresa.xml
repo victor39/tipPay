@@ -11,7 +11,7 @@
         android:id="@+id/registreEmpresaUbicacio"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="336dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ubicació"
@@ -32,14 +32,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/registreEmpresaTipusLocal"
+        android:id="@+id/registreEmpresaCP"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="448dp"
+        android:layout_marginTop="276dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Tipus Local"
+        android:text="CP"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,7 +73,7 @@
         android:id="@+id/registreEmpresaDNI"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="392dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="DNI Propietari"
@@ -81,15 +82,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/registreEmpreNomPropietari"
+        android:id="@+id/registreEmpresaDireccio"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="392dp"
+        android:layout_marginTop="448dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Nom propietari"
+        android:text="Direccio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/registreEmpresaPAY"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="504dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Pay Pal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -122,12 +134,11 @@
         android:id="@+id/registreEmpresaNom"
         android:layout_width="215dp"
         android:layout_height="59dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="208dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Nom Empresa"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

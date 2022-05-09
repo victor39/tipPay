@@ -22,4 +22,11 @@ public class principalClient extends AppCompatActivity {
             Intent favoritos = new Intent(this, favoritos.class);
             startActivity(favoritos);
         }
+        public void registrarEmpresa(View view) {
+        Intent registrarEmpresa = new Intent ( this , registreEmpresa.class);
+        startActivity(registrarEmpresa);
+    }
+
+
+
 }

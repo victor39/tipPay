@@ -10,16 +10,30 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Inteficies.VolleyCallBack;
+
 public class Propietari extends Persona{
 
+    String nie;
 
+    public Propietari(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena,String nomUsuari) {
+        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena,nomUsuari);
 
-    public Propietari(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena) {
-        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena);
+    }
 
+    public Propietari() {
+        super();
+    }
+
+    public void setEmpresa(String nie){
+        this.nie = nie;
+    }
+    public String getEmpresa(){
+        return nie;
     }
 
     @Override
@@ -33,6 +47,66 @@ public class Propietari extends Persona{
         return propietari;
     }
 
+    static public void propinesPropietari(Activity act, String dni, final VolleyCallBack callBack){
+
+        ArrayList<Propina> propinas = new ArrayList<>();
+
+        try {
+            String url = "https://ffames.cat/tippay/Empresa-buscarTotsPropines.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println(response);
+
+                                    String[] res = resultado.split("=");
+
+                                    for (int i = 0; i < res.length; i++){
+
+                                        String[] valores = res[i].split("#");
+
+                                        Propina p = new Propina(valores[0], valores[1], valores[2], Double.parseDouble(valores[3]), valores[4]);
+                                        propinas.add(p);
+                                    }
+
+                                    callBack.onSuccess(propinas);
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    //borrar
     public void insert(Activity act){
 
         String dni = this.getDni();
@@ -99,18 +173,9 @@ public class Propietari extends Persona{
         }
     }
 
-    public void update(Activity act){
+    public void updateNouPropietari(Activity act){
 
         String dni = this.getDni();
-        String nom = this.getNom();
-        String cognom1 = this.getCognom1();
-        String cognom2 = this.getCognom2();
-        String datanaix = this.getDataNaixement();
-        String telefono = this.getTelf();
-        String correu = this.getCorreu();
-        String codipostal = this.getCp();
-        String paypal = this.getPaypal();
-        String contrasena = this.getContrasena();
 
         try {
             String url = "https://ffames.cat/tippay/Propietari-update.php";
@@ -122,10 +187,8 @@ public class Propietari extends Persona{
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
-
-
+                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -144,15 +207,6 @@ public class Propietari extends Persona{
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("dni", dni);
-                            params.put("nom", nom);
-                            params.put("cognom1", cognom1);
-                            params.put("cognom2", cognom2);
-                            params.put("datanaix", datanaix.toString());
-                            params.put("telefono", telefono);
-                            params.put("correu", correu);
-                            params.put("codipostal", codipostal+"");
-                            params.put("paypal", paypal);
-                            params.put("contrasena", contrasena);
                             return params;
                         }
                     };
@@ -165,6 +219,7 @@ public class Propietari extends Persona{
         }
     }
 
+    //borrar
     public void delete(Activity act){
         String dni = this.getDni();
 
@@ -211,6 +266,7 @@ public class Propietari extends Persona{
             e.printStackTrace();
         }
     }
+
     public void buscarPropietari(Activity act){
 
         String dni = this.getDni();
@@ -281,4 +337,62 @@ public class Propietari extends Persona{
         }
     }
 
+    public void buscarEmpresa(Activity act,String nie, final VolleyCallBack callBack){
+
+        String dni = this.getDni();
+        ArrayList<Empresa> empreses = new ArrayList<Empresa>();
+
+        try {
+            String url = "https://ffames.cat/tippay/Propietari-buscarEmpresa.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println(response);
+
+                                    String[] res = resultado.split("=");
+
+                                    for (int i = 0; i < res.length; i++){
+                                        Propietari pro = new Propietari();
+                                        ArrayList<Treballador> treballadors = new ArrayList<>();
+                                        String[] valores = res[i].split("#");
+                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], Integer.parseInt(valores[3]), pro,valores[5], treballadors, valores[6]);
+                                        empreses.add(emp);
+                                    }
+
+                                    callBack.onSuccess(empreses);
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

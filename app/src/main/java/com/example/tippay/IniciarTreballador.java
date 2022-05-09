@@ -15,6 +15,7 @@ public class IniciarTreballador extends AppCompatActivity {
         this.setTitle("Iniciar Treballador");
         
     }
+
     public void historialTreballador(View view) {
         Intent historialTreballador = new Intent(this, HistorialPagaments.class);
         startActivity(historialTreballador);

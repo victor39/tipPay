@@ -8,19 +8,26 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.tippay.HistorialPagaments;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import Inteficies.VolleyCallBack;
+
 public class Client extends Persona{
 
     ArrayList<Empresa> empresasFav;
 
-    public Client(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena, ArrayList<Empresa> empresaFav) {
-        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena);
+    public Client(String dni, String nom, String cognom1, String cognom2, String dataNaixement, String telf, String correu, String cp, String paypal, String contrasena, ArrayList<Empresa> empresaFav, String nomUsuari) {
+        super(dni, nom, cognom1, cognom2, dataNaixement, telf, correu, cp, paypal, contrasena,nomUsuari);
         this.empresasFav = empresaFav;
+    }
+
+    public Client() {
     }
 
     public ArrayList<Empresa> getEmpresasFav() {
@@ -29,6 +36,66 @@ public class Client extends Persona{
 
     public void setEmpresasFav(ArrayList<Empresa> empresasFav) {
         this.empresasFav = empresasFav;
+    }
+
+    static public void propinesClient(Activity act, String dni, final VolleyCallBack callBack){
+
+        ArrayList<Propina> propinas = new ArrayList<>();
+
+        try {
+            String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println(response);
+                                    String[] res = resultado.split("=");
+
+                                    for (int i = 0; i < res.length; i++){
+
+                                        String[] valores = res[i].split("#");
+
+                                        Propina p = new Propina(valores[0], valores[1], valores[2], Double.parseDouble(valores[3]), valores[4]);
+                                        System.out.println("DENTRO " + p.toString());
+                                        propinas.add(p);
+                                    }
+
+                                    callBack.onSuccess(propinas);
+
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
     }
 
     public void insert(Activity act){
@@ -43,9 +110,10 @@ public class Client extends Persona{
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String contrasena = this.getContrasena();
+        String nomUsuari = this.getNomUsuari();
 
         try {
-            String url = "https://ffames.cat/tippay/Client-insert.php";
+            String url = "https://ffames.cat/tippay/Persona-insert.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -55,6 +123,7 @@ public class Client extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
+                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {
@@ -74,14 +143,16 @@ public class Client extends Persona{
                             // the POST parameters:
                             params.put("dni", dni);
                             params.put("nom", nom);
+                            params.put("nomUsuari",nomUsuari);
                             params.put("cognom1", cognom1);
                             params.put("cognom2", cognom2);
-                            params.put("datanaix", datanaix.toString());
+                            params.put("datanaix", datanaix);
                             params.put("telefono", telefono);
                             params.put("correu", correu);
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("contrasena", contrasena);
+
                             return params;
                         }
                     };
@@ -94,6 +165,7 @@ public class Client extends Persona{
         }
     }
 
+    //borrar
     public void update(Activity act){
 
         String dni = this.getDni();
@@ -106,6 +178,7 @@ public class Client extends Persona{
         String codipostal = this.getCp();
         String paypal = this.getPaypal();
         String contrasena = this.getContrasena();
+        String nomUsuari = this.getNomUsuari();
 
         try {
             String url = "https://ffames.cat/tippay/Client-update.php";
@@ -117,8 +190,8 @@ public class Client extends Persona{
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
+                                    System.out.println(response);
 
                                 }
                             },
@@ -147,6 +220,7 @@ public class Client extends Persona{
                             params.put("codipostal", codipostal+"");
                             params.put("paypal", paypal);
                             params.put("contrasena", contrasena);
+                            params.put("nomUsuari",nomUsuari);
                             return params;
                         }
                     };
@@ -159,6 +233,7 @@ public class Client extends Persona{
         }
     }
 
+    //borrar
     public void delete(Activity act){
         String dni = this.getDni();
 
@@ -172,10 +247,8 @@ public class Client extends Persona{
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
-
-
+                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {

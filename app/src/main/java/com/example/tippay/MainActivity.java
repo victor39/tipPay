@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.setTitle("Principal");
-
+/*
         String dni = "56";
         String nom = "jo";
         String cognom1 = "tu";
@@ -49,15 +49,16 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList <Treballador> treb = new ArrayList<>();
         String nieEmp = "3445";
+        String nomb = "nom";
         String cp = "344";
         int ubi = 434;
         String direccio = "direccio";
 
-        Empresa emp = new Empresa(nieEmp,cp,ubi,pro,direccio,treb,paypal);
+        Empresa emp = new Empresa(nieEmp,nomb, cp,ubi,pro,direccio,treb,paypal);
         emp.insert(MainActivity.this);
 
         pro.buscarPropietari(MainActivity.this);
-
+*/
         //Treballador tre = new Treballador(dni, nom, cognom1, cognom2, datanaix, telefono, correu, codipostal, paypal, contrasena);
        // tre.insert(MainActivity.this);
        // tre.update(MainActivity.this);
@@ -68,17 +69,14 @@ public class MainActivity extends AppCompatActivity {
         Intent iniciarSessio = new Intent ( this , IniciarSessio.class);
         startActivity(iniciarSessio);
     }
-    public void registrarEmpresa(View view) {
-        Intent registrarEmpresa = new Intent ( this , registreEmpresa.class);
-        startActivity(registrarEmpresa);
-    }
+
     public void registrarPersona(View view) {
         Intent registrarPersona = new Intent ( this , registrePersona.class);
         startActivity(registrarPersona);
     }
     public void informacio(View view) {
-        Intent informacio = new Intent ( this , informacioPopUp.class);
-        startActivity(informacio);
+        //Intent informacio = new Intent ( this , informacioPopUp.class);
+        //startActivity(informacio);
     }
     public void sortir(View view){
         Toast.makeText(MainActivity.this, "Has tancat la aplicació", Toast.LENGTH_SHORT).show();

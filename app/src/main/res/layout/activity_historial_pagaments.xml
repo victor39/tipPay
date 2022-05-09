@@ -13,6 +13,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="19dp"
         android:layout_marginBottom="664dp"
+        android:onClick="enrere"
         android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +23,8 @@
         android:id="@+id/textView9"
         android:layout_width="274dp"
         android:layout_height="34dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="100dp"
         android:text="Historial de Pagaments "
         android:textSize="24sp"
         android:textStyle="bold"
@@ -43,12 +44,13 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TableLayout
+        android:id="@+id/table_main"
         android:layout_width="398dp"
         android:layout_height="451dp"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="264dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
