@@ -101,15 +101,7 @@ public class Empresa {
 
     @Override
     public String toString() {
-        return "Empresa{" +
-                "NIE='" + NIE + '\'' +
-                ", nom='" + nom + '\'' +
-                ", cp='" + cp + '\'' +
-                ", cordenades=" + cordenades +
-                ", propietari=" + propietari +
-                ", direccio='" + direccio + '\'' +
-                ", paypal='" + paypal + '\'' +
-                '}';
+        return nom + "/" + NIE;
     }
 
     public void insert(Activity act ){

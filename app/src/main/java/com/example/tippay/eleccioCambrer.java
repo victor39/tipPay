@@ -67,4 +67,10 @@ public class eleccioCambrer extends AppCompatActivity {
         sp.setAdapter(adapter);
     }
 
+    public void eleccioQty(View view) {
+
+        //PayPal.treballador = String.valueOf(dni);
+        Intent pagar = new Intent(this, PayPal.class);
+        startActivity(pagar);
+    }
 }
