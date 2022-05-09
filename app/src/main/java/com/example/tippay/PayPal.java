@@ -3,6 +3,8 @@ package com.example.tippay;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.paypal.android.sdk.payments.PayPalConfiguration;
@@ -23,9 +26,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+import clases.Propina;
+import clases.Treballador;
 
 public class PayPal extends AppCompatActivity {
 
+    public static String treballador = "";
+    public static String empresa = "";
+    public static Float propina = 0f;
     public static final String clientKey = "AewBQqgAdj01PzIY8-9XdU9mtK6rEUPTld1jGAmXmQVWfslV0k2-3Gdeskn6C2q_mfxjpUM_x8QVTsTv";
     public static final int PAYPAL_REQUEST_CODE = 1;
 
@@ -86,6 +96,7 @@ public class PayPal extends AppCompatActivity {
         startActivityForResult(intent, PAYPAL_REQUEST_CODE);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -102,14 +113,19 @@ public class PayPal extends AppCompatActivity {
                 // if confirmation is not null
                 if (confirm != null) {
                     try {
-                        // Getting the payment details
-                        String paymentDetails = confirm.toJSONObject().toString(4);
-                        // on below line we are extracting json response and displaying it in a text view.
-                        JSONObject payObj = new JSONObject(paymentDetails);
-                        String payID = payObj.getJSONObject("response").getString("id");
-                        String state = payObj.getJSONObject("response").getString("state");
-                        paymentTV.setText("Payment " + state + "\n with payment id is " + payID);
-                    } catch (JSONException e) {
+
+                        if(IniciarSessio.var == 'C') {
+                            Propina propina = new Propina(IniciarSessio.clt.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
+                            propina.insert(this);
+                        }else if(IniciarSessio.var == 'T'){
+                            Propina propina = new Propina(IniciarSessio.trb.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
+                            propina.insert(this);
+                        }else if(IniciarSessio.var == 'P'){
+                            Propina propina = new Propina(IniciarSessio.prp.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
+                            propina.insert(this);
+                        }
+
+                    } catch (Exception e) {
                         // handling json exception on below line
                         Log.e("Error", "an extremely unlikely failure occurred: ", e);
                     }
