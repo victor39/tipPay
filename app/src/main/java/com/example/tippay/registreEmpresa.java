@@ -18,14 +18,16 @@ public class registreEmpresa extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registre_empresa);
 
+
         nieEmp = findViewById(R.id.registreEmpresaNIE);
         nomEmp = findViewById(R.id.registreEmpresaNom);
         cpEmp = findViewById(R.id.registreEmpresaCP);
         ubiEmp = findViewById(R.id.registreEmpresaUbicacio);
-        dniEmp = findViewById(R.id.registreEmpresaDNI);
+        dniEmp = findViewById(R.id.TExtInput);
         nomProp = findViewById(R.id.registreEmpresaDireccio);
         direccio = findViewById(R.id.registreEmpresaDireccio);
         paypal = findViewById(R.id.registreEmpresaPAY);
+
 
     }
     public void registre2Empresa(View view) {

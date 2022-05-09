@@ -1,9 +1,11 @@
 package com.example.tippay;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -63,6 +65,7 @@ public class registraUsuari extends AppCompatActivity {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void returnMain(View view) {
         Intent returnMain = new Intent(this, MainActivity.class);
         startActivity(returnMain);

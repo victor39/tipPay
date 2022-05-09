@@ -27,6 +27,7 @@ import java.util.Map;
 import Inteficies.VolleyCallBack;
 import clases.Client;
 import clases.Empresa;
+import clases.Persona;
 import clases.Propietari;
 import clases.Treballador;
 
@@ -55,47 +56,13 @@ public class IniciarSessio extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validarUsuari("https://ffames.cat/tippay/Usuari-validar.php");
+               // Persona.validarUsuari(IniciarSessio.this, );
             }
         });
 
     }
-    public void validarUsuari(String URL){
-        StringRequest stringRequest= new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-            @Override
-            //mirarem si l'dni i contraseña son correctas
-            public void onResponse(String response) {
-                if(!response.isEmpty()){
-                    iniciar(response);
-                    //Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
 
-                }else{
-                    Toast.makeText(IniciarSessio.this, "Usuario o contraseña incorrecta ", Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                }
-            }
-        },new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error){
-                //llençar l'error per veure que falla
-                Toast.makeText(IniciarSessio.this, error.toString(), Toast.LENGTH_SHORT).show();
-
-            }
-        }){
-            @Nullable
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<String,String>();
-                parametros.put("Dni",adni.getText().toString());
-                parametros.put("Contrasena",aContra.getText().toString());
-
-                return parametros;
-            }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }
     public void iniciar (String response) {
-        System.out.println(response);
         String[] separar = response.split("#");
         treballador = separar[0];
         propietari = separar[1];

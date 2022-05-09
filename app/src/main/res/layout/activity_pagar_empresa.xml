@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pagarEmpresa">
+
+    <Button
+        android:id="@+id/btReturnIniciar2"
+        android:layout_width="55dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="11dp"
+        android:background="#14FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        android:foregroundTint="#00FFFFFF"
+        android:onClick="volver"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconTint="#0E0101"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textBuscarCP"
+        android:layout_width="264dp"
+        android:layout_height="47dp"
+        android:text="Quina empresa vols ? "
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16" />
+
+    <Spinner
+        android:id="@+id/spEmpresas"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.438"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btBuscarCP"
+        android:layout_width="58dp"
+        android:layout_height="48dp"
+        android:background="#11FFFFFF"
+        android:text="Button"
+        android:onClick="buscar"
+        app:icon="@android:drawable/ic_menu_search"
+        app:iconTint="#121010"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.307" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="252dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textCP"
+            android:layout_width="246dp"
+            android:layout_height="55dp"
+            android:hint="Posa el teu CP "
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="eleccioCambrer"
+        android:text="Eleccio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spEmpresas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
