@@ -28,7 +28,7 @@ public class HistorialPagaments extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial_pagaments);
 
-        Client.propinesClient(this, IniciarSessio.clt.getDni(), new VolleyCallBack(){
+        Client.propinesClient(this, IniciarSessio.trb.getDni(), new VolleyCallBack(){
             @Override
             public void onSuccess(ArrayList prop){
 
