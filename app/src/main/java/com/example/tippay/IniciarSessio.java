@@ -48,16 +48,17 @@ public class IniciarSessio extends AppCompatActivity {
         setContentView(R.layout.activity_iniciar_sessio);
 
         btnIniciar = findViewById(R.id.btIniciarSessio);
-
         adni = findViewById(R.id.textIniciarSessioINICIAR);
         aContra = findViewById(R.id.textContraseñaINICIAR);
+
+    }
+
+    public void iniciar(View view){
         dniRecollir = adni.getText().toString();
         contraRecollir = aContra.getText().toString();
         System.out.println(dniRecollir);
         System.out.println(contraRecollir);
-    }
 
-    public void iniciar(View view){
         Persona.validarUsuari(IniciarSessio.this, dniRecollir, contraRecollir);
         if (var==('P')) {
             prp.buscarEmpresa(this, prp.getDni(), new VolleyCallBack() {

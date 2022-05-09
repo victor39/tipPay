@@ -163,7 +163,6 @@ public class Persona {
 
     static public void validarUsuari(Activity act, String dni, String psw){
          try {
-             ArrayList<Persona> persones = new ArrayList<Persona>();
              String url = "https://ffames.cat/tippay/Usuari-validar.php";
              StringRequest postRequest = new
                      //crear constructor
@@ -171,25 +170,22 @@ public class Persona {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    //devuelve el resultado de la consulta
-                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    System.out.println(response);
                                     String resultado = response;
-                                    System.out.println(resultado);
                                     String[] valores = resultado.split("#");
-                                    if(valores[0] == "1"){
+                                    if(valores[0].equals("1")){
                                         IniciarSessio.trb =  new Treballador(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
                                         IniciarSessio.var= 'T';
                                     }
-                                    else if(valores[1] == "1"){
+                                    else if(valores[1].equals("1")){
                                         IniciarSessio.prp = new Propietari(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
                                         IniciarSessio.var = 'P';
                                     }
-                                    else if(valores[0] == "0"){
+                                    else if(valores[0].equals("0")){
                                         IniciarSessio.clt = new Client(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12],null, valores[4]);
                                         IniciarSessio.var = 'C';
                                     }
                                 }
-
                             },
                             new Response.ErrorListener() {
                                 @Override
@@ -209,13 +205,14 @@ public class Persona {
                             // the POST parameters:
                             params.put("dni", dni);
                             params.put("psw", psw);
+                            System.out.println(params);
                             return params;
                         }
                     };
             //ejecutar y pasar parametros
             RequestQueue requestQueue = Volley.newRequestQueue(act);
             requestQueue.add(postRequest);
-            System.out.println("entra");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
