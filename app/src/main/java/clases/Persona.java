@@ -172,10 +172,10 @@ public class Persona {
                                 public void onResponse(String response) {
                                     String resultado = response;
                                     String[] valores = resultado.split("#");
+                                    System.out.println(response);
                                     if(valores[0].equals("1")){
                                         IniciarSessio.trb =  new Treballador(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
                                         IniciarSessio.var= 'T';
-
                                         callBack.onSuccess();
                                     }
                                     else if(valores[1].equals("1")){
