@@ -170,7 +170,6 @@ public class Persona {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    System.out.println(response);
                                     String resultado = response;
                                     String[] valores = resultado.split("#");
                                     if(valores[0].equals("1")){
@@ -195,7 +194,6 @@ public class Persona {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
-                                    System.out.println(error);
                                     error.printStackTrace();
                                 }
                             }
@@ -209,7 +207,6 @@ public class Persona {
                             // the POST parameters:
                             params.put("dni", dni);
                             params.put("psw", psw);
-                            System.out.println(params);
                             return params;
                         }
                     };
