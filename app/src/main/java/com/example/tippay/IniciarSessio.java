@@ -51,8 +51,10 @@ public class IniciarSessio extends AppCompatActivity {
 
         adni = findViewById(R.id.textIniciarSessioINICIAR);
         aContra = findViewById(R.id.textContraseñaINICIAR);
-        dniRecollir = adni.toString();
-        contraRecollir = aContra.toString();
+        dniRecollir = adni.getText().toString();
+        contraRecollir = aContra.getText().toString();
+        System.out.println(dniRecollir);
+        System.out.println(contraRecollir);
     }
 
     public void iniciar(View view){
@@ -66,7 +68,6 @@ public class IniciarSessio extends AppCompatActivity {
                 }
                 @Override
                 public void onSuccess() {
-
                 }
             });
             Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
