@@ -22,6 +22,8 @@ import clases.Treballador;
 
 public class eleccioCambrer extends AppCompatActivity {
 
+    ArrayList<Treballador> treball = new ArrayList<>();
+
     TextView text;
     Bundle recoger;
     Spinner sp ;
@@ -47,6 +49,7 @@ public class eleccioCambrer extends AppCompatActivity {
             emp.totsTreballadors(eleccioCambrer.this, nie, new VolleyCallBack() {
                 @Override
                 public void onSuccess(ArrayList treballadors) {
+                    treball = treballadors;
                     rellenarSpinner(treballadors);
                 }
 
@@ -63,13 +66,14 @@ public class eleccioCambrer extends AppCompatActivity {
     public void rellenarSpinner(ArrayList treballadors){
         ArrayList <Treballador> treb= treballadors;
         sp= findViewById(R.id.spinner);
-        ArrayAdapter<Treballador> adapter = new ArrayAdapter<Treballador>(this, android.R.layout.simple_list_item_1,treb);
+        ArrayAdapter<Treballador> adapter = new ArrayAdapter<Treballador>(this, android.R.layout.simple_list_item_1, treb);
         sp.setAdapter(adapter);
     }
 
     public void eleccioQty(View view) {
 
-        //PayPal.treballador = String.valueOf(dni);
+        int pos = sp.getSelectedItemPosition();
+        PayPal.treballador = treball.get(pos).getDni();
         Intent pagar = new Intent(this, PayPal.class);
         startActivity(pagar);
     }

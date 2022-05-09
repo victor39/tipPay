@@ -1,9 +1,7 @@
 package com.example.tippay;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,14 +20,11 @@ import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
 import com.paypal.android.sdk.payments.PaymentConfirmation;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import java.util.Calendar;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import clases.Propina;
-import clases.Treballador;
 
 public class PayPal extends AppCompatActivity {
 
