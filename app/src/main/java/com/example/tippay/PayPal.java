@@ -117,14 +117,18 @@ public class PayPal extends AppCompatActivity {
                     try {
 
                         if(IniciarSessio.var == 'C') {
+                            System.out.println(LocalDateTime.now());
                             Propina propina = new Propina(IniciarSessio.clt.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
                             propina.insert(this);
+
                         }else if(IniciarSessio.var == 'T'){
                             Propina propina = new Propina(IniciarSessio.trb.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
                             propina.insert(this);
+
                         }else if(IniciarSessio.var == 'P'){
                             Propina propina = new Propina(IniciarSessio.prp.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
                             propina.insert(this);
+
                         }
 
                     } catch (Exception e) {

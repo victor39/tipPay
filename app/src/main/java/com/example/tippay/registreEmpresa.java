@@ -23,7 +23,7 @@ public class registreEmpresa extends AppCompatActivity {
         nomEmp = findViewById(R.id.registreEmpresaNom);
         cpEmp = findViewById(R.id.registreEmpresaCP);
         ubiEmp = findViewById(R.id.registreEmpresaUbicacio);
-        dniEmp = findViewById(R.id.TExtInput);
+        dniEmp = findViewById(R.id.registreEmpresaDNI);
         nomProp = findViewById(R.id.registreEmpresaDireccio);
         direccio = findViewById(R.id.registreEmpresaDireccio);
         paypal = findViewById(R.id.registreEmpresaPAY);

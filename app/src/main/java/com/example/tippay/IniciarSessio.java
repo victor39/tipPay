@@ -93,7 +93,6 @@ public class IniciarSessio extends AppCompatActivity {
                         Toast.makeText(IniciarSessio.this, "Has iniciat sessió com Client", Toast.LENGTH_SHORT).show();
                         Intent usuari = new Intent(IniciarSessio.this, principalClient.class);
                         startActivity(usuari);
-
                     }
                 }
         });
@@ -102,5 +101,10 @@ public class IniciarSessio extends AppCompatActivity {
     public void returnIniciar(View view) {
         Intent returnIniciar = new Intent(this, MainActivity.class);
         startActivity(returnIniciar);
+    }
+
+    public void info(View view) {
+        Intent info = new Intent(this, informacioPopUp.class);
+        startActivity(info);
     }
 }

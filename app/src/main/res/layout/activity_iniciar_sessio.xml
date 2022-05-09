@@ -57,6 +57,7 @@
         android:layout_height="56dp"
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
+        android:onClick="info"
         app:icon="@android:drawable/ic_dialog_info"
         app:iconTint="#0C0505"
         app:layout_constraintBottom_toBottomOf="parent"

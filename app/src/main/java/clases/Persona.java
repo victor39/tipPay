@@ -160,7 +160,6 @@ public class Persona {
                 ", nomUsuari='" + nomUsuari + '\'' +
                 '}';
     }
-
     static public void validarUsuari(Activity act, String dni, String psw, VolleyCallBack callBack){
          try {
              String url = "https://ffames.cat/tippay/Usuari-validar.php";
