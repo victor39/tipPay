@@ -69,8 +69,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.400
-"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.211">
@@ -111,7 +110,7 @@
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout7"
-        app:layout_constraintVertical_bias="0.016">
+        app:layout_constraintVertical_bias="0.026">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreCognom"
@@ -129,7 +128,7 @@
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482">
+        app:layout_constraintVertical_bias="0.492">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreCognom2"
@@ -147,7 +146,7 @@
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.594">
+        app:layout_constraintVertical_bias="0.606">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreDataNaix"
@@ -165,7 +164,7 @@
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754">
+        app:layout_constraintVertical_bias="0.764">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreCP"
@@ -183,7 +182,7 @@
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.841">
+        app:layout_constraintVertical_bias="0.857">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registrePAYPAL"
@@ -200,7 +199,7 @@
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.661">
+        app:layout_constraintVertical_bias="0.673">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreTelef"
