@@ -123,7 +123,6 @@ public class Client extends Persona{
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
-                                    System.out.println(response);
                                 }
                             },
                             new Response.ErrorListener() {

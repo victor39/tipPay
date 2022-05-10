@@ -71,8 +71,18 @@ public class HistorialPagaments extends AppCompatActivity {
     }
 
     protected void enrere(View view){
-        Intent enrere = new Intent(this, IniciarTreballador.class);
-        startActivity(enrere);
+        if(IniciarSessio.var == 'C') {
+            Intent enrere = new Intent(this, principalClient.class);
+            startActivity(enrere);
+        }
+        else if(IniciarSessio.var == 'T') {
+            Intent enrere = new Intent(this, IniciarTreballador.class);
+            startActivity(enrere);
+        }
+        else if(IniciarSessio.var == 'P') {
+            Intent enrere = new Intent(this, iniciarEmpresa.class);
+            startActivity(enrere);
+        }
     }
 
     protected void emplenarTaula(ArrayList<Propina> propinas, char tipus){

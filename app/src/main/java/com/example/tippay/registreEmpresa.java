@@ -23,7 +23,7 @@ public class registreEmpresa extends AppCompatActivity {
         nomEmp = findViewById(R.id.registreEmpresaNom);
         cpEmp = findViewById(R.id.registreEmpresaCP);
         ubiEmp = findViewById(R.id.registreEmpresaUbicacio);
-        dniEmp = findViewById(R.id.TExtInput);
+        dniEmp = findViewById(R.id.registreEmpresaDNI);
         nomProp = findViewById(R.id.registreEmpresaDireccio);
         direccio = findViewById(R.id.registreEmpresaDireccio);
         paypal = findViewById(R.id.registreEmpresaPAY);
@@ -45,8 +45,19 @@ public class registreEmpresa extends AppCompatActivity {
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void returnEmpresa(View view) {
-        Intent main = new Intent(this, MainActivity.class);
-        startActivity(main);
+        if(IniciarSessio.var == 'C'){
+            Intent returnRegistre = new Intent ( this , principalClient.class);
+            startActivity(returnRegistre);
+        }
+        else if(IniciarSessio.var == 'P'){
+            Intent returnRegistre = new Intent ( this , iniciarEmpresa.class);
+            startActivity(returnRegistre);
+        }
+        else if(IniciarSessio.var == 'T'){
+            Intent returnRegistre = new Intent ( this , IniciarTreballador.class);
+            startActivity(returnRegistre);
+        }
+
 
     }
 }

@@ -144,6 +144,7 @@ public class Empresa {
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("NIE", NIE);
+                            params.put("nom",nom);
                             params.put("cp", cp);
                             params.put("cordenades", cordenades + "");
                             params.put("propietari", propietari);

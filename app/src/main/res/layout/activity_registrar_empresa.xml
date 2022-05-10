@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/returnRegistre4"
+        android:id="@+id/btnReturnregistreEmpre"
         android:layout_width="48dp"
         android:layout_height="46dp"
         android:background="#00FFFFFF"
@@ -39,7 +39,7 @@
         app:iconTint="#A38F8F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -93,11 +93,12 @@
         android:id="@+id/textInputLayout9"
         android:layout_width="307dp"
         android:layout_height="58dp"
-        android:layout_marginBottom="372dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.459">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/validarNomProp"
@@ -127,9 +128,10 @@
         android:layout_width="305dp"
         android:layout_height="62dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout10"
-        app:layout_constraintVertical_bias="0.122"
-        tools:layout_editor_absoluteX="48dp">
+        app:layout_constraintVertical_bias="0.122">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registrarContraEmpr"

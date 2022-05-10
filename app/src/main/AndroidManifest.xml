@@ -18,6 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TipPay">
         <activity
+            android:name=".informacioPayPal"
+            android:exported="false"
+            android:theme="@style/Theme.TipPay.TemapopUP"
+            />
+        <activity
             android:name=".eleccioCambrer"
             android:exported="false" />
         <activity

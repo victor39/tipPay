@@ -160,7 +160,6 @@ public class Persona {
                 ", nomUsuari='" + nomUsuari + '\'' +
                 '}';
     }
-
     static public void validarUsuari(Activity act, String dni, String psw, VolleyCallBack callBack){
          try {
              String url = "https://ffames.cat/tippay/Usuari-validar.php";
@@ -170,15 +169,12 @@ public class Persona {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    //devuelve el resultado de la consulta
-                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
-                                    System.out.println(resultado);
                                     String[] valores = resultado.split("#");
+                                    System.out.println(response);
                                     if(valores[0].equals("1")){
                                         IniciarSessio.trb =  new Treballador(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
                                         IniciarSessio.var= 'T';
-
                                         callBack.onSuccess();
                                     }
                                     else if(valores[1].equals("1")){
@@ -192,13 +188,11 @@ public class Persona {
                                         callBack.onSuccess();
                                     }
                                 }
-
                             },
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
                                     //si hay un error lo muestra
-                                    System.out.println(error);
                                     error.printStackTrace();
                                 }
                             }
@@ -218,7 +212,7 @@ public class Persona {
             //ejecutar y pasar parametros
             RequestQueue requestQueue = Volley.newRequestQueue(act);
             requestQueue.add(postRequest);
-            System.out.println("entra");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
