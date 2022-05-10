@@ -134,7 +134,6 @@ public class GTreballadors extends AppCompatActivity {
                    }
                });
            }
-
        }
     public void atras(View view) {
         Intent returnClient = new Intent(this, iniciarEmpresa.class);
