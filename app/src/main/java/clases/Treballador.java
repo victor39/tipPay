@@ -26,13 +26,17 @@ public class Treballador extends Persona{
 
     public Treballador() {
     }
+    @Override
+    public String toString() {
+        return this.getNom();
+    }
 
     static public void propinesTreballador(Activity act, String dni, final VolleyCallBack callBack){
 
         ArrayList<Propina> propinas = new ArrayList<>();
 
         try {
-            String url = "https://ffames.cat/tippay/Client-buscarTotsPropines.php";
+            String url = "https://ffames.cat/tippay/Treballador-buscarTotsPropines.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,
@@ -228,6 +232,9 @@ public class Treballador extends Persona{
         }
     }
 
+
+
+    //borrar
     public void delete(Activity act){
         String dni = this.getDni();
 
@@ -272,6 +279,10 @@ public class Treballador extends Persona{
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
     }
+
+
 
 }

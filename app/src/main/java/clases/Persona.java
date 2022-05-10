@@ -160,28 +160,34 @@ public class Persona {
                 ", nomUsuari='" + nomUsuari + '\'' +
                 '}';
     }
-
-    static public void validarUsuari(Activity act, String dni, String psw, final VolleyCallBack callBack){
+    static public void validarUsuari(Activity act, String dni, String psw, VolleyCallBack callBack){
          try {
-             ArrayList<Persona> persones = new ArrayList<Persona>();
-             String url = "https://ffames.cat/tippay/Usuarui-validar.php";
+             String url = "https://ffames.cat/tippay/Usuari-validar.php";
              StringRequest postRequest = new
                      //crear constructor
                     StringRequest(Request.Method.POST, url,
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    //devuelve el resultado de la consulta
-                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
-                                    System.out.println(resultado);
                                     String[] valores = resultado.split("#");
-                                    Persona pre = new Persona(valores[2], valores[4], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[2]);
-                                    persones.add(pre);
-                                    callBack.onSuccess(persones);
-
+                                    System.out.println(response);
+                                    if(valores[0].equals("1")){
+                                        IniciarSessio.trb =  new Treballador(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
+                                        IniciarSessio.var= 'T';
+                                        callBack.onSuccess();
+                                    }
+                                    else if(valores[1].equals("1")){
+                                        IniciarSessio.prp = new Propietari(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12], valores[4]);
+                                        IniciarSessio.var = 'P';
+                                        callBack.onSuccess();
+                                    }
+                                    else if(valores[0].equals("0")){
+                                        IniciarSessio.clt = new Client(valores[2], valores[3], valores[5], valores[6], valores[7],valores[8], valores[9], valores[10], valores[11],valores[12],null, valores[4]);
+                                        IniciarSessio.var = 'C';
+                                        callBack.onSuccess();
+                                    }
                                 }
-
                             },
                             new Response.ErrorListener() {
                                 @Override
@@ -206,7 +212,7 @@ public class Persona {
             //ejecutar y pasar parametros
             RequestQueue requestQueue = Volley.newRequestQueue(act);
             requestQueue.add(postRequest);
-            System.out.println("entra");
+
         } catch (Exception e) {
             e.printStackTrace();
         }

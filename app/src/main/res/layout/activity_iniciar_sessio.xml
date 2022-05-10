@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".IniciarSessio">
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="177dp"
+        android:layout_height="79dp"
+        app:layout_constraintBottom_toTopOf="@+id/textIniciar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/captura" />
+
     <EditText
         android:id="@+id/textIniciar"
         android:layout_width="214dp"
@@ -24,12 +34,13 @@
         android:id="@+id/btIniciarSessio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="iniciar"
         android:text="Iniciar Sessió"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.803" />
 
     <Button
         android:id="@+id/btReturnIniciar"
@@ -56,6 +67,7 @@
         android:layout_height="56dp"
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
+        android:onClick="info"
         app:icon="@android:drawable/ic_dialog_info"
         app:iconTint="#0C0505"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,28 +81,29 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIniciarSessio"
-        android:layout_width="320dp"
-        android:layout_height="61dp"
+        android:layout_width="314dp"
+        android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405">
+        app:layout_constraintVertical_bias="0.406">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textIniciarSessioINICIAR"
-            android:layout_width="316dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="DNI?" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
-        android:layout_width="316dp"
-        android:layout_height="52dp"
+        android:layout_width="315dp"
+        android:layout_height="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -100,6 +113,25 @@
             android:layout_height="match_parent"
             android:hint="Contraseña"
             android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="315dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toTopOf="@+id/btIniciarSessio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+        app:layout_constraintVertical_bias="0.114">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textContraseña2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Torna a posar la contraseña"
+            android:inputType="textPassword"
+            tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,10 +7,11 @@
     tools:context=".misTips">
 
     <TableLayout
+        android:id="@+id/table_main"
         android:layout_width="404dp"
         android:layout_height="511dp"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="176dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,28 +38,31 @@
         android:id="@+id/textView13"
         android:layout_width="162dp"
         android:layout_height="59dp"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="152dp"
         android:text="TIPS "
+        android:textAlignment="center"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/table_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
 
     <Button
         android:id="@+id/btReturn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="294dp"
-        android:layout_marginBottom="656dp"
+        android:layout_width="47dp"
+        android:layout_height="38dp"
+        android:background="#05FFFFFF"
+        android:backgroundTint="#00FFFFFF"
         android:onClick="returnTips"
         android:text="Button"
+        app:icon="?attr/homeAsUpIndicator"
+        app:iconTint="#0C0C0C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        tools:ignore="TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,13 +21,13 @@ public class Empresa {
     private String NIE;
     private String nom;
     private String cp;
-    private int cordenades;
+    private String cordenades;
     private Propietari propietari;
     private String direccio;
     private ArrayList<Treballador> treballadors;
     private String paypal;
 
-    public Empresa(String NIE, String nom, String cp, int cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal) {
+    public Empresa(String NIE, String nom, String cp, String cordenades, Propietari propietari, String direccio, ArrayList<Treballador> treballadors, String paypal) {
 
         this.NIE = NIE;
         this.nom = nom;
@@ -66,11 +66,11 @@ public class Empresa {
         this.cp = cp;
     }
 
-    public int getCordenades() {
+    public String getCordenades() {
         return cordenades;
     }
 
-    public void setCordenades(int cordenades) {
+    public void setCordenades(String cordenades) {
         this.cordenades = cordenades;
     }
 
@@ -101,7 +101,7 @@ public class Empresa {
 
     @Override
     public String toString() {
-        return this.nom + "/" + this.NIE;
+        return nom + "/" + NIE;
     }
 
     public void insert(Activity act ){
@@ -109,7 +109,7 @@ public class Empresa {
         String NIE = this.NIE;
         String nom = this.nom;
         String cp = this.cp;
-        int cordenades = this.cordenades;
+        String cordenades = this.cordenades;
         String propietari = this.propietari.getDni();
         String direccio = this.direccio;
         ArrayList<Treballador> treballadors;
@@ -144,6 +144,7 @@ public class Empresa {
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("NIE", NIE);
+                            params.put("nom",nom);
                             params.put("cp", cp);
                             params.put("cordenades", cordenades + "");
                             params.put("propietari", propietari);
@@ -166,7 +167,7 @@ public class Empresa {
         String NIE = this.NIE;
         String nom = this.nom;
         String cp = this.cp;
-        int cordenades = this.cordenades;
+        String cordenades = this.cordenades;
         String propietari = this.propietari.getDni();
         String direccio = this.direccio;
         ArrayList<Treballador> treballadors;
@@ -183,7 +184,6 @@ public class Empresa {
                                 public void onResponse(String response) {
                                     //devuelve el resultado de la consulta
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
-
                                     String resultado = response;
                                     System.out.println(response);
 
@@ -324,6 +324,7 @@ public class Empresa {
 
 
     }
+
     //todas las empresas por cp
     public static void todasCP(Activity act, String cp, final VolleyCallBack callBack){
         ArrayList<Empresa> empreses = new ArrayList<Empresa>();
@@ -340,14 +341,14 @@ public class Empresa {
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
                                     String resultado = response;
                                     System.out.println(response);
+
                                     String[] res = resultado.split("=");
 
                                     for (int i = 0; i < res.length; i++){
                                         Propietari pro = new Propietari();
                                         ArrayList<Treballador> treballadors = new ArrayList<Treballador>();
                                         String[] valores = res[i].split("#");
-                                        //porque peta aunque devuelva un integer :S
-                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], '1', pro,valores[5], treballadors, valores[6]);
+                                        Empresa emp = new Empresa(valores[0], valores[1], valores[2], valores[3], pro,valores[5], treballadors, valores[6]);
                                         empreses.add(emp);
                                     }
                                     callBack.onSuccess(empreses);
@@ -369,6 +370,276 @@ public class Empresa {
                             Map<String, String> params = new HashMap<>();
                             // the POST parameters:
                             params.put("codipostal", cp);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    //activar treballador
+    public void nouTreballador(Activity act, String dni ){
+
+        try {
+            String url = "https://ffames.cat/tippay/Treballador-updateNou.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println(response);
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //desactivar treballador
+    public void vellTreballador(Activity act, String dni ){
+        String NIE = this.NIE;
+
+        try {
+            String url = "https://ffames.cat/tippay/Treballador-updateVell.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println(response);
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //alta nou treballador EmpresaTreballador-insup.php
+    public void altaNouTreballador(Activity act, String dni ){
+        String nie = this.getNIE();
+        try {
+            String url = "https://ffames.cat/tippay/EmpresaTreballador-insup.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println(response);
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    //baixa nou treballador EmpresaTreballador-insup.php
+    public void baixaNouTreballador(Activity act, String dni ){
+        String nie = this.getNIE();
+        try {
+            String url = "https://ffames.cat/tippay/EmpresaTreballador-insupBaixa.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println(response);
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void acomiadarTreballador(Activity act, String dni, String nie, VolleyCallBack callBack){
+        ArrayList<Empresa> empreses = new ArrayList<Empresa>();
+
+        try {
+            String url = "https://ffames.cat/tippay/EmpresaTreballador-insupBaixa.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println(response);
+
+                                    callBack.onSuccess();
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            params.put("nie", nie);
+                            return params;
+                        }
+                    };
+            //ejecutar y pasar parametros
+            RequestQueue requestQueue = Volley.newRequestQueue(act);
+            requestQueue.add(postRequest);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static void contractarTreballador(Activity act, String dni, String nie, VolleyCallBack callBack){
+        ArrayList<Empresa> empreses = new ArrayList<Empresa>();
+
+        try {
+            String url = "https://ffames.cat/tippay/EmpresaTreballador-insup.php";
+            StringRequest postRequest = new
+                    //crear constructor
+                    StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    //devuelve el resultado de la consulta
+                                    //si hay un error de sintaxis en la consulta del php lo devolvera aqui
+                                    String resultado = response;
+                                    System.out.println("Resposta " + response);
+
+                                    callBack.onSuccess();
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    //si hay un error lo muestra
+                                    error.printStackTrace();
+                                }
+                            }
+                    ) {
+
+                        //generar clave-valor
+                        @Override
+                        protected Map<String, String> getParams() {
+
+                            Map<String, String> params = new HashMap<>();
+                            // the POST parameters:
+                            params.put("dni", dni);
+                            params.put("nie", nie);
                             return params;
                         }
                     };

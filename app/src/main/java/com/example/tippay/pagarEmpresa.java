@@ -57,6 +57,7 @@ public class pagarEmpresa extends AppCompatActivity  {
         System.out.println(nie);
         extras.putString("nom", String.valueOf(nom));
         extras.putString("nie", String.valueOf(nie));
+        PayPal.empresa = String.valueOf(nie);
         Intent inici = new Intent(this, eleccioCambrer.class);
         inici.putExtras(extras);
         startActivity(inici);

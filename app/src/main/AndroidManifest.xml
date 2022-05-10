@@ -34,9 +34,6 @@
             android:name=".afegirTreballador"
             android:exported="true" />
         <activity
-            android:name=".qr"
-            android:exported="true" />
-        <activity
             android:name=".misTips"
             android:exported="true" />
         <activity
@@ -59,9 +56,6 @@
             android:exported="true" />
         <activity
             android:name=".IniciarTreballador"
-            android:exported="true" />
-        <activity
-            android:name=".tancarSessio"
             android:exported="true" />
         <activity
             android:name=".registrarEmpresa"

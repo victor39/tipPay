@@ -7,6 +7,25 @@
     tools:context=".GTreballadors">
 
     <Button
+        android:id="@+id/btReturnGtreballadors"
+        android:layout_width="55dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="16dp"
+        android:background="#14FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        android:foregroundTint="#00FFFFFF"
+        android:onClick="atras"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconTint="#0E0101"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
         android:id="@+id/btnAfegir"
         android:layout_width="105dp"
         android:layout_height="54dp"

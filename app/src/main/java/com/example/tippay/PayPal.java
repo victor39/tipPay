@@ -1,16 +1,18 @@
 package com.example.tippay;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.paypal.android.sdk.payments.PayPalConfiguration;
@@ -19,19 +21,20 @@ import com.paypal.android.sdk.payments.PayPalService;
 import com.paypal.android.sdk.payments.PaymentActivity;
 import com.paypal.android.sdk.payments.PaymentConfirmation;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import java.util.Calendar;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+import clases.Propina;
 
 import clases.Propina;
 import clases.Treballador;
 
 public class PayPal extends AppCompatActivity {
 
-    static Treballador treballador = new Treballador();
-    static String empresa = "";
-
+    public static String treballador = "";
+    public static String empresa = "";
+    public static Float propina = 0f;
     public static final String clientKey = "AewBQqgAdj01PzIY8-9XdU9mtK6rEUPTld1jGAmXmQVWfslV0k2-3Gdeskn6C2q_mfxjpUM_x8QVTsTv";
     public static final int PAYPAL_REQUEST_CODE = 1;
 
@@ -63,7 +66,7 @@ public class PayPal extends AppCompatActivity {
 
         // creating a variable for button, edit text and status tv.
         Button makePaymentBtn = (Button) findViewById(R.id.idBtnPay);
-        paymentTV = findViewById(R.id.idTVStatus);
+
 
         // on below line adding click listener to our make payment button.
         makePaymentBtn.setOnClickListener(PayPalListener);
@@ -73,6 +76,8 @@ public class PayPal extends AppCompatActivity {
 
         // Getting the amount from editText
         String amount = amountEdt.getText().toString();
+
+        PayPal.propina = Float.parseFloat(amount);
 
         // Creating a paypal payment on below line.
         PayPalPayment payment = new PayPalPayment(new BigDecimal(String.valueOf(amount)), "EUR", "Propina",
@@ -92,6 +97,7 @@ public class PayPal extends AppCompatActivity {
         startActivityForResult(intent, PAYPAL_REQUEST_CODE);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -109,22 +115,32 @@ public class PayPal extends AppCompatActivity {
                 if (confirm != null) {
 
                     try {
-                        // Getting the payment details
-                        String paymentDetails = confirm.toJSONObject().toString(4);
-                        // on below line we are extracting json response and displaying it in a text view.
-                        JSONObject payObj = new JSONObject(paymentDetails);
-                        String payID = payObj.getJSONObject("response").getString("id");
-                        String state = payObj.getJSONObject("response").getString("state");
-                        String pago = payObj.getJSONObject("response").getString("total");
 
-                        /*
-                        if(IniciarSessio.var == 'C'){
-                            Propina propina = new Propina(IniciarSessio.clt, treballador, empresa, pago);
+                        if(IniciarSessio.var == 'C') {
+                            Propina propina = new Propina(IniciarSessio.clt.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina);
+                            propina.insert(this);
+                            Toast.makeText(PayPal.this, "Propina afegida ", Toast.LENGTH_SHORT).show();
+                            Intent princi2 = new Intent(PayPal.this, principalClient.class);
+                            startActivity(princi2);
+
+                        }else if(IniciarSessio.var == 'T'){
+                            Propina propina = new Propina(IniciarSessio.trb.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina);
+                            propina.insert(this);
+                            Toast.makeText(PayPal.this, "Propina afegida", Toast.LENGTH_SHORT).show();
+                            Intent principalTreball = new Intent(PayPal.this, IniciarTreballador.class);
+                            startActivity(principalTreball);
+
+
+                        }else if(IniciarSessio.var == 'P'){
+                            Propina propina = new Propina(IniciarSessio.prp.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina);
+                            propina.insert(this);
+                            Toast.makeText(PayPal.this, "Propina afegida", Toast.LENGTH_SHORT).show();
+                            Intent principalPropie = new Intent(PayPal.this, iniciarEmpresa.class);
+                            startActivity(principalPropie);
+
                         }
-                        */
 
-                        paymentTV.setText("Payment " + state + "\n with payment id is " + payID + ". Pago = " + pago);
-                    } catch (JSONException e) {
+                    } catch (Exception e) {
                         // handling json exception on below line
                         Log.e("Error", "an extremely unlikely failure occurred: ", e);
                     }

@@ -25,7 +25,7 @@ public class misTips extends AppCompatActivity {
         setContentView(R.layout.activity_mis_tips);
 
 
-        Client.propinesClient(this, IniciarSessio.clt.getDni(), new VolleyCallBack(){
+        Client.propinesClient(this, IniciarSessio.trb.getDni(), new VolleyCallBack(){
             @Override
             public void onSuccess(ArrayList prop){
 
@@ -91,7 +91,7 @@ public class misTips extends AppCompatActivity {
             tbrow.addView(t2v);
 
             TextView t3v = new TextView(this);
-            t3v.setText("5'5 €"); //pagament
+            t3v.setText(propinas.get(i).getPropina() + ""); //pagament
             t3v.setTextColor(Color.BLACK);
             t3v.setGravity(Gravity.CENTER);
             t3v.setLayoutParams(paramsExample);

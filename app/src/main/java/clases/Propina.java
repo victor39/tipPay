@@ -21,6 +21,13 @@ public class Propina {
     double propina;
     String data;
 
+    public Propina(String client, String treballador, String empresa, double propina) {
+        this.client = client;
+        this.empresa = empresa;
+        this.treballador = treballador;
+        this.propina = propina;
+    }
+
     public Propina(String client, String treballador, String empresa, double propina, String data) {
         this.client = client;
         this.empresa = empresa;
@@ -82,7 +89,7 @@ public class Propina {
         Double propina = this.propina;
 
         try {
-            String url = "https://ffames.cat/tippay/Client-insert.php";
+            String url = "https://ffames.cat/tippay/Propina-insert.php";
             StringRequest postRequest = new
                     //crear constructor
                     StringRequest(Request.Method.POST, url,

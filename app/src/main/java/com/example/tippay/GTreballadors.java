@@ -22,6 +22,7 @@ import clases.Treballador;
 
 public class GTreballadors extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,24 +95,9 @@ public class GTreballadors extends AppCompatActivity {
             bt0.setLayoutParams(paramsExample);
         }
     }
-             /*
-            bt0.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    acomiadar(t1v.getText().toString());
-                }
-            });
-
-            tbrow.addView(bt0);
-
-            stk.addView(tbrow);
-        }
-
-    }
-
        public void acomiadar(String dni){
 
-           System.out.println(dni)          /*
+           System.out.println(dni);
            Treballador.updateVellTreballador(this, dni);
            Empresa.acomiadarTreballador(this, dni, IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
                @Override
@@ -148,12 +134,10 @@ public class GTreballadors extends AppCompatActivity {
                    }
                });
            }
-
        }
-
-       */
     public void atras(View view) {
         Intent returnClient = new Intent(this, iniciarEmpresa.class);
         startActivity(returnClient);
     }
+
 }

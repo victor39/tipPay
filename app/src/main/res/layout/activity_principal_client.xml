@@ -6,23 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".principalClient">
 
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="320dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toTopOf="@+id/iniciClientHistorial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.684"
+        app:srcCompat="@drawable/captura" />
+
     <Button
         android:id="@+id/returnInici2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="50dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#11FFFFFF"
         android:onClick="inici"
-        android:text="Home"
         app:icon="?attr/homeAsUpIndicator"
+        app:iconTint="#070707"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.028"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/registrarEmpresa"
-        android:layout_width="140dp"
+        android:layout_width="130dp"
         android:layout_height="53dp"
         android:onClick="registrarEmpresa"
         android:text="Registrar Empresa"
@@ -31,19 +46,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="214dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="92dp"
-        android:text="LOGOTIPPAY"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.584" />
 
     <Button
         android:id="@+id/iniciClientHistorial"
@@ -53,7 +56,7 @@
         android:text="MIS TIPS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.374" />
@@ -66,21 +69,21 @@
         android:text="@string/favoritos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.477" />
 
     <Button
         android:id="@+id/butonPagar"
-        android:layout_width="133dp"
-        android:layout_height="50dp"
-        android:text="pagar"
+        android:layout_width="130dp"
+        android:layout_height="53dp"
         android:onClick="anarPagar"
+        android:text="pagar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823" />
+        app:layout_constraintVertical_bias="0.728" />
 </androidx.constraintlayout.widget.ConstraintLayout>
