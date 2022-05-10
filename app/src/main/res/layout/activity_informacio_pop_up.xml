@@ -8,10 +8,10 @@
 
     <TextView
         android:id="@+id/textPopMenu"
-        android:layout_width="343dp"
-        android:layout_height="50dp"
+        android:layout_width="357dp"
+        android:layout_height="335dp"
         android:layout_gravity="center"
-        android:text="Aqui tens una petita explicacíó del que desitjis"
+        android:text="Aquesta aplicació ofereix l'opció de fer propines sense efectiu, d'aquesta forma podràs tornar a fer tips als teus treballadors preferits.   Com a treballador podràs saber qui et fa propines i també podràs ferles a altres treballadors.   Com a propietari podràs gestionar-les i saber quins dels teus treballadors és millor per l'atenció al client."
         android:textSize="20sp" />
 
 </LinearLayout>
