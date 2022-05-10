@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".registraUsuari">
 
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="297dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/IniciarSessio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/captura" />
+
     <Button
         android:id="@+id/registreInfo2"
         android:layout_width="62dp"
@@ -52,13 +64,14 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="307dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="276dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
         android:text="REGISTRE "
         android:textAlignment="center"
-        android:textSize="48sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274">
+        app:layout_constraintVertical_bias="0.402">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreUsuariEmail"
@@ -83,23 +96,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
-        android:layout_width="307dp"
-        android:layout_height="61dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-        app:layout_constraintVertical_bias="0.032">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/registreUsuariNomUsuari"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nom usuari" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout5"
         android:layout_width="307dp"
         android:layout_height="61dp"
@@ -107,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486">
+        app:layout_constraintVertical_bias="0.614">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreUsuariContra"
@@ -126,13 +122,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589">
+        app:layout_constraintVertical_bias="0.717">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreUsuariContra2"
             android:layout_width="306dp"
             android:layout_height="56dp"
             android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="307dp"
+        android:layout_height="61dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+        app:layout_constraintVertical_bias="0.035">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registreUsuariNomUsuari"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom usuari" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

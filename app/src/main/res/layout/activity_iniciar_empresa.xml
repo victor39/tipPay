@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".iniciarEmpresa">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="320dp"
+        android:layout_height="125dp"
+        app:layout_constraintBottom_toTopOf="@+id/btonGestionarPersonal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/captura" />
+
     <Button
         android:id="@+id/button4"
         android:layout_width="54dp"
@@ -36,20 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.028" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="284dp"
-        android:layout_height="79dp"
-        android:text="TipPay"
-        android:textAlignment="center"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/btonGestionarPersonal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
 
     <Button
         android:id="@+id/btonGestionarPersonal"
