@@ -93,8 +93,7 @@ public class GTreballadors extends AppCompatActivity {
             bt0.setText("Acomiadar");
             bt0.setLayoutParams(paramsExample);
         }
-    }
-             /*
+
             bt0.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -107,11 +106,8 @@ public class GTreballadors extends AppCompatActivity {
             stk.addView(tbrow);
         }
 
-    }
-
        public void acomiadar(String dni){
-
-           System.out.println(dni)          /*
+           System.out.println(dni);
            Treballador.updateVellTreballador(this, dni);
            Empresa.acomiadarTreballador(this, dni, IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
                @Override
@@ -151,7 +147,6 @@ public class GTreballadors extends AppCompatActivity {
 
        }
 
-       */
     public void atras(View view) {
         Intent returnClient = new Intent(this, iniciarEmpresa.class);
         startActivity(returnClient);
