@@ -123,7 +123,7 @@ public class PayPal extends AppCompatActivity {
                             Propina propina = new Propina(IniciarSessio.trb.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina);
                             propina.insert(this);
                             Toast.makeText(PayPal.this, "Propina afegida", Toast.LENGTH_SHORT).show();
-                            Intent principalTreball = new Intent(PayPal.this, informacioPayPal.class);
+                            Intent principalTreball = new Intent(PayPal.this, IniciarTreballador.class);
                             startActivity(principalTreball);
 
 
@@ -131,7 +131,7 @@ public class PayPal extends AppCompatActivity {
                             Propina propina = new Propina(IniciarSessio.prp.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina);
                             propina.insert(this);
                             Toast.makeText(PayPal.this, "Propina afegida", Toast.LENGTH_SHORT).show();
-                            Intent principalPropie = new Intent(PayPal.this, informacioPayPal.class);
+                            Intent principalPropie = new Intent(PayPal.this, iniciarEmpresa.class);
                             startActivity(principalPropie);
 
                         }
