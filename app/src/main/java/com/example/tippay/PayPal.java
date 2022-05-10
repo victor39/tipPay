@@ -63,7 +63,7 @@ public class PayPal extends AppCompatActivity {
 
         // creating a variable for button, edit text and status tv.
         Button makePaymentBtn = (Button) findViewById(R.id.idBtnPay);
-        paymentTV = findViewById(R.id.idTVStatus);
+
 
         // on below line adding click listener to our make payment button.
         makePaymentBtn.setOnClickListener(PayPalListener);

@@ -22,6 +22,7 @@ import clases.Treballador;
 
 public class GTreballadors extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,4 +140,5 @@ public class GTreballadors extends AppCompatActivity {
         Intent returnClient = new Intent(this, iniciarEmpresa.class);
         startActivity(returnClient);
     }
+
 }
