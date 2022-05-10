@@ -92,7 +92,17 @@ public class GTreballadors extends AppCompatActivity {
 
             Button bt0 = new Button(this);
             bt0.setText("Acomiadar");
+            bt0.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    acomiadar(t1v.getText().toString());
+                }
+            });
+
             bt0.setLayoutParams(paramsExample);
+            tbrow.addView(bt0);
+
+            stk.addView(tbrow);
         }
     }
        public void acomiadar(String dni){
