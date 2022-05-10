@@ -142,9 +142,7 @@ public class Treballador extends Persona{
             e.printStackTrace();
         }
     }
-
     static public void updateNouTreballador(Activity act, String dni){;
-
         try {
             String url = "https://ffames.cat/tippay/Treballador-updateNou.php";
             StringRequest postRequest = new
@@ -157,8 +155,6 @@ public class Treballador extends Persona{
                                     //si hay un error de sintaxis en la consulta del php lo devolvera aqui
 
                                     String resultado = response;
-
-
                                 }
                             },
                             new Response.ErrorListener() {

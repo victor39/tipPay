@@ -22,7 +22,6 @@ import clases.Treballador;
 
 public class GTreballadors extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +32,7 @@ public class GTreballadors extends AppCompatActivity {
         Empresa.totsTreballadors(this, IniciarSessio.prp.getEmpresa(), new VolleyCallBack() {
             @Override
             public void onSuccess(ArrayList treballadors) {
+
                 emplenarTaula(treballadors);
             }
             @Override
