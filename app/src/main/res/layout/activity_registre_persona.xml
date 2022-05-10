@@ -91,7 +91,7 @@
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304">
+        app:layout_constraintVertical_bias="0.303">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreNom"
@@ -146,7 +146,7 @@
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597">
+        app:layout_constraintVertical_bias="0.594">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreDataNaix"
@@ -161,9 +161,10 @@
         android:layout_height="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789">
+        app:layout_constraintVertical_bias="0.754">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreCP"
@@ -178,9 +179,10 @@
         android:layout_height="51dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.887">
+        app:layout_constraintVertical_bias="0.841">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registrePAYPAL"
@@ -194,9 +196,10 @@
         android:layout_height="51dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.694">
+        app:layout_constraintVertical_bias="0.661">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreTelef"
