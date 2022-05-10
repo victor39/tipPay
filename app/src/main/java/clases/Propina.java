@@ -21,6 +21,13 @@ public class Propina {
     double propina;
     String data;
 
+    public Propina(String client, String treballador, String empresa, double propina) {
+        this.client = client;
+        this.empresa = empresa;
+        this.treballador = treballador;
+        this.propina = propina;
+    }
+
     public Propina(String client, String treballador, String empresa, double propina, String data) {
         this.client = client;
         this.empresa = empresa;
