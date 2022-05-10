@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -115,14 +116,24 @@ public class PayPal extends AppCompatActivity {
                             System.out.println(LocalDateTime.now());
                             Propina propina = new Propina(IniciarSessio.clt.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
                             propina.insert(this);
+                            Toast.makeText(PayPal.this, "Propina afegida ", Toast.LENGTH_SHORT).show();
+                            Intent princi2 = new Intent(PayPal.this, principalClient.class);
+                            startActivity(princi2);
 
                         }else if(IniciarSessio.var == 'T'){
                             Propina propina = new Propina(IniciarSessio.trb.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
                             propina.insert(this);
+                            Toast.makeText(PayPal.this, "Propina afegida", Toast.LENGTH_SHORT).show();
+                            Intent principalTreball = new Intent(PayPal.this, informacioPayPal.class);
+                            startActivity(principalTreball);
+
 
                         }else if(IniciarSessio.var == 'P'){
                             Propina propina = new Propina(IniciarSessio.prp.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
                             propina.insert(this);
+                            Toast.makeText(PayPal.this, "Propina afegida", Toast.LENGTH_SHORT).show();
+                            Intent principalPropie = new Intent(PayPal.this, informacioPayPal.class);
+                            startActivity(principalPropie);
 
                         }
 

@@ -39,7 +39,7 @@ public class IniciarSessio extends AppCompatActivity {
     public static char var;
 
     String dniRecollir , contraRecollir;
-    EditText adni , aContra;
+    EditText adni , aContra ,aContra2;
     Button btnIniciar;
 
     @Override
@@ -52,23 +52,27 @@ public class IniciarSessio extends AppCompatActivity {
 
         adni = findViewById(R.id.textIniciarSessioINICIAR);
         aContra = findViewById(R.id.textContraseñaINICIAR);
+        aContra2 = findViewById(R.id.textContraseña2);
     }
 
-    public void iniciar(View view){
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void iniciar(View view) {
 
-        dniRecollir = adni.getText().toString();
-        contraRecollir = aContra.getText().toString();
-        System.out.println(dniRecollir);
-        System.out.println(contraRecollir);
+        if (aContra.getText().toString().equals(aContra2.getText().toString())) {
+            dniRecollir = adni.getText().toString();
+            contraRecollir = aContra.getText().toString();
+            System.out.println(dniRecollir);
+            System.out.println(contraRecollir);
 
-        Persona.validarUsuari(IniciarSessio.this, dniRecollir, contraRecollir, new VolleyCallBack(){
+            Persona.validarUsuari(IniciarSessio.this, dniRecollir, contraRecollir, new VolleyCallBack() {
 
-            @Override
-            public void onSuccess(ArrayList propinas) {
+                @Override
+                public void onSuccess(ArrayList propinas) {
 
-            }
-            @Override
-            public void onSuccess() {
+                }
+
+                @Override
+                public void onSuccess() {
                     if (IniciarSessio.var == 'P') {
                         IniciarSessio.prp.buscarEmpresa(IniciarSessio.this, prp.getDni(), new VolleyCallBack() {
                             @Override
@@ -76,28 +80,35 @@ public class IniciarSessio extends AppCompatActivity {
                                 ArrayList<Empresa> emps = empreses;
                                 prp.setEmpresa(emps.get(0).getNIE());
                             }
+
                             @Override
                             public void onSuccess() {
                             }
                         });
-                        Toast.makeText(IniciarSessio.this, "Has iniciat sessió com propietari", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(IniciarSessio.this, "Has iniciat sessió", Toast.LENGTH_SHORT).show();
                         Intent usuari = new Intent(IniciarSessio.this, iniciarEmpresa.class);
                         startActivity(usuari);
-                    } else if (IniciarSessio.var == 'T' ) {
+                    } else if (IniciarSessio.var == 'T') {
 
-                        Toast.makeText(IniciarSessio.this, "Has iniciat sessió com treballador", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(IniciarSessio.this, "Has iniciat sessió ", Toast.LENGTH_SHORT).show();
                         Intent gTreballadors = new Intent(IniciarSessio.this, IniciarTreballador.class);
                         startActivity(gTreballadors);
 
                     } else if (IniciarSessio.var == 'C') {
-                        Toast.makeText(IniciarSessio.this, "Has iniciat sessió com Client", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(IniciarSessio.this, "Has iniciat sessió ", Toast.LENGTH_SHORT).show();
                         Intent usuari = new Intent(IniciarSessio.this, principalClient.class);
                         startActivity(usuari);
                     }
                 }
-        });
+            });
+
+
+        } else {
+            Toast.makeText(IniciarSessio.this, "Contraseña incorrecta ,tornar a omplir", Toast.LENGTH_SHORT).show();
+            aContra.setText("");
+            aContra2.setText("");
+        }
     }
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void returnIniciar(View view) {
         Intent returnIniciar = new Intent(this, MainActivity.class);
         startActivity(returnIniciar);

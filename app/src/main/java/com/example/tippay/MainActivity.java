@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(registrarPersona);
     }
     public void informacio(View view) {
-        Intent informacio = new Intent ( this , PayPal.class);
+        Intent informacio = new Intent ( this , informacioPopUp.class);
         startActivity(informacio);
     }
     public void sortir(View view){
