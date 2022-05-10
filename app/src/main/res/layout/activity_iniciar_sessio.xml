@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".IniciarSessio">
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="177dp"
+        android:layout_height="79dp"
+        app:layout_constraintBottom_toTopOf="@+id/textIniciar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/captura" />
+
     <EditText
         android:id="@+id/textIniciar"
         android:layout_width="214dp"
