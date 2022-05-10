@@ -41,23 +41,24 @@
         android:id="@+id/btSeguent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
         android:onClick="sessioIniciada"
         android:text="Registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regis"
+        app:layout_constraintVertical_bias="0.546" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="284dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="307dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="84dp"
         android:text="REGISTRE "
+        android:textAlignment="center"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223">
+        app:layout_constraintVertical_bias="0.274">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreUsuariEmail"
@@ -89,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-        app:layout_constraintVertical_bias="0.075">
+        app:layout_constraintVertical_bias="0.032">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreUsuariNomUsuari"
@@ -105,7 +106,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.486">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreUsuariContra"
@@ -124,7 +126,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.647">
+        app:layout_constraintVertical_bias="0.589">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registreUsuariContra2"

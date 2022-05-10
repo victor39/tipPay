@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.803" />
 
     <Button
         android:id="@+id/btReturnIniciar"
@@ -71,19 +71,19 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textIniciarSessio"
-        android:layout_width="320dp"
-        android:layout_height="55dp"
+        android:layout_width="314dp"
+        android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.405">
+        app:layout_constraintVertical_bias="0.406">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textIniciarSessioINICIAR"
-            android:layout_width="316dp"
-            android:layout_height="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:hint="DNI?" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,6 +93,7 @@
         android:layout_height="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -109,8 +110,10 @@
         android:layout_height="55dp"
         app:layout_constraintBottom_toTopOf="@+id/btIniciarSessio"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+        app:layout_constraintVertical_bias="0.114">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textContraseña2"
