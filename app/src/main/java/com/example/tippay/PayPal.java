@@ -113,26 +113,25 @@ public class PayPal extends AppCompatActivity {
                     try {
 
                         if(IniciarSessio.var == 'C') {
-                            System.out.println(LocalDateTime.now());
-                            Propina propina = new Propina(IniciarSessio.clt.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
+                            Propina propina = new Propina(IniciarSessio.clt.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina);
                             propina.insert(this);
                             Toast.makeText(PayPal.this, "Propina afegida ", Toast.LENGTH_SHORT).show();
                             Intent princi2 = new Intent(PayPal.this, principalClient.class);
                             startActivity(princi2);
 
                         }else if(IniciarSessio.var == 'T'){
-                            Propina propina = new Propina(IniciarSessio.trb.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
+                            Propina propina = new Propina(IniciarSessio.trb.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina);
                             propina.insert(this);
                             Toast.makeText(PayPal.this, "Propina afegida", Toast.LENGTH_SHORT).show();
-                            Intent principalTreball = new Intent(PayPal.this, informacioPayPal.class);
+                            Intent principalTreball = new Intent(PayPal.this, IniciarTreballador.class);
                             startActivity(principalTreball);
 
 
                         }else if(IniciarSessio.var == 'P'){
-                            Propina propina = new Propina(IniciarSessio.prp.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina, LocalDateTime.now().toString());
+                            Propina propina = new Propina(IniciarSessio.prp.getDni(), PayPal.treballador, PayPal.empresa, PayPal.propina);
                             propina.insert(this);
                             Toast.makeText(PayPal.this, "Propina afegida", Toast.LENGTH_SHORT).show();
-                            Intent principalPropie = new Intent(PayPal.this, informacioPayPal.class);
+                            Intent principalPropie = new Intent(PayPal.this, iniciarEmpresa.class);
                             startActivity(principalPropie);
 
                         }

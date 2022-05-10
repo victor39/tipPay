@@ -8,16 +8,20 @@
 
     <Button
         android:id="@+id/btnReturnEmpresa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:background="#02FFFFFF"
+        android:backgroundTint="#05FFFFFF"
         android:onClick="atras"
-        android:text="Home"
+        app:icon="?attr/homeAsUpIndicator"
+        app:iconTint="#0C0C0C"
         app:layout_constraintBottom_toTopOf="@+id/btnAfegirTreballador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.028"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnAfegirTreballador"
