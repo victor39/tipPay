@@ -7,4 +7,4 @@ En la part de client , aquest entraria al restaurant i veura els diferents cambr
 La part de cambrer consta per una banda , per cobrar les propines  i veure un historial o inclus si anes al mateix lloc , poder fer la propina a un company seu
 L'administrador en aquest podra fer les modificacions pertinents 
 
-(https://raw.victor39/tipPay/edit/master/tippay.PNG)
+(https://raw.githubusercontent.com/victor39/tipPay/blob/master/tippay.PNG)
